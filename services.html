@@ -1,4 +1,137 @@
-    <!-- Services Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalOPS</title>
+    <link rel="stylesheet" href="templatemo-chain-summit.css">
+<!-- 
+
+TemplateMo 601 KalOPS
+
+https://templatemo.com/tm-601-kalops
+
+-->
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Hexagon background -->
+                    <polygon points="50,5 85,25 85,65 50,85 15,65 15,25" 
+                             fill="none" 
+                             stroke="url(#gradientStroke)" 
+                             stroke-width="2"/>
+                    
+                    <!-- Neural network nodes -->
+                    <circle cx="50" cy="30" r="4" fill="#00ffff"/>
+                    <circle cx="35" cy="45" r="4" fill="#ff00ff"/>
+                    <circle cx="65" cy="45" r="4" fill="#ff00ff"/>
+                    <circle cx="35" cy="65" r="4" fill="#00ffff"/>
+                    <circle cx="65" cy="65" r="4" fill="#00ffff"/>
+                    <circle cx="50" cy="55" r="5" fill="#7c3aed"/>
+                    
+                    <!-- Connection lines -->
+                    <line x1="50" y1="30" x2="35" y2="45" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+                    <line x1="50" y1="30" x2="65" y2="45" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+                    <line x1="35" y1="45" x2="50" y2="55" stroke="#ff00ff" stroke-width="1" opacity="0.5"/>
+                    <line x1="65" y1="45" x2="50" y2="55" stroke="#ff00ff" stroke-width="1" opacity="0.5"/>
+                    <line x1="50" y1="55" x2="35" y2="65" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+                    <line x1="50" y1="55" x2="65" y2="65" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+                    
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#speakers">Services</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#speakers" onclick="closeMenu()">Speakers</a>
+            <a href="#schedule" onclick="closeMenu()">Schedule</a>
+            <a href="#sponsors" onclick="closeMenu()">Sponsors</a>
+            <a href="#register" onclick="closeMenu()">Register</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>KalOPS</h1>
+            <p>Where Artificial Intelligence Meets Blockchain Innovation</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Attendees</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Speakers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">Days</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="25">0</span>
+                    <span class="stat-label">Sponsors</span>
+                </div>
+            </div>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="#schedule" class="btn btn-secondary">View Schedule</a>
+            </div>
+        </div>
+    </section>
+	    <!-- Services Section -->
 <section id="speakers" class="section">
     <h2 class="animate-on-scroll">Our Services</h2>
 
@@ -56,3 +189,131 @@
 
     </div>
 </section>
+
+    <!-- Register Section -->
+    <section id="register" class="section">
+        <div class="register-section animate-on-scroll">
+            <div class="register-content">
+                <h2 class="register-title">Stay Updated</h2>
+                <p class="register-subtitle">Be the first to know about conference updates and early bird tickets</p>
+                
+                <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                    <input 
+                        type="email" 
+                        class="email-input" 
+                        placeholder="Enter your email address" 
+                        required
+                        id="emailInput"
+                    >
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+                
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info-section animate-on-scroll">
+            <div class="contact-container">
+                <!-- Contact Form Column -->
+                <div class="contact-form-column">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-field">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" required placeholder="Your name">
+                        </div>
+                        <div class="form-field">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-field">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" required placeholder="How can we help?">
+                        </div>
+                        <div class="form-field">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="contact-submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="contact-info-column">
+                    <h3 class="contact-info-title">Get In Touch</h3>
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Venue</span>
+                                <span class="contact-value">Bangkok Convention Center<br>999 Rama IV Road<br>Bangkok, Thailand</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value"><a href="mailto:info@chainsummit.com">info@chainsummit.com</a></span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+66 2 123 4567</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Event Date</span>
+                                <span class="contact-value">December 15-17, 2025<br>9:00 AM - 6:00 PM Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Chain Summit</h2>
+            <p>November 14-16, 2026 • Bangkok Convention Center</p>
+            <!-- set the event date in the JavaScript file / line number 32 -->
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+
+            <p>
+                © 2026 KalOPS. All rights reserved. 
+                | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a>
+            </p>
+        </div>
+    </footer>
+
+<script src="templatemo-chain-scripts.js"></script>
+</body>
+
+</html>
