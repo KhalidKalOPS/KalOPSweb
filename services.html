@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>KalOPS</title> 
+    <title>KalOPS - Services</title> 
     <link rel="stylesheet" href="templatemo-chain-summit.css"> 
     <style>
         /* Force show services section */
@@ -16,6 +16,29 @@
         .services-hero-fix {
             padding-top: 120px;
             text-align: center;
+            color: white;
+        }
+        
+        .services-hero-fix h1 {
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .services-hero-fix p {
+            color: #00ffff;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer styling */
+        .footer-content h2 {
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head> 
@@ -25,28 +48,25 @@
         <div class="neural-network" id="neuralNetwork"></div> 
         <div class="particles" id="particles"></div> 
     </div> 
+    
     <!-- Header --> 
     <header> 
         <nav> 
             <a href="index.html" class="logo"> 
                 <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
-                    <!-- Hexagon background --> 
                     <polygon points="50,5 85,25 85,65 50,85 15,65 15,25" fill="none" stroke="url(#gradientStroke)" stroke-width="2"/> 
-                    <!-- Neural network nodes --> 
                     <circle cx="50" cy="30" r="4" fill="#00ffff"/> 
                     <circle cx="35" cy="45" r="4" fill="#ff00ff"/> 
                     <circle cx="65" cy="45" r="4" fill="#ff00ff"/> 
                     <circle cx="35" cy="65" r="4" fill="#00ffff"/> 
                     <circle cx="65" cy="65" r="4" fill="#00ffff"/> 
                     <circle cx="50" cy="55" r="5" fill="#7c3aed"/> 
-                    <!-- Connection lines --> 
                     <line x1="50" y1="30" x2="35" y2="45" stroke="#00ffff" stroke-width="1" opacity="0.5"/> 
                     <line x1="50" y1="30" x2="65" y2="45" stroke="#00ffff" stroke-width="1" opacity="0.5"/> 
                     <line x1="35" y1="45" x2="50" y2="55" stroke="#ff00ff" stroke-width="1" opacity="0.5"/> 
                     <line x1="65" y1="45" x2="50" y2="55" stroke="#ff00ff" stroke-width="1" opacity="0.5"/> 
                     <line x1="50" y1="55" x2="35" y2="65" stroke="#7c3aed" stroke-width="1" opacity="0.5"/> 
                     <line x1="50" y1="55" x2="65" y2="65" stroke="#7c3aed" stroke-width="1" opacity="0.5"/> 
-                    <!-- Gradient definitions --> 
                     <defs> 
                         <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%"> 
                             <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" /> 
@@ -71,7 +91,6 @@
                 <span></span> 
             </div> 
         </nav> 
-        <!-- Mobile Navigation Menu --> 
         <div class="mobile-nav" id="mobileNav"> 
             <a href="index.html" onclick="closeMenu()">Home</a> 
             <a href="about.html" onclick="closeMenu()">About Us</a> 
@@ -82,15 +101,15 @@
         </div> 
     </header> 
 
-    <!-- Services Page Header --> 
-    <div class="services-hero-fix"> 
-        <h1>Our Services</h1> 
-        <p>Comprehensive solutions for your business needs</p> 
-    </div> 
+    <!-- Services Page Header -->
+    <div class="services-hero-fix">
+        <h1>Our Services</h1>
+        <p>Comprehensive solutions for your business needs</p>
+    </div>
 
     <!-- Services Section --> 
     <section id="services" class="section" style="display: block; visibility: visible; opacity: 1; padding: 20px 0;"> 
-        <div class="speakers-grid"> 
+        <div class="speakers-grid">
             <!-- Service 1 --> 
             <div class="speaker-card" style="display: block; visibility: visible;"> 
                 <div class="speaker-avatar">SM</div> 
@@ -100,7 +119,6 @@
                     Daily store operations, inventory handling, reporting, and workflow automation to keep your convenience store running smoothly. 
                 </p> 
             </div> 
-
             <!-- Service 2 --> 
             <div class="speaker-card" style="display: block; visibility: visible;"> 
                 <div class="speaker-avatar">BO</div> 
@@ -110,7 +128,6 @@
                     POS/ERP setup, data entry, troubleshooting, sales reconciliation, and performance monitoring for seamless store operations. 
                 </p> 
             </div> 
-
             <!-- Service 3 --> 
             <div class="speaker-card" style="display: block; visibility: visible;"> 
                 <div class="speaker-avatar">CM</div> 
@@ -120,7 +137,6 @@
                     Real-time surveillance, staff activity logs, theft alerts, and daily incident reports to keep your store secure. 
                 </p> 
             </div> 
-
             <!-- Service 4 --> 
             <div class="speaker-card" style="display: block; visibility: visible;"> 
                 <div class="speaker-avatar">FI</div> 
@@ -130,7 +146,6 @@
                     Pump-wise tracking, inventory accuracy, invoice reconciliation, and loss detection for fuel station owners. 
                 </p> 
             </div> 
-
             <!-- Service 5 --> 
             <div class="speaker-card" style="display: block; visibility: visible;"> 
                 <div class="speaker-avatar">WD</div> 
@@ -142,12 +157,12 @@
             </div> 
         </div> 
     </section> 
+    
     <!-- Footer --> 
     <footer> 
         <div class="footer-content"> 
             <h2>KalOPS</h2> 
-            <p>November 14-16, 2026 • Bangkok Convention Center</p> 
-            <!-- set the event date in the JavaScript file / line number 32 --> 
+            <p>Professional Business Solutions</p> 
             <div class="social-links"> 
                 <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a> 
                 <a href="#" class="social-link">L</a> 
