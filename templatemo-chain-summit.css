@@ -1640,15 +1640,3 @@ footer p a:hover {
 		font-size: 0.8rem;
 	}
 }
-
-/* Force show services section */
-    #services {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-        
-    .services-hero-fix {
-        padding-top: 120px;
-        text-align: center;
-    }
