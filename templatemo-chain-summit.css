@@ -1518,6 +1518,52 @@ footer p a:hover {
 	animation-delay: calc(var(--stagger) * 0.1s);
 }
 
+/* Services Page Specific Styles */
+#services {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#services h2 {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Services page header styling */
+.services-page-header {
+    padding-top: 120px;
+    text-align: center;
+    color: white;
+}
+
+.services-page-header h1 {
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.services-page-header p {
+    color: #00ffff;
+    font-size: 1.2rem;
+}
+
+/* Footer styling for services page */
+footer .footer-content h2 {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 	.nav-links {
