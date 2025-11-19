@@ -1640,3 +1640,16 @@ footer p a:hover {
 		font-size: 0.8rem;
 	}
 }
+/* Custom Logo Styling */
+.custom-logo {
+    height: 40px; /* Adjust according to your logo size */
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+}
