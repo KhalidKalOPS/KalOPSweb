@@ -2,40 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact • KalOPS</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <style>
+        /* Contact page specific styling */
+        .contact-hero {
+            padding-top: 120px;
+            text-align: center;
+            color: white;
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contact-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-hero p {
+            color: var(--primary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-content {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .contact-content h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .contact-content p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Footer styling */
+        .footer-content h2 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
 
 <body>
-
-<header>
-    <nav>
- <a href="index.html" class="logo">
-    <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
-    <span class="logo-text">KalOPS</span>
-</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a class="active" href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="section">
-    <h2>Contact</h2>
-    <p>Join KalOPS 2026 and be part of the global AI & blockchain revolution.</p>
-</section>
-
-<footer>
-    <div class="footer-content">
-        <h2>KalOPS</h2>
-        <p>© 2026 KalOPS. All rights reserved.</p>
+    <!-- Background Animation -->
+    <div class="bg-animation"> 
+        <div class="neural-network" id="neuralNetwork"></div> 
+        <div class="particles" id="particles"></div> 
     </div>
-</footer>
 
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()"> 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav"> 
+            <a href="index.html" onclick="closeMenu()">Home</a> 
+            <a href="about.html" onclick="closeMenu()">About Us</a> 
+            <a href="services.html" onclick="closeMenu()">Services</a> 
+            <a href="support.html" onclick="closeMenu()">Support</a> 
+            <a href="clients.html" onclick="closeMenu()">Clients</a> 
+            <a class="active" href="contact.html" onclick="closeMenu()">Contact</a> 
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <div class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team for professional business solutions</p>
+    </div>
+
+    <!-- Contact Content Section -->
+    <section class="contact-content">
+        <h2>Let's Start a Conversation</h2>
+        <p>
+            Ready to streamline your business operations? Contact us today to discuss how KalOPS 
+            can provide comprehensive support for your convenience store or fuel station. Our team 
+            is here to answer your questions and provide tailored solutions.
+        </p>
+        <!-- Yahan ap contact form, phone numbers, email, address etc. add kar sakte ho -->
+    </section>
+
+    <!-- Footer -->
+    <footer> 
+        <div class="footer-content"> 
+            <h2>KalOPS</h2> 
+            <p>Professional Business Solutions</p> 
+            <div class="social-links"> 
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a> 
+                <a href="#" class="social-link">L</a> 
+                <a href="#" class="social-link">F</a> 
+                <a href="#" class="social-link">I</a> 
+            </div> 
+            <p> © 2026 KalOPS. All rights reserved. | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a> </p> 
+        </div> 
+    </footer> 
+
+    <script src="templatemo-chain-scripts.js"></script> 
 </body>
 </html>
