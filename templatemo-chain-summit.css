@@ -1389,6 +1389,15 @@ footer {
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-content h2 {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 footer p {
 	margin-top: 2rem; 
 	color: var(--gray); 
@@ -1653,3 +1662,4 @@ footer p a:hover {
     gap: 0.8rem;
     text-decoration: none;
 }
+
