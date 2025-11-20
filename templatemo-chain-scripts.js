@@ -240,97 +240,26 @@ function addHexDecorations() {
    });
 }
 
-// Email functionality for contact form
-async function handleContactSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.contact-submit-btn');
-    const messageDiv = document.getElementById('contactFormMessage');
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('contactName').value,
-        email: document.getElementById('contactEmail').value,
-        subject: document.getElementById('contactSubject').value,
-        message: document.getElementById('contactMessage').value,
-        timestamp: new Date().toLocaleString()
-    };
-    
-    // Show loading state
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    messageDiv.textContent = '';
-    messageDiv.className = 'form-message';
-    
-    try {
-        // Send email using EmailJS (you'll need to set up an account)
-        await sendContactEmail(formData);
-        
-        // Success message
-        messageDiv.textContent = 'Thank you! Your message has been sent successfully.';
-        messageDiv.className = 'form-message success';
-        form.reset();
-        
-    } catch (error) {
-        // Error message
-        console.error('Error sending email:', error);
-        messageDiv.textContent = 'Sorry, there was an error sending your message. Please try again.';
-        messageDiv.className = 'form-message error';
-    } finally {
-        // Reset button
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
-    }
-}
+// Handle contact form submission
+function handleContactSubmit(event) {
+   event.preventDefault();
 
-// Function to send email using EmailJS
-async function sendContactEmail(formData) {
-    // Method 1: Using EmailJS (Recommended)
-    // You'll need to sign up at https://emailjs.com and get your credentials
-    
-    // Uncomment and configure this section after setting up EmailJS
-    /*
-    const emailParams = {
-        to_email: 'khalid@kalops.it.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        timestamp: formData.timestamp
-    };
-    
-    // Initialize EmailJS with your Public Key
-    emailjs.init("YOUR_PUBLIC_KEY_HERE");
-    
-    // Send email using your Service ID and Template ID
-    return await emailjs.send(
-        "YOUR_SERVICE_ID_HERE",
-        "YOUR_TEMPLATE_ID_HERE",
-        emailParams
-    );
-    */
-    
-    // Method 2: Using Formspree (Alternative - no coding required)
-    // Change the form action to: action="https://formspree.io/f/YOUR_FORM_ID"
-    // And remove the onsubmit handler
-    
-    // Method 3: Simple fetch to a server endpoint (if you have a backend)
-    // return await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData)
-    // });
-    
-    // For now, we'll simulate a successful send
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            console.log('Email would be sent to khalid@kalops.it.com with:', formData);
-            resolve({ status: 200, text: 'OK' });
-        }, 1000);
-    });
+   const name = document.getElementById('contactName').value;
+   const email = document.getElementById('contactEmail').value;
+   const subject = document.getElementById('contactSubject').value;
+   const message = document.getElementById('contactMessage').value;
+
+   // Simulate form submission (in a real scenario, this would send to a server)
+   if (name && email && subject && message) {
+      // Show success message
+      alert('Thank you for your message! We\'ll get back to you soon.');
+
+      // Clear the form
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactSubject').value = '';
+      document.getElementById('contactMessage').value = '';
+   }
 }
 
 // Handle email submission
@@ -379,4 +308,5 @@ window.addEventListener('load', () => {
 
    // Update countdown every second
    setInterval(updateCountdown, 1000);
+
 });
