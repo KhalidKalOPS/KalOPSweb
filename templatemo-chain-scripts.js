@@ -6,44 +6,32 @@ https://templatemo.com/tm-601-chain-summit
 
 */
 
-
 // Animate counter numbers
 function animateCounters() {
    const counters = document.querySelectorAll('.stat-number');
    counters.forEach(counter => {
       const target = parseInt(counter.getAttribute('data-target'));
-      const increment = target / 200;
+      const increment = target / 100;
       let current = 0;
 
       const timer = setInterval(() => {
          current += increment;
-         counter.textContent = Math.floor(current);
+         if (target === 99) {
+            counter.textContent = Math.floor(current) + '%';
+         } else {
+            counter.textContent = Math.floor(current);
+         }
 
          if (current >= target) {
-            counter.textContent = target;
+            if (target === 99) {
+               counter.textContent = target + '%';
+            } else {
+               counter.textContent = target;
+            }
             clearInterval(timer);
          }
-      }, 10);
+      }, 20);
    });
-}
-
-// Countdown timer
-function updateCountdown() {
-   const eventDate = new Date('2026-11-14T09:00:00');
-   const now = new Date();
-   const diff = eventDate - now;
-
-   if (diff > 0) {
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = days.toString().padStart(2, '0');
-      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-   }
 }
 
 // Create neural network animation
@@ -273,7 +261,7 @@ function handleEmailSubmit(event) {
    // Simulate form submission (in a real scenario, this would send to a server)
    if (email) {
       // Show success message
-      formMessage.textContent = 'Thank you for signing up! We\'ll keep you updated on Chain Summit.';
+      formMessage.textContent = 'Thank you for signing up! We\'ll keep you updated.';
       formMessage.className = 'form-message success';
       formMessage.style.display = 'block';
 
@@ -302,11 +290,6 @@ window.addEventListener('load', () => {
    animateCounters();
    createNeuralNetwork();
    createParticles();
-   updateCountdown();
    initScrollAnimations();
    addHexDecorations();
-
-   // Update countdown every second
-   setInterval(updateCountdown, 1000);
-
 });
