@@ -456,7 +456,7 @@ https://templatemo.com/tm-601-kalops
         <!-- Contact Form Column -->
 <div class="contact-form-column">
     <h3 class="contact-form-title">Send Us a Message</h3>
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
         <div class="form-field">
             <label for="contactName">Name</label>
             <input type="text" id="contactName" name="from_name" required placeholder="Your name">
@@ -477,7 +477,6 @@ https://templatemo.com/tm-601-kalops
         <div id="formMessage" class="form-message" style="display: none;"></div>
     </form>
 </div>
-
                 <!-- Contact Info Column -->
                 <div class="contact-info-column">
                     <h3 class="contact-info-title">Get In Touch</h3>
@@ -556,6 +555,7 @@ https://templatemo.com/tm-601-kalops
 </body>
 
 </html>
+
 
 
 
