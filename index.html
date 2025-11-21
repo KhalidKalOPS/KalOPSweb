@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KalOPS</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <!-- 
 
 TemplateMo 601 KalOPS
@@ -451,32 +453,30 @@ https://templatemo.com/tm-601-kalops
             </div>
         </div>
 
-        <!-- Contact Information -->
-        <div class="contact-info-section animate-on-scroll">
-            <div class="contact-container">
-                <!-- Contact Form Column -->
-                <div class="contact-form-column">
-                    <h3 class="contact-form-title">Send Us a Message</h3>
-                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                        <div class="form-field">
-                            <label for="contactName">Name</label>
-                            <input type="text" id="contactName" required placeholder="Your name">
-                        </div>
-                        <div class="form-field">
-                            <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" required placeholder="your@email.com">
-                        </div>
-                        <div class="form-field">
-                            <label for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" required placeholder="How can we help?">
-                        </div>
-                        <div class="form-field">
-                            <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" required placeholder="Your message..."></textarea>
-                        </div>
-                        <button type="submit" class="contact-submit-btn">Send Message</button>
-                    </form>
-                </div>
+        <!-- Contact Form Column -->
+<div class="contact-form-column">
+    <h3 class="contact-form-title">Send Us a Message</h3>
+    <form class="contact-form" id="contactForm">
+        <div class="form-field">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="from_name" required placeholder="Your name">
+        </div>
+        <div class="form-field">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="from_email" required placeholder="your@email.com">
+        </div>
+        <div class="form-field">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" required placeholder="How can we help?">
+        </div>
+        <div class="form-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" required placeholder="Your message..."></textarea>
+        </div>
+        <button type="submit" class="contact-submit-btn" id="submitBtn">Send Message</button>
+        <div id="formMessage" class="form-message" style="display: none;"></div>
+    </form>
+</div>
 
                 <!-- Contact Info Column -->
                 <div class="contact-info-column">
@@ -556,6 +556,7 @@ https://templatemo.com/tm-601-kalops
 </body>
 
 </html>
+
 
 
 
