@@ -240,13 +240,73 @@ function addHexDecorations() {
    });
 }
 
+// Handle contact form submission
+function handleContactSubmit(event) {
+   event.preventDefault();
+
+   const name = document.getElementById('contactName').value;
+   const email = document.getElementById('contactEmail').value;
+   const subject = document.getElementById('contactSubject').value;
+   const message = document.getElementById('contactMessage').value;
+
+   // Simulate form submission (in a real scenario, this would send to a server)
+   if (name && email && subject && message) {
+      // Show success message
+      alert('Thank you for your message! We\'ll get back to you soon.');
+
+      // Clear the form
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactSubject').value = '';
+      document.getElementById('contactMessage').value = '';
+   }
+}
+
+// Handle email submission
+function handleEmailSubmit(event) {
+   event.preventDefault();
+
+   const emailInput = document.getElementById('emailInput');
+   const formMessage = document.getElementById('formMessage');
+   const email = emailInput.value;
+
+   // Simulate form submission (in a real scenario, this would send to a server)
+   if (email) {
+      // Show success message
+      formMessage.textContent = 'Thank you for signing up! We\'ll keep you updated on Chain Summit.';
+      formMessage.className = 'form-message success';
+      formMessage.style.display = 'block';
+
+      // Clear the input
+      emailInput.value = '';
+
+      // Hide message after 5 seconds
+      setTimeout(() => {
+         formMessage.style.display = 'none';
+      }, 5000);
+   } else {
+      // Show error message
+      formMessage.textContent = 'Please enter a valid email address.';
+      formMessage.className = 'form-message error';
+      formMessage.style.display = 'block';
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+         formMessage.style.display = 'none';
+      }, 3000);
+   }
+}
+
 // Initialize everything when page loads
 window.addEventListener('load', () => {
-    animateCounters();
-    createNeuralNetwork();
-    createParticles();
-    updateCountdown();
-    initScrollAnimations();
-    addHexDecorations();
-    setInterval(updateCountdown, 1000);
+   animateCounters();
+   createNeuralNetwork();
+   createParticles();
+   updateCountdown();
+   initScrollAnimations();
+   addHexDecorations();
+
+   // Update countdown every second
+   setInterval(updateCountdown, 1000);
+
 });
