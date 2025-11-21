@@ -240,66 +240,7 @@ function addHexDecorations() {
    });
 }
 
-// Handle contact form submission with EmailJS
-function handleContactSubmit(event) {
-    event.preventDefault();
-    
-    const submitBtn = document.getElementById('submitBtn');
-    const formMessage = document.getElementById('formMessage');
-    const originalText = submitBtn.textContent;
-    
-    // Show loading state
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    formMessage.style.display = 'none';
-
-    // Get form data
-    const formData = {
-        from_name: document.getElementById('contactName').value,
-        from_email: document.getElementById('contactEmail').value,
-        subject: document.getElementById('contactSubject').value,
-        message: document.getElementById('contactMessage').value
-    };
-
-    // Send email using EmailJS
-    emailjs.send('service_9q3k8bj', 'template_2fq7p9n', formData, 'pQ0Y8W3pX7qV2vD6s')
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            
-            // Show success message
-            formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
-            
-            // Clear the form
-            document.getElementById('contactForm').reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        }, function(error) {
-            console.log('FAILED...', error);
-            
-            // Show error message
-            formMessage.textContent = 'Message sent! We will contact you soon.';
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
-        })
-        .finally(function() {
-            // Reset button state
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
-}
-
-// Initialize EmailJS when page loads
-function initEmailJS() {
-    // Initialize EmailJS
-    emailjs.init("pQ0Y8W3pX7qV2vD6s");
-}
-
-// Add to window load
+// Initialize everything when page loads
 window.addEventListener('load', () => {
     animateCounters();
     createNeuralNetwork();
@@ -307,6 +248,5 @@ window.addEventListener('load', () => {
     updateCountdown();
     initScrollAnimations();
     addHexDecorations();
-    initEmailJS();
     setInterval(updateCountdown, 1000);
 });
