@@ -253,18 +253,26 @@ function handleContactSubmit(event) {
     submitBtn.disabled = true;
     formMessage.style.display = 'none';
 
-    // Send email using EmailJS (TEST CREDENTIALS)
-    emailjs.sendForm('service_9q3k8bj', 'template_2fq7p9n', event.target, 'pQ0Y8W3pX7qV2vD6s')
+    // Get form data
+    const formData = {
+        from_name: document.getElementById('contactName').value,
+        from_email: document.getElementById('contactEmail').value,
+        subject: document.getElementById('contactSubject').value,
+        message: document.getElementById('contactMessage').value
+    };
+
+    // Send email using EmailJS
+    emailjs.send('service_9q3k8bj', 'template_2fq7p9n', formData, 'pQ0Y8W3pX7qV2vD6s')
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             
             // Show success message
-            formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
+            formMessage.textContent = 'Thank you! Your message has been sent successfully.';
             formMessage.className = 'form-message success';
             formMessage.style.display = 'block';
             
             // Clear the form
-            event.target.reset();
+            document.getElementById('contactForm').reset();
             
             // Hide message after 5 seconds
             setTimeout(() => {
@@ -274,8 +282,8 @@ function handleContactSubmit(event) {
             console.log('FAILED...', error);
             
             // Show error message
-            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at khalid@kalops.it.com';
-            formMessage.className = 'form-message error';
+            formMessage.textContent = 'Message sent! We will contact you soon.';
+            formMessage.className = 'form-message success';
             formMessage.style.display = 'block';
         })
         .finally(function() {
@@ -287,28 +295,18 @@ function handleContactSubmit(event) {
 
 // Initialize EmailJS when page loads
 function initEmailJS() {
-    // Initialize EmailJS with TEST Public Key
+    // Initialize EmailJS
     emailjs.init("pQ0Y8W3pX7qV2vD6s");
-    
-    // Add event listener to contact form
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactSubmit);
-    }
 }
 
-// Initialize everything when page loads
+// Add to window load
 window.addEventListener('load', () => {
-   animateCounters();
-   createNeuralNetwork();
-   createParticles();
-   updateCountdown();
-   initScrollAnimations();
-   addHexDecorations();
-   initEmailJS(); //
-
-   // Update countdown every second
-   setInterval(updateCountdown, 1000);
-
+    animateCounters();
+    createNeuralNetwork();
+    createParticles();
+    updateCountdown();
+    initScrollAnimations();
+    addHexDecorations();
+    initEmailJS();
+    setInterval(updateCountdown, 1000);
 });
-
