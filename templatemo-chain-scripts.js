@@ -240,61 +240,61 @@ function addHexDecorations() {
    });
 }
 
-// Handle contact form submission
+// Handle contact form submission with EmailJS
 function handleContactSubmit(event) {
-   event.preventDefault();
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+    const originalText = submitBtn.textContent;
+    
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    formMessage.style.display = 'none';
 
-   const name = document.getElementById('contactName').value;
-   const email = document.getElementById('contactEmail').value;
-   const subject = document.getElementById('contactSubject').value;
-   const message = document.getElementById('contactMessage').value;
-
-   // Simulate form submission (in a real scenario, this would send to a server)
-   if (name && email && subject && message) {
-      // Show success message
-      alert('Thank you for your message! We\'ll get back to you soon.');
-
-      // Clear the form
-      document.getElementById('contactName').value = '';
-      document.getElementById('contactEmail').value = '';
-      document.getElementById('contactSubject').value = '';
-      document.getElementById('contactMessage').value = '';
-   }
+    // Send email using EmailJS (TEST CREDENTIALS)
+    emailjs.sendForm('service_9q3k8bj', 'template_2fq7p9n', event.target, 'pQ0Y8W3pX7qV2vD6s')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Show success message
+            formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            
+            // Clear the form
+            event.target.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }, function(error) {
+            console.log('FAILED...', error);
+            
+            // Show error message
+            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at khalid@kalops.it.com';
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+        })
+        .finally(function() {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
 }
 
-// Handle email submission
-function handleEmailSubmit(event) {
-   event.preventDefault();
-
-   const emailInput = document.getElementById('emailInput');
-   const formMessage = document.getElementById('formMessage');
-   const email = emailInput.value;
-
-   // Simulate form submission (in a real scenario, this would send to a server)
-   if (email) {
-      // Show success message
-      formMessage.textContent = 'Thank you for signing up! We\'ll keep you updated on Chain Summit.';
-      formMessage.className = 'form-message success';
-      formMessage.style.display = 'block';
-
-      // Clear the input
-      emailInput.value = '';
-
-      // Hide message after 5 seconds
-      setTimeout(() => {
-         formMessage.style.display = 'none';
-      }, 5000);
-   } else {
-      // Show error message
-      formMessage.textContent = 'Please enter a valid email address.';
-      formMessage.className = 'form-message error';
-      formMessage.style.display = 'block';
-
-      // Hide message after 3 seconds
-      setTimeout(() => {
-         formMessage.style.display = 'none';
-      }, 3000);
-   }
+// Initialize EmailJS when page loads
+function initEmailJS() {
+    // Initialize EmailJS with TEST Public Key
+    emailjs.init("pQ0Y8W3pX7qV2vD6s");
+    
+    // Add event listener to contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactSubmit);
+    }
 }
 
 // Initialize everything when page loads
@@ -305,8 +305,10 @@ window.addEventListener('load', () => {
    updateCountdown();
    initScrollAnimations();
    addHexDecorations();
+   initEmailJS(); //
 
    // Update countdown every second
    setInterval(updateCountdown, 1000);
 
 });
+
