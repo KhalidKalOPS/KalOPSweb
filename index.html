@@ -6,6 +6,15 @@
     <title>KalOPS</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+
+    
+<script>
+        // URL se index.html remove karne ka code
+        if (window.location.pathname.includes('index.html')) {
+            var newUrl = window.location.pathname.replace('/index.html', '');
+            window.history.replaceState({}, document.title, newUrl);
+        }
+    </script>
 <!-- 
 
 TemplateMo 601 KalOPS
@@ -557,5 +566,6 @@ https://templatemo.com/tm-601-kalops
 </body>
 
 </html>
+
 
 
