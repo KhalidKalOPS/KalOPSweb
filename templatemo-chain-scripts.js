@@ -310,3 +310,11 @@ window.addEventListener('load', () => {
    setInterval(updateCountdown, 1000);
 
 });
+
+(function() {
+    if (window.location.pathname.includes('index.html')) {
+        var newUrl = window.location.pathname.replace('/index.html', '');
+        window.history.replaceState({}, document.title, newUrl);
+    }
+})();
+
