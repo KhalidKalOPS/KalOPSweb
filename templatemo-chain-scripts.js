@@ -6,6 +6,24 @@ https://templatemo.com/tm-601-chain-summit
 
 */
 
+// ================= URL FIX CODE - START =================
+(function() {
+    // Remove .html from all URLs
+    var currentPath = window.location.pathname;
+    
+    if (currentPath.endsWith('.html')) {
+        var newPath = currentPath.replace('.html', '');
+        
+        // Special case for home page
+        if (newPath === '/index') {
+            newPath = '/';
+        }
+        
+        // Update URL without refreshing page
+        window.history.replaceState({}, document.title, newPath);
+    }
+})();
+// ================= URL FIX CODE - END =================
 
 // Animate counter numbers
 function animateCounters() {
@@ -310,11 +328,3 @@ window.addEventListener('load', () => {
    setInterval(updateCountdown, 1000);
 
 });
-
-(function() {
-    if (window.location.pathname.includes('index.html')) {
-        var newUrl = window.location.pathname.replace('/index.html', '');
-        window.history.replaceState({}, document.title, newUrl);
-    }
-})();
-
