@@ -569,22 +569,17 @@ nav {
 	}
 }
 
-.block { 
+.block {
     width: 70px;
     height: 70px;
     background: linear-gradient(135deg, var(--primary), var(--accent));
-
-    /* Perfect Center Fix */
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     color: var(--dark);
     font-weight: bold;
     font-size: 0.9rem;
-
     animation: hexPulse 8s infinite;
     position: relative;
     overflow: hidden;
@@ -1667,4 +1662,5 @@ footer p a:hover {
     gap: 0.8rem;
     text-decoration: none;
 }
+
 
