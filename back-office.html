@@ -1,1 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalOPS - Back-Office Software Management</title>
+    <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+    <style>
+        /* Back-Office Specific Styles */
+        .backoffice-hero {
+            padding: 150px 2rem 50px;
+            text-align: center;
+            color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .backoffice-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .backoffice-hero p {
+            color: var(--primary);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--light);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Coming Soon Placeholder */
+        .coming-soon-note {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .coming-soon-note p {
+            color: #ffa500;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .backoffice-hero {
+                padding: 120px 1rem 30px;
+            }
+            
+            .backoffice-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem 3rem;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation (Same as other pages) -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <!-- Header (Same as other pages) -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="support.html" onclick="closeMenu()">Support</a>
+            <a href="clients.html" onclick="closeMenu()">Clients</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </div>
+    </header>
 
+    <!-- Back-Office Hero Section -->
+    <div class="backoffice-hero">
+        <h1>Back-Office Software Management</h1>
+        <p>Comprehensive POS & ERP system handling with detailed monitoring and reconciliation features</p>
+        <a href="services.html" class="back-link">← Back to All Services</a>
+    </div>
+
+    <!-- Features Section - 8 Items -->
+    <section class="section">
+        <h2>Our Back-Office Features</h2>
+        <div class="features-grid">
+            
+            <!-- Feature 1: Daily Close -->
+            <div class="feature-card">
+                <div class="feature-number">1</div>
+                <h3>Daily Close</h3>
+                <div class="feature-description">
+                    Complete daily closing procedures with automated reports, end-of-day reconciliation, and summary generation for accurate financial tracking.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 2: Vendor Purchases -->
+            <div class="feature-card">
+                <div class="feature-number">2</div>
+                <h3>Vendor Purchases</h3>
+                <div class="feature-description">
+                    Manage vendor transactions, purchase orders, supplier payments, and inventory restocking with automated tracking and reporting.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 3: Fuel Sales -->
+            <div class="feature-card">
+                <div class="feature-number">3</div>
+                <h3>Fuel Sales</h3>
+                <div class="feature-description">
+                    Monitor fuel pump transactions, inventory levels, pricing updates, and compliance reporting for efficient fuel management.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 4: Lottery Sales -->
+            <div class="feature-card">
+                <div class="feature-number">4</div>
+                <h3>Lottery Sales</h3>
+                <div class="feature-description">
+                    Track lottery ticket sales, commission calculations, prize payouts, and regulatory compliance reporting.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 5: P&L Review -->
+            <div class="feature-card">
+                <div class="feature-number">5</div>
+                <h3>P&L Review</h3>
+                <div class="feature-description">
+                    Comprehensive Profit & Loss analysis with visual dashboards, trend identification, and actionable insights for business growth.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 6: Inventory Reconciliation -->
+            <div class="feature-card">
+                <div class="feature-number">6</div>
+                <h3>Inventory Reconciliation</h3>
+                <div class="feature-description">
+                    Automated stock counting, discrepancy identification, reorder alerts, and inventory optimization recommendations.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 7: POS Menu Setup -->
+            <div class="feature-card">
+                <div class="feature-number">7</div>
+                <h3>POS Menu Setup</h3>
+                <div class="feature-description">
+                    Custom POS interface configuration, product categorization, pricing management, and promotional setup for optimal sales.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Feature 8: Cash Reconciliation -->
+            <div class="feature-card">
+                <div class="feature-number">8</div>
+                <h3>Cash Reconciliation</h3>
+                <div class="feature-description">
+                    Daily cash drawer balancing, discrepancy investigation, deposit preparation, and cash flow monitoring for accuracy.
+                </div>
+                <div class="coming-soon-note">
+                    <p>Detailed content coming soon...</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Footer (Same as other pages) -->
+    <footer>
+        <div class="footer-content">
+            <h2>KalOPS</h2>
+            <p>Professional Business Solutions</p>
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+            <p>© 2026 KalOPS. All rights reserved. | Designed by <a href="https://templatemo.com
