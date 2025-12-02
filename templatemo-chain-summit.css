@@ -1668,5 +1668,21 @@ footer p a:hover {
     text-decoration: none;
 }
 
+/* Back-Office Service Link Enhancement */
+.speaker-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.speaker-card:hover .speaker-avatar {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.speaker-card a:hover .speaker-name {
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
 
 
