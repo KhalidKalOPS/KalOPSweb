@@ -1685,103 +1685,87 @@ footer p a:hover {
     transition: color 0.3s ease;
 }
 
-/* ========== CONSISTENT SERVICE CARDS STYLING ========== */
+/* ========== SERVICE CARDS ENHANCEMENTS ========== */
 
-/* Make sure all speaker cards have consistent hover behavior */
-.speaker-card {
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-/* Hover effect for ALL speaker cards */
-.speaker-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
-    border-color: var(--primary);
-}
-
-/* Disable hover lift for Coming Soon cards */
-.speaker-card[style*="opacity: 0.7"]:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: rgba(0, 255, 255, 0.1);
-}
-
-/* But still allow subtle effects for Coming Soon cards */
-.speaker-card[style*="opacity: 0.7"]:hover .speaker-avatar {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-/* Avatar animation for all cards */
-.speaker-card .speaker-avatar {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.speaker-card:hover .speaker-avatar {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
-}
-
-/* Text color change on hover for Back-Office card only */
-.speaker-card a:hover .speaker-name {
-    color: var(--primary);
-}
-
-/* No text color change for Coming Soon cards */
-.speaker-card[style*="opacity: 0.7"]:hover .speaker-name {
-    color: inherit;
-}
-
-/* Link inside Back-Office card styling */
-.speaker-card a {
+/* Make speaker cards clickable and add hover effects */
+.service-link {
     text-decoration: none;
     color: inherit;
     display: block;
-    height: 100%;
 }
 
-/* "Click to see" hint styling */
-.speaker-card a div[style*="color: var(--primary)"] {
-    margin-top: 10px;
+/* Hover effect for clickable cards */
+.service-link .speaker-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 255, 255, 0.3);
+    border-color: var(--primary);
+}
+
+/* Coming Soon cards should have reduced opacity */
+.speaker-card[style*="opacity: 0.7"] {
+    position: relative;
+}
+
+/* Coming Soon overlay badge */
+.coming-soon-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+/* Click hint text */
+.click-hint {
+    margin-top: 15px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
     transition: all 0.3s ease;
 }
 
-.speaker-card a:hover div[style*="color: var(--primary)"] {
+.service-link:hover .click-hint {
     transform: translateX(5px);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-/* Coming Soon badge enhancement */
-.speaker-card div[style*="background: #ff9800"] {
-    background: linear-gradient(45deg, #ff9800, #ff5722) !important;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
-    z-index: 10;
+/* Avatar animation on hover for clickable cards */
+.service-link .speaker-avatar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Cursor styling */
-.speaker-card[style*="opacity: 0.7"] {
-    cursor: not-allowed;
+.service-link:hover .speaker-avatar {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
 }
 
-.speaker-card:not([style*="opacity: 0.7"]) {
-    cursor: pointer;
+/* Disable hover effects for Coming Soon cards */
+.speaker-card[style*="cursor: not-allowed"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: rgba(0, 255, 255, 0.1) !important;
 }
 
-/* Remove any blue outline on focus */
-.speaker-card a:focus {
-    outline: none;
-}
-
-/* Mobile responsiveness */
+/* Mobile responsiveness for service cards */
 @media (max-width: 768px) {
-    .speaker-card:hover {
-        transform: translateY(-5px);
+    .coming-soon-badge {
+        top: 10px;
+        right: 10px;
+        padding: 4px 8px;
+        font-size: 10px;
     }
     
-    .speaker-card[style*="opacity: 0.7"]:hover {
-        transform: none;
+    .service-link .speaker-card:hover {
+        transform: translateY(-8px);
     }
 }
+
+
 
