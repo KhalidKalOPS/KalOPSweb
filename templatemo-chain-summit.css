@@ -1685,4 +1685,85 @@ footer p a:hover {
     transition: color 0.3s ease;
 }
 
+/* ========== SERVICE CARDS ENHANCEMENTS ========== */
+
+/* Make speaker cards clickable and add hover effects */
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Hover effect for clickable cards */
+.service-link .speaker-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 255, 255, 0.3);
+    border-color: var(--primary);
+}
+
+/* Coming Soon cards should have reduced opacity */
+.speaker-card[style*="opacity: 0.7"] {
+    position: relative;
+}
+
+/* Coming Soon overlay badge */
+.coming-soon-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+/* Click hint text */
+.click-hint {
+    margin-top: 15px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover .click-hint {
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Avatar animation on hover for clickable cards */
+.service-link .speaker-avatar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-link:hover .speaker-avatar {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
+}
+
+/* Disable hover effects for Coming Soon cards */
+.speaker-card[style*="cursor: not-allowed"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: rgba(0, 255, 255, 0.1) !important;
+}
+
+/* Mobile responsiveness for service cards */
+@media (max-width: 768px) {
+    .coming-soon-badge {
+        top: 10px;
+        right: 10px;
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    .service-link .speaker-card:hover {
+        transform: translateY(-8px);
+    }
+}
 
