@@ -1,1 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalOPS - Daily Close Service</title>
+    <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+    <style>
+        /* Feature Detail Page Styles */
+        .feature-hero {
+            padding: 150px 2rem 50px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-hero p {
+            color: var(--primary);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Content Sections */
+        .feature-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-title::before {
+            content: '▶';
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Benefits List */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .benefit-item h4 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .benefit-item h4::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .benefit-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-question {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .faq-question::before {
+            content: 'Q:';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            padding-left: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .faq-answer::before {
+            content: 'A:';
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-btn {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-hero {
+                padding: 120px 1rem 30px;
+            }
+            
+            .feature-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-content {
+                padding: 0 1rem 3rem;
+            }
+            
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="support.html" onclick="closeMenu()">Support</a>
+            <a href="clients.html" onclick="closeMenu()">Clients</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <div class="feature-hero">
+        <h1>Daily Close Service</h1>
+        <p>Complete end-of-day reconciliation and financial reporting for accurate business tracking</p>
+        <a href="back-office.html" class="nav-btn">← Back to All Features</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="feature-content">
+        
+        <!-- What is Daily Close? -->
+        <section class="content-section">
+            <h2 class="section-title">What is Daily Close?</h2>
+            <div class="section-content">
+                <p>The Daily Close process is a systematic procedure performed at the end of each business day to reconcile all financial transactions, verify cash balances, and prepare accurate reports for management review.</p>
+                <p>It involves closing out the day's sales, balancing cash registers, verifying credit card transactions, and ensuring all financial data is accurately recorded in your POS/ERP system.</p>
+            </div>
+        </section>
+        
+        <!-- Why is it Important? -->
+        <section class="content-section">
+            <h2 class="section-title">Why is Daily Close Important?</h2>
+            <div class="section-content">
+                <p>Daily Close is critical for maintaining financial accuracy, detecting discrepancies early, and ensuring your business operates with complete transparency. Without proper daily closing procedures:</p>
+                <ul style="color: var(--gray); padding-left: 2rem; margin: 1.5rem 0;">
+                    <li style="margin-bottom: 0.8rem;">Financial errors can accumulate unnoticed</li>
+                    <li style="margin-bottom: 0.8rem;">Theft or fraud may go undetected</li>
+                    <li style="margin-bottom: 0.8rem;">Cash flow management becomes difficult</li>
+                    <li style="margin-bottom: 0.8rem;">Tax reporting becomes inaccurate</li>
+                    <li>Business decisions lack reliable data</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- How We Handle It -->
+        <section class="content-section">
+            <h2 class="section-title">How We Handle Daily Close</h2>
+            <div class="section-content">
+                <p>Our expert team follows a meticulous 7-step process for Daily Close:</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>1. Sales Reconciliation</h4>
+                        <p>Match POS sales data with actual cash, credit cards, and digital payments</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>2. Cash Count & Verification</h4>
+                        <p>Physical cash counting and verification against system records</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>3. Credit Card Settlement</h4>
+                        <p>Verify all credit card transactions and reconcile with bank deposits</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>4. Exception Reporting</h4>
+                        <p>Identify and report any discrepancies or unusual transactions</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>5. End-of-Day Reports</h4>
+                        <p>Generate comprehensive daily sales and financial reports</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>6. Data Backup</h4>
+                        <p>Secure backup of all daily transaction data</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>7. Management Summary</h4>
+                        <p>Prepare executive summary for business owners</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Benefits -->
+        <section class="content-section">
+            <h2 class="section-title">Benefits for Your Business</h2>
+            <div class="section-content">
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>Financial Accuracy</h4>
+                        <p>99.9% accurate daily financial reporting</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Fraud Prevention</h4>
+                        <p>Early detection of discrepancies or theft</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Time Savings</h4>
+                        <p>Save 2-3 hours daily on manual reconciliation</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Better Decisions</h4>
+                        <p>Accurate data for informed business decisions</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Tax Compliance</h4>
+                        <p>Proper records for tax reporting and audits</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Peace of Mind</h4>
+                        <p>Know your finances are accurate every day</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQs -->
+        <section class="content-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does the Daily Close process take?</div>
+                <div class="faq-answer">Typically 1-2 hours depending on transaction volume. We complete it within 2 hours of store closing.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What information do you need from us?</div>
+                <div class="faq-answer">We need access to your POS system, bank statements, and cash register reports. No sensitive financial data is stored.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you handle multiple store locations?</div>
+                <div class="faq-answer">Yes, we manage Daily Close for multiple locations with consolidated reporting.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What happens if you find discrepancies?</div>
+                <div class="faq-answer">We immediately alert you with detailed reports and suggested corrective actions.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is this service available 7 days a week?</div>
+                <div class="faq-answer">Yes, we provide Daily Close services 365 days a year, including holidays.</div>
+            </div>
+        </section>
+        
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="vendor-purchases.html" class="nav-btn">← Previous: Vendor Purchases</a>
+            <a href="back-office.html" class="nav-btn">View All Features</a>
+            <a href="fuel-sales.html" class="nav-btn">Next: Fuel Sales →</a>
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>KalOPS</h2>
+            <p>Professional Business Solutions</p>
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+            <p>© 2026 KalOPS. All rights reserved. | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a></p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="templatemo-chain-scripts.js"></script>
+</body>
+</html>
