@@ -7,6 +7,48 @@
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
     <style>
+        /* ===== NAVIGATION BAR FIXES ===== */
+        /* Navigation bar size fix */
+        nav {
+            min-height: 60px !important;
+            max-height: 60px !important;
+            padding: 0.5rem 1rem !important;
+        }
+        
+        /* Logo size adjustment */
+        .logo img.custom-logo {
+            height: 40px !important;
+            width: auto !important;
+        }
+        
+        /* Remove underline from navigation links */
+        .nav-links a,
+        .nav-links li a,
+        .nav-links .nav-link {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            position: relative;
+        }
+        
+        /* Mobile navigation links fix */
+        .mobile-nav a,
+        .mobile-nav-link {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+        
+        /* Hover effects (optional) */
+        .nav-links a:hover {
+            color: var(--primary) !important;
+        }
+        
+        /* Active/Focus states */
+        .nav-links a:active,
+        .nav-links a:focus {
+            text-decoration: none !important;
+            outline: none !important;
+        }
+        
         /* Feature Detail Page Styles */
         .feature-hero {
             padding: 150px 2rem 50px;
