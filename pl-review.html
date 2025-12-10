@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalOPS - P&L Review & Financial Analysis</title>
+    <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+    <style>
+        /* Feature Detail Page Styles */
+        .feature-hero {
+            padding: 150px 2rem 50px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-hero p {
+            color: var(--primary);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Content Sections */
+        .feature-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-title::before {
+            content: '▶';
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Benefits List */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .benefit-item h4 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .benefit-item h4::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .benefit-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-question {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .faq-question::before {
+            content: 'Q:';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            padding-left: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .faq-answer::before {
+            content: 'A:';
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-btn {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-hero {
+                padding: 120px 1rem 30px;
+            }
+            
+            .feature-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-content {
+                padding: 0 1rem 3rem;
+            }
+            
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="support.html" onclick="closeMenu()">Support</a>
+            <a href="clients.html" onclick="closeMenu()">Clients</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <div class="feature-hero">
+        <h1>P&L Review & Financial Analysis</h1>
+        <p>Comprehensive profit and loss analysis, financial reporting, trend identification, and business performance optimization</p>
+        <a href="back-office.html" class="nav-btn">← Back to All Features</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="feature-content">
+        
+        <!-- What is P&L Review? -->
+        <section class="content-section">
+            <h2 class="section-title">What is P&L Review & Financial Analysis?</h2>
+            <div class="section-content">
+                <p>P&L Review & Financial Analysis is a comprehensive financial management system that provides detailed analysis of profit and loss statements, identifies financial trends, analyzes business performance, and offers actionable insights for improving profitability across retail operations.</p>
+                <p>It involves monthly P&L preparation, variance analysis against budgets, trend identification, expense categorization, revenue analysis, and strategic recommendations for financial optimization.</p>
+            </div>
+        </section>
+        
+        <!-- Why is it Important? -->
+        <section class="content-section">
+            <h2 class="section-title">Why is P&L Analysis Critical?</h2>
+            <div class="section-content">
+                <p>Regular P&L analysis is essential for business survival and growth. Without proper financial analysis:</p>
+                <ul style="color: var(--gray); padding-left: 2rem; margin: 1.5rem 0;">
+                    <li style="margin-bottom: 0.8rem;">Profitability issues go undetected until too late</li>
+                    <li style="margin-bottom: 0.8rem;">Cost overruns remain unaddressed</li>
+                    <li style="margin-bottom: 0.8rem;">Revenue opportunities are missed</li>
+                    <li style="margin-bottom: 0.8rem;">Financial decisions lack data support</li>
+                    <li>Business growth becomes unpredictable</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- How We Handle It -->
+        <section class="content-section">
+            <h2 class="section-title">How We Handle P&L Review & Analysis</h2>
+            <div class="section-content">
+                <p>Our comprehensive financial analysis system includes:</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>1. Monthly P&L Preparation</h4>
+                        <p>Detailed profit and loss statements with accurate categorization</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>2. Variance Analysis</h4>
+                        <p>Comparison against budgets, forecasts, and previous periods</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>3. Trend Identification</h4>
+                        <p>Identification of revenue, cost, and profit trends over time</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>4. Expense Optimization</h4>
+                        <p>Analysis of all expenses with recommendations for reduction</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>5. Revenue Analysis</h4>
+                        <p>Detailed breakdown of revenue sources and growth opportunities</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>6. Strategic Recommendations</h4>
+                        <p>Actionable insights for improving profitability and financial health</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Benefits -->
+        <section class="content-section">
+            <h2 class="section-title">Benefits for Your Business</h2>
+            <div class="section-content">
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>Improved Profitability</h4>
+                        <p>Identify and address issues affecting your bottom line</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Cost Control</h4>
+                        <p>Monitor and optimize expenses across all categories</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Data-Driven Decisions</h4>
+                        <p>Make financial decisions based on accurate, timely data</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Early Warning System</h4>
+                        <p>Identify financial problems before they become critical</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Growth Planning</h4>
+                        <p>Use financial insights to plan and fund business growth</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Investor Confidence</h4>
+                        <p>Professional financial reporting builds trust with stakeholders</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQs -->
+        <section class="content-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How often do you prepare P&L statements?</div>
+                <div class="faq-answer">We prepare monthly P&L statements with weekly performance updates for critical metrics.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you compare performance across multiple locations?</div>
+                <div class="faq-answer">Yes, we provide comparative analysis across all store locations to identify best practices.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How detailed are your expense categorizations?</div>
+                <div class="faq-answer">We categorize expenses into 50+ detailed categories for precise analysis and control.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you provide cash flow analysis as well?</div>
+                <div class="faq-answer">Yes, we include cash flow analysis and working capital management in our financial review.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you help with budget preparation?</div>
+                <div class="faq-answer">Yes, we assist with annual budget preparation and quarterly forecasting based on historical data.</div>
+            </div>
+        </section>
+        
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="store-operations.html" class="nav-btn">← Previous: Store Operations</a>
+            <a href="back-office.html" class="nav-btn">View All Features</a>
+            <a href="inventory-reconciliation.html" class="nav-btn">Next: Inventory Reconciliation →</a>
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>KalOPS</h2>
+            <p>Professional Business Solutions</p>
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+            <p>© 2026 KalOPS. All rights reserved. | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a></p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="templatemo-chain-scripts.js"></script>
+</body>
+</html>
