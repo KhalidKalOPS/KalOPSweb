@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalOPS - Store Operations Management</title>
+    <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+    <style>
+        /* Feature Detail Page Styles */
+        .feature-hero {
+            padding: 150px 2rem 50px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-hero p {
+            color: var(--primary);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Content Sections */
+        .feature-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-title::before {
+            content: '▶';
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Benefits List */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .benefit-item h4 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .benefit-item h4::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .benefit-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-question {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .faq-question::before {
+            content: 'Q:';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            padding-left: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .faq-answer::before {
+            content: 'A:';
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-btn {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-hero {
+                padding: 120px 1rem 30px;
+            }
+            
+            .feature-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-content {
+                padding: 0 1rem 3rem;
+            }
+            
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="support.html" onclick="closeMenu()">Support</a>
+            <a href="clients.html" onclick="closeMenu()">Clients</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <div class="feature-hero">
+        <h1>Store Operations Management</h1>
+        <p>Complete retail store monitoring, staff scheduling, maintenance tracking, and operational efficiency optimization</p>
+        <a href="back-office.html" class="nav-btn">← Back to All Features</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="feature-content">
+        
+        <!-- What is Store Operations Management? -->
+        <section class="content-section">
+            <h2 class="section-title">What is Store Operations Management?</h2>
+            <div class="section-content">
+                <p>Store Operations Management is a comprehensive system for managing all aspects of retail store operations, including staff scheduling, maintenance tracking, equipment monitoring, safety compliance, and operational efficiency optimization across multiple locations.</p>
+                <p>It involves centralized control of daily store activities, real-time monitoring of operational metrics, staff performance tracking, maintenance scheduling, and compliance management for retail chains.</p>
+            </div>
+        </section>
+        
+        <!-- Why is it Important? -->
+        <section class="content-section">
+            <h2 class="section-title">Why is Store Operations Management Critical?</h2>
+            <div class="section-content">
+                <p>Proper store operations management is essential for maximizing efficiency, reducing costs, and maintaining brand standards. Without effective operations management:</p>
+                <ul style="color: var(--gray); padding-left: 2rem; margin: 1.5rem 0;">
+                    <li style="margin-bottom: 0.8rem;">Operational inefficiencies increase costs</li>
+                    <li style="margin-bottom: 0.8rem;">Staff scheduling becomes inconsistent</li>
+                    <li style="margin-bottom: 0.8rem;">Equipment failures disrupt business</li>
+                    <li style="margin-bottom: 0.8rem;">Safety compliance risks fines and closures</li>
+                    <li>Customer experience suffers from poor management</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- How We Handle It -->
+        <section class="content-section">
+            <h2 class="section-title">How We Handle Store Operations Management</h2>
+            <div class="section-content">
+                <p>Our comprehensive store operations system includes:</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>1. Multi-Location Monitoring</h4>
+                        <p>Centralized dashboard for real-time monitoring of all store locations</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>2. Intelligent Staff Scheduling</h4>
+                        <p>Automated scheduling based on sales patterns and labor laws</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>3. Maintenance Management</h4>
+                        <p>Preventive maintenance scheduling and repair tracking for all equipment</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>4. Compliance Tracking</h4>
+                        <p>Safety, health, and regulatory compliance monitoring and reporting</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>5. Performance Analytics</h4>
+                        <p>Detailed operational metrics and KPI tracking across locations</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>6. Task Management System</h4>
+                        <p>Daily checklists, opening/closing procedures, and task assignments</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Benefits -->
+        <section class="content-section">
+            <h2 class="section-title">Benefits for Your Business</h2>
+            <div class="section-content">
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>Reduced Operational Costs</h4>
+                        <p>Optimized staffing and maintenance reduce expenses by 15-25%</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Improved Efficiency</h4>
+                        <p>Streamlined processes increase productivity across all locations</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Consistent Brand Standards</h4>
+                        <p>Standardized operations maintain quality across multiple stores</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Better Staff Management</h4>
+                        <p>Optimal scheduling reduces overtime and improves employee satisfaction</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Preventive Maintenance</h4>
+                        <p>Reduced equipment downtime and emergency repair costs</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Regulatory Compliance</h4>
+                        <p>Avoid fines and closures with comprehensive compliance tracking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQs -->
+        <section class="content-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How many store locations can you manage?</div>
+                <div class="faq-answer">Our system can scale to manage from 1 to 500+ store locations with centralized control.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you integrate with existing POS systems?</div>
+                <div class="faq-answer">Yes, we integrate with all major POS systems for real-time operational data.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do you handle staff scheduling optimization?</div>
+                <div class="faq-answer">Our AI algorithms analyze sales patterns, foot traffic, and labor laws to create optimal schedules.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you track equipment maintenance across locations?</div>
+                <div class="faq-answer">Yes, we track all equipment maintenance schedules, repair history, and warranty information.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you provide mobile access for store managers?</div>
+                <div class="faq-answer">Yes, our mobile app allows store managers to manage operations from anywhere.</div>
+            </div>
+        </section>
+        
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="lottery-sales.html" class="nav-btn">← Previous: Lottery Sales</a>
+            <a href="back-office.html" class="nav-btn">View All Features</a>
+            <a href="pl-review.html" class="nav-btn">Next: P&L Review →</a>
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>KalOPS</h2>
+            <p>Professional Business Solutions</p>
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+            <p>© 2026 KalOPS. All rights reserved. | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a></p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="templatemo-chain-scripts.js"></script>
+</body>
+</html>
