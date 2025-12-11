@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalOPS - Cash Reconciliation & Management</title>
+    <link rel="stylesheet" href="templatemo-chain-summit.css">
+    <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+    <style>
+        /* Feature Detail Page Styles */
+        .feature-hero {
+            padding: 150px 2rem 50px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-hero p {
+            color: var(--primary);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Content Sections */
+        .feature-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-title::before {
+            content: '▶';
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Benefits List */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .benefit-item h4 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .benefit-item h4::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .benefit-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-question {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .faq-question::before {
+            content: 'Q:';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            padding-left: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .faq-answer::before {
+            content: 'A:';
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-btn {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-hero {
+                padding: 120px 1rem 30px;
+            }
+            
+            .feature-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-content {
+                padding: 0 1rem 3rem;
+            }
+            
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="support.html" onclick="closeMenu()">Support</a>
+            <a href="clients.html" onclick="closeMenu()">Clients</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <div class="feature-hero">
+        <h1>Cash Reconciliation & Management</h1>
+        <p>Complete cash handling oversight, drawer balancing, variance analysis, and cash flow optimization</p>
+        <a href="back-office.html" class="nav-btn">← Back to All Features</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="feature-content">
+        
+        <!-- What is Cash Reconciliation? -->
+        <section class="content-section">
+            <h2 class="section-title">What is Cash Reconciliation & Management?</h2>
+            <div class="section-content">
+                <p>Cash Reconciliation & Management is a systematic process for tracking, verifying, and optimizing all cash handling activities in retail operations, including daily drawer balancing, variance analysis, cash flow monitoring, bank deposit verification, and shrinkage control across all payment methods.</p>
+                <p>It involves daily cash count verification, discrepancy investigation, deposit preparation, cash flow optimization, and implementation of controls to prevent losses and ensure accurate financial reporting.</p>
+            </div>
+        </section>
+        
+        <!-- Why is it Important? -->
+        <section class="content-section">
+            <h2 class="section-title">Why is Cash Reconciliation Critical?</h2>
+            <div class="section-content">
+                <p>Accurate cash reconciliation is essential for financial integrity and loss prevention. Without proper cash management:</p>
+                <ul style="color: var(--gray); padding-left: 2rem; margin: 1.5rem 0;">
+                    <li style="margin-bottom: 0.8rem;">Cash shortages and theft go undetected</li>
+                    <li style="margin-bottom: 0.8rem;">Financial statements become inaccurate</li>
+                    <li style="margin-bottom: 0.8rem;">Bank deposits don't match recorded sales</li>
+                    <li style="margin-bottom: 0.8rem;">Cash flow problems arise unexpectedly</li>
+                    <li>Internal controls become ineffective against fraud</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- How We Handle It -->
+        <section class="content-section">
+            <h2 class="section-title">How We Handle Cash Reconciliation & Management</h2>
+            <div class="section-content">
+                <p>Our comprehensive cash management system includes:</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>1. Daily Drawer Reconciliation</h4>
+                        <p>Systematic counting and verification of all cash drawer contents</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>2. Variance Analysis & Investigation</h4>
+                        <p>Detailed investigation of cash discrepancies with root cause analysis</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>3. Deposit Verification</h4>
+                        <p>Verification of bank deposits against recorded sales and cash counts</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>4. Cash Flow Optimization</h4>
+                        <p>Analysis and optimization of cash handling processes and float levels</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>5. Multi-Payment Method Tracking</h4>
+                        <p>Reconciliation of cash, credit cards, checks, and digital payments</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>6. Internal Control Implementation</h4>
+                        <p>Establishment of cash handling policies and procedures to prevent losses</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Benefits -->
+        <section class="content-section">
+            <h2 class="section-title">Benefits for Your Business</h2>
+            <div class="section-content">
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <h4>Reduced Cash Losses</h4>
+                        <p>Immediate detection and prevention of cash shortages and theft</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Accurate Financial Reporting</h4>
+                        <p>Reliable cash figures for financial statements and tax reporting</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Improved Cash Flow</h4>
+                        <p>Optimized cash handling reduces float requirements and bank fees</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Enhanced Internal Controls</h4>
+                        <p>Strong controls deter fraud and ensure policy compliance</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Better Bank Reconciliation</h4>
+                        <p>Accurate deposits lead to faster bank reconciliation processes</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Peace of Mind</h4>
+                        <p>Confidence that cash handling is accurate, secure, and compliant</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQs -->
+        <section class="content-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How often do you perform cash reconciliation?</div>
+                <div class="faq-answer">We perform daily cash reconciliation for each shift and each cash drawer, with weekly audits.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you handle credit card and digital payment reconciliation?</div>
+                <div class="faq-answer">Yes, we reconcile all payment methods including cash, credit cards, checks, and mobile payments.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do you investigate cash variances?</div>
+                <div class="faq-answer">We use transaction analysis, CCTV review, and process auditing to identify variance causes.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you optimize cash float levels?</div>
+                <div class="faq-answer">Yes, we analyze transaction patterns to recommend optimal cash float levels for each shift.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you provide cash handling training for staff?</div>
+                <div class="faq-answer">Yes, we provide comprehensive cash handling training and establish clear procedures.</div>
+            </div>
+        </section>
+        
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="pos-menu-setup.html" class="nav-btn">← Previous: POS Menu Setup</a>
+            <a href="back-office.html" class="nav-btn">View All Features</a>
+            <a href="daily-close.html" class="nav-btn">Next: Daily Close →</a>
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>KalOPS</h2>
+            <p>Professional Business Solutions</p>
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+            <p>© 2026 KalOPS. All rights reserved. | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a></p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="templatemo-chain-scripts.js"></script>
+</body>
+</html>
