@@ -3,114 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | KalOPS</title>
+    <title>KalOPS Pricing</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
 </head>
-
 <body>
 
-<!-- Background Animation -->
-<div class="bg-animation">
-    <div class="neural-network"></div>
-    <div class="particles"></div>
-</div>
-
-<!-- Header -->
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
-            <span class="logo-text">KalOPS</span>
-        </a>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a class="active" href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <div class="mobile-menu" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="about.html" onclick="closeMenu()">About Us</a>
-        <a href="services.html" onclick="closeMenu()">Services</a>
-        <a href="support.html" onclick="closeMenu()">Support</a>
-        <a href="clients.html" onclick="closeMenu()">Clients</a>
-        <a class="active" href="pricing.html" onclick="closeMenu()">Pricing</a>
-        <a href="contact.html" onclick="closeMenu()">Contact</a>
-    </div>
-</header>
-
-<!-- Pricing Section -->
-<section id="pricing" class="section">
-    <h2 class="animate-on-scroll">Pricing Plans</h2>
-
-    <div class="pricing-container animate-on-scroll scale-up">
-
-        <!-- Basic Plan -->
-        <div class="pricing-card">
-            <h3 class="pricing-title">Basic Plan</h3>
-            <p class="pricing-old-price">$149</p>
-            <p class="pricing-price">$129 <span>/ month</span></p>
-
-            <ul class="pricing-features">
-                <li>✔ Vendor Purchases</li>
-                <li>✔ Fuel Purchases</li>
+    <!-- Header / Navbar -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a class="active" href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
+        </nav>
+    </header>
 
-            <a href="contact.html" class="pricing-button">Get Started</a>
+    <!-- Pricing Section -->
+    <section class="section" style="padding: 50px; text-align: center;">
+        <h1>Pricing Plans</h1>
+
+        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 30px;">
+
+            <!-- Plan 1 -->
+            <div style="border: 2px solid #ccc; border-radius: 10px; padding: 30px; width: 300px;">
+                <h2>Basic Plan</h2>
+                <p><strong>$149</strong> <br> After discount: <strong>$129</strong></p>
+                <p>Includes:</p>
+                <ul style="text-align: left;">
+                    <li>Vendor Purchases</li>
+                    <li>Fuel Purchases</li>
+                </ul>
+            </div>
+
+            <!-- Plan 2 -->
+            <div style="border: 2px solid #ccc; border-radius: 10px; padding: 30px; width: 300px;">
+                <h2>Advanced Plan</h2>
+                <p><strong>$199</strong> <br> After discount: <strong>$149</strong></p>
+                <p>Includes:</p>
+                <ul style="text-align: left;">
+                    <li>Daily Close</li>
+                    <li>Vendor Purchases</li>
+                    <li>Fuel Sales</li>
+                    <li>Lottery Sales</li>
+                    <li>P&L Review</li>
+                    <li>Inventory Reconciliation</li>
+                    <li>Cash Reconciliation</li>
+                </ul>
+            </div>
+
         </div>
+    </section>
 
-        <!-- Advanced Plan -->
-        <div class="pricing-card highlighted">
-            <div class="badge">Most Popular</div>
-            <h3 class="pricing-title">Advanced Plan</h3>
-            <p class="pricing-old-price">$199</p>
-            <p class="pricing-price">$149 <span>/ month</span></p>
-
-            <ul class="pricing-features">
-                <li>✔ Daily Close</li>
-                <li>✔ Vendor Purchases</li>
-                <li>✔ Fuel Sales</li>
-                <li>✔ Lottery Sales</li>
-                <li>✔ P&L Review</li>
-                <li>✔ Inventory Reconciliation</li>
-                <li>✔ Cash Reconciliation</li>
-            </ul>
-
-            <a href="contact.html" class="pricing-button primary">Start Now</a>
-        </div>
-
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <h2>KalOPS</h2>
-        <p>November 14-16, 2026 • Bangkok Convention Center</p>
-
-        <div class="social-links">
-            <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
-            <a href="#" class="social-link">L</a>
-            <a href="#" class="social-link">F</a>
-            <a href="#" class="social-link">I</a>
-        </div>
-
-        <p>© 2026 KalOPS. All rights reserved. 
-            | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a>
-        </p>
-    </div>
-</footer>
+</body>
+</html>
 
 <script src="templatemo-chain-scripts.js"></script>
 </body>
