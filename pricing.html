@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
     <style>
-        /* Hero Section */
         .pricing-hero {
             padding-top: 120px;
             text-align: center;
@@ -25,14 +24,18 @@
             font-size: 1.2rem;
         }
 
-        /* Pricing Cards */
+        /* Two Column Pricing Layout */
         .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
             padding: 50px 20px;
         }
+
         .pricing-card {
+            flex: 1 1 300px;
+            max-width: 400px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 15px;
@@ -44,6 +47,7 @@
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
+
         .pricing-card h3 {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -51,11 +55,19 @@
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
+
         .pricing-card .price {
             font-size: 2rem;
-            margin: 15px 0;
+            margin: 15px 0 5px 0;
             color: var(--primary);
         }
+
+        .pricing-card .discount {
+            font-size: 1.2rem;
+            color: #00ff99;
+            margin-bottom: 20px;
+        }
+
         .pricing-card ul {
             list-style: none;
             padding: 0;
@@ -65,6 +77,7 @@
             padding: 8px 0;
             border-bottom: 1px solid rgba(255,255,255,0.2);
         }
+
         .pricing-card button {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
@@ -77,6 +90,14 @@
         }
         .pricing-card button:hover {
             opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .pricing-grid {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -129,35 +150,31 @@
 
     <!-- Pricing Cards Section -->
     <section class="pricing-grid">
+        <!-- Basic Plan -->
         <div class="pricing-card">
             <h3>Basic</h3>
-            <div class="price">$49/month</div>
+            <div class="price">$149</div>
+            <div class="discount">After Discount: $129</div>
             <ul>
-                <li>POS System Integration</li>
-                <li>24/7 Support</li>
-                <li>Basic Reporting</li>
+                <li>Vendor Purchases</li>
+                <li>Fuel Purchases</li>
             </ul>
             <button>Get Started</button>
         </div>
 
-        <div class="pricing-card">
-            <h3>Standard</h3>
-            <div class="price">$99/month</div>
-            <ul>
-                <li>All Basic Features</li>
-                <li>Advanced Reporting</li>
-                <li>Camera Monitoring</li>
-            </ul>
-            <button>Get Started</button>
-        </div>
-
+        <!-- Premium Plan -->
         <div class="pricing-card">
             <h3>Premium</h3>
-            <div class="price">$199/month</div>
+            <div class="price">$199</div>
+            <div class="discount">After Discount: $149</div>
             <ul>
-                <li>All Standard Features</li>
-                <li>Custom ERP Integration</li>
-                <li>Dedicated Account Manager</li>
+                <li>Daily Close</li>
+                <li>Vendor Purchases</li>
+                <li>Fuel Sales</li>
+                <li>Lottery Sales</li>
+                <li>P&L Review</li>
+                <li>Inventory Reconciliation</li>
+                <li>Cash Reconciliation</li>
             </ul>
             <button>Get Started</button>
         </div>
