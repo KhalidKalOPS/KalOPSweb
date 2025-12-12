@@ -3,11 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KalOPS Pricing</title>
+    <title>KalOPS - Pricing</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+    <style>
+        /* Hero Section */
+        .pricing-hero {
+            padding-top: 120px;
+            text-align: center;
+            color: white;
+        }
+        .pricing-hero h1 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .pricing-hero p {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+        }
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        .pricing-card h3 {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 2rem;
+            margin: 15px 0;
+            color: var(--primary);
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .pricing-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .pricing-card button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        .pricing-card button:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <nav>
@@ -16,13 +96,13 @@
                 <span class="logo-text">KalOPS</span>
             </a>
             <ul class="nav-links">
-               <li><a href="index.html">Home</a></li>
-               <li><a href="about.html">About Us</a></li>
-               <li><a href="services.html">Services</a></li>
-               <li><a href="support.html">Support</a></li>
-               <li><a href="clients.html">Clients</a></li>
-               <li><a class="active" href="pricing.html">Pricing</a></li>
-               <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a class="active" href="pricing.html">Pricing</a></li> 
+                <li><a href="contact.html">Contact</a></li>
            </ul>
             <div class="mobile-menu" onclick="toggleMenu()">
                 <span></span>
@@ -30,7 +110,6 @@
                 <span></span>
             </div>
         </nav>
-        <!-- Mobile Navigation Menu -->
         <div class="mobile-nav" id="mobileNav">
             <a href="index.html" onclick="closeMenu()">Home</a>
             <a href="about.html" onclick="closeMenu()">About Us</a>
@@ -39,47 +118,48 @@
             <a href="clients.html" onclick="closeMenu()">Clients</a>
             <a class="active" href="pricing.html" onclick="closeMenu()">Pricing</a>
             <a href="contact.html" onclick="closeMenu()">Contact</a>
-       </div>
+        </div>
     </header>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="section">
-        <h2 class="animate-on-scroll">Pricing Plans</h2>
+    <!-- Pricing Hero Section -->
+    <div class="pricing-hero">
+        <h1>Our Pricing Plans</h1>
+        <p>Choose a plan that fits your business needs</p>
+    </div>
 
-        <div class="speakers-grid">
+    <!-- Pricing Cards Section -->
+    <section class="pricing-grid">
+        <div class="pricing-card">
+            <h3>Basic</h3>
+            <div class="price">$49/month</div>
+            <ul>
+                <li>POS System Integration</li>
+                <li>24/7 Support</li>
+                <li>Basic Reporting</li>
+            </ul>
+            <button>Get Started</button>
+        </div>
 
-            <!-- Basic Plan -->
-            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 2;">
-                <div class="speaker-avatar">B</div>
-                <h3 class="speaker-name">Basic Plan</h3>
-                <div class="speaker-title">$149 <span style="color: green;">After Discount: $129</span></div>
-                <p class="speaker-bio">Includes the following services:</p>
-                <ul style="text-align: left; padding-left: 20px;">
-                    <li>Vendor Purchases</li>
-                    <li>Fuel Purchases</li>
-                </ul>
-            </div>
+        <div class="pricing-card">
+            <h3>Standard</h3>
+            <div class="price">$99/month</div>
+            <ul>
+                <li>All Basic Features</li>
+                <li>Advanced Reporting</li>
+                <li>Camera Monitoring</li>
+            </ul>
+            <button>Get Started</button>
+        </div>
 
-            <!-- Advanced Plan -->
-            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 3; position: relative;">
-                <div class="speaker-avatar">A</div>
-                <h3 class="speaker-name">Advanced Plan</h3>
-                <div class="speaker-title">$199 <span style="color: green;">After Discount: $149</span></div>
-                <p class="speaker-bio">Includes the following services:</p>
-                <ul style="text-align: left; padding-left: 20px;">
-                    <li>Daily Close</li>
-                    <li>Vendor Purchases</li>
-                    <li>Fuel Sales</li>
-                    <li>Lottery Sales</li>
-                    <li>P&L Review</li>
-                    <li>Inventory Reconciliation</li>
-                    <li>Cash Reconciliation</li>
-                </ul>
-                <div style="position: absolute; top: 10px; right: 10px; background: #ff9800; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;">
-                    BEST VALUE
-                </div>
-            </div>
-
+        <div class="pricing-card">
+            <h3>Premium</h3>
+            <div class="price">$199/month</div>
+            <ul>
+                <li>All Standard Features</li>
+                <li>Custom ERP Integration</li>
+                <li>Dedicated Account Manager</li>
+            </ul>
+            <button>Get Started</button>
         </div>
     </section>
 
@@ -87,17 +167,14 @@
     <footer>
         <div class="footer-content">
             <h2>KalOPS</h2>
-            <p>November 14-16, 2026 • Bangkok Convention Center</p>
+            <p>Professional Business Solutions</p>
             <div class="social-links">
-                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="https://x.com/minthu" class="social-link" target="_blank">T</a>
                 <a href="#" class="social-link">L</a>
                 <a href="#" class="social-link">F</a>
                 <a href="#" class="social-link">I</a>
             </div>
-            <p>
-                © 2026 KalOPS. All rights reserved. 
-                | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a>
-            </p>
+            <p>© 2026 KalOPS. All rights reserved. | Designed by TemplateMo</p>
         </div>
     </footer>
 
