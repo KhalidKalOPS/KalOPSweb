@@ -150,8 +150,8 @@
             margin-right: 0.5rem;
         }
         
-        /* Navigation Links */
-        .nav-links {
+        /* Bottom Navigation Links - CLASS NAME CHANGED HERE */
+        .bottom-nav-links {
             display: flex;
             justify-content: space-between;
             margin-top: 3rem;
@@ -202,7 +202,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .nav-links {
+            .bottom-nav-links {
                 flex-direction: column;
                 gap: 1rem;
             }
@@ -221,35 +221,35 @@
         <div class="particles" id="particles"></div>
     </div>
     
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
+    <!-- Header - Updated as per services.html -->
+    <header> 
+        <nav> 
+            <a href="index.html" class="logo"> 
                 <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
-                <span class="logo-text">KalOPS</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="clients.html">Clients</a></li>
+                <span class="logo-text">KalOPS</span> 
+            </a>  
+            <ul class="nav-links"> 
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="about.html">About Us</a></li> 
+                <li><a class="active" href="services.html">Services</a></li> 
+                <li><a href="support.html">Support</a></li> 
+                <li><a href="clients.html">Clients</a></li> 
                 <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-        <div class="mobile-nav" id="mobileNav">
-            <a href="index.html" onclick="closeMenu()">Home</a>
-            <a href="about.html" onclick="closeMenu()">About Us</a>
-            <a href="services.html" onclick="closeMenu()">Services</a>
-            <a href="support.html" onclick="closeMenu()">Support</a>
-            <a href="clients.html" onclick="closeMenu()">Clients</a>
-            <a href="contact.html" onclick="closeMenu()">Contact</a>
-        </div>
+            </ul> 
+            <div class="mobile-menu" onclick="toggleMenu()"> 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+            </div> 
+        </nav> 
+        <div class="mobile-nav" id="mobileNav"> 
+            <a href="index.html" onclick="closeMenu()">Home</a> 
+            <a href="about.html" onclick="closeMenu()">About Us</a> 
+            <a class="active" href="services.html" onclick="closeMenu()">Services</a> 
+            <a href="support.html" onclick="closeMenu()">Support</a> 
+            <a href="clients.html" onclick="closeMenu()">Clients</a> 
+            <a href="contact.html" onclick="closeMenu()">Contact</a> 
+        </div> 
     </header>
 
     <!-- Hero Section -->
@@ -384,8 +384,8 @@
             </div>
         </section>
         
-        <!-- Navigation -->
-        <div class="nav-links">
+        <!-- Navigation - CLASS CHANGED HERE TOO -->
+        <div class="bottom-nav-links">
             <a href="pos-menu-setup.html" class="nav-btn">← Previous: POS Menu Setup</a>
             <a href="back-office.html" class="nav-btn">View All Features</a>
             <a href="daily-close.html" class="nav-btn">Next: Daily Close →</a>
