@@ -8,8 +8,7 @@
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
 </head>
 <body>
-
-    <!-- Header / Navbar -->
+    <!-- Header -->
     <header>
         <nav>
             <a href="index.html" class="logo">
@@ -17,40 +16,57 @@
                 <span class="logo-text">KalOPS</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="clients.html">Clients</a></li>
-                <li><a class="active" href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="about.html">About Us</a></li>
+               <li><a href="services.html">Services</a></li>
+               <li><a href="support.html">Support</a></li>
+               <li><a href="clients.html">Clients</a></li>
+               <li><a class="active" href="pricing.html">Pricing</a></li>
+               <li><a href="contact.html">Contact</a></li>
+           </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="support.html" onclick="closeMenu()">Support</a>
+            <a href="clients.html" onclick="closeMenu()">Clients</a>
+            <a class="active" href="pricing.html" onclick="closeMenu()">Pricing</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+       </div>
     </header>
 
     <!-- Pricing Section -->
-    <section class="section" style="padding: 50px; text-align: center;">
-        <h1>Pricing Plans</h1>
+    <section id="pricing" class="section">
+        <h2 class="animate-on-scroll">Pricing Plans</h2>
 
-        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 30px;">
+        <div class="speakers-grid">
 
-            <!-- Plan 1 -->
-            <div style="border: 2px solid #ccc; border-radius: 10px; padding: 30px; width: 300px;">
-                <h2>Basic Plan</h2>
-                <p><strong>$149</strong> <br> After discount: <strong>$129</strong></p>
-                <p>Includes:</p>
-                <ul style="text-align: left;">
+            <!-- Basic Plan -->
+            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 2;">
+                <div class="speaker-avatar">B</div>
+                <h3 class="speaker-name">Basic Plan</h3>
+                <div class="speaker-title">$149 <span style="color: green;">After Discount: $129</span></div>
+                <p class="speaker-bio">Includes the following services:</p>
+                <ul style="text-align: left; padding-left: 20px;">
                     <li>Vendor Purchases</li>
                     <li>Fuel Purchases</li>
                 </ul>
             </div>
 
-            <!-- Plan 2 -->
-            <div style="border: 2px solid #ccc; border-radius: 10px; padding: 30px; width: 300px;">
-                <h2>Advanced Plan</h2>
-                <p><strong>$199</strong> <br> After discount: <strong>$149</strong></p>
-                <p>Includes:</p>
-                <ul style="text-align: left;">
+            <!-- Advanced Plan -->
+            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 3; position: relative;">
+                <div class="speaker-avatar">A</div>
+                <h3 class="speaker-name">Advanced Plan</h3>
+                <div class="speaker-title">$199 <span style="color: green;">After Discount: $149</span></div>
+                <p class="speaker-bio">Includes the following services:</p>
+                <ul style="text-align: left; padding-left: 20px;">
                     <li>Daily Close</li>
                     <li>Vendor Purchases</li>
                     <li>Fuel Sales</li>
@@ -59,14 +75,32 @@
                     <li>Inventory Reconciliation</li>
                     <li>Cash Reconciliation</li>
                 </ul>
+                <div style="position: absolute; top: 10px; right: 10px; background: #ff9800; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;">
+                    BEST VALUE
+                </div>
             </div>
 
         </div>
     </section>
 
-</body>
-</html>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>KalOPS</h2>
+            <p>November 14-16, 2026 • Bangkok Convention Center</p>
+            <div class="social-links">
+                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">L</a>
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">I</a>
+            </div>
+            <p>
+                © 2026 KalOPS. All rights reserved. 
+                | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a>
+            </p>
+        </div>
+    </footer>
 
-<script src="templatemo-chain-scripts.js"></script>
+    <script src="templatemo-chain-scripts.js"></script>
 </body>
 </html>
