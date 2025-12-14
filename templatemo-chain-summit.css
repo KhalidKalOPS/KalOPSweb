@@ -2122,6 +2122,38 @@ footer {
     position: relative;
     z-index: 5;
 }
+/* ===== HERO FINAL FIX ===== */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 80px;
+  z-index: 5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+}
+
+/* Background animation fix */
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Services should start AFTER hero */
+#services {
+  position: relative;
+  z-index: 6;
+  margin-top: 0 !important;
+  padding-top: 100px;
+}
 
 
 
