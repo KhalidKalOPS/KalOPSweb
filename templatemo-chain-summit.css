@@ -2092,7 +2092,36 @@ footer {
 #services {
     background: transparent;
 }
+/* ================= FINAL HERO GAP FIX ================= */
 
+/* Kill hero inner spacing */
+.hero,
+.business-hero {
+    min-height: auto !important;
+    padding-bottom: 40px !important;
+}
+
+/* THIS IS THE REAL CULPRIT */
+.hero .hero-content,
+.hero .container,
+.hero .row {
+    margin-top: 0 !important;
+    padding-top: 120px !important; /* control yahan se */
+}
+
+/* Vertically align content properly */
+.hero {
+    display: flex !important;
+    align-items: flex-start !important;
+}
+
+/* Fix services position */
+#services {
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+    position: relative;
+    z-index: 5;
+}
 
 
 
