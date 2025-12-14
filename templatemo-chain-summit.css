@@ -152,3 +152,24 @@ footer {
     flex-direction: column;
   }
 }
+/* ===== LOGO SIZE FIX ===== */
+.custom-logo {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1001;
+  position: relative;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
