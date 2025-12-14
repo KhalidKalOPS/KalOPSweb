@@ -2084,6 +2084,15 @@ footer {
     position: relative;
     z-index: 3;
 }
+.hero,
+.business-hero {
+    overflow: hidden;
+}
+
+#services {
+    background: transparent;
+}
+
 
 
 
