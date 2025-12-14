@@ -1952,6 +1952,66 @@ footer {
 .pricing-button:hover {
     opacity: 0.85;
 }
+/* ===== BUSINESS HERO FIX ===== */
+
+.business-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 120px;
+    position: relative;
+}
+
+.business-hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.business-hero h1 span {
+    display: block;
+    font-size: 0.9em;
+}
+
+.business-hero p {
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.15rem;
+    color: var(--gray);
+}
+
+/* Remove conference vibes */
+.hero-stats,
+.countdown {
+    display: none !important;
+}
+
+/* CTA spacing fix */
+.business-hero .cta-buttons {
+    margin-top: 1rem;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .business-hero {
+        padding-top: 100px;
+    }
+
+    .business-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .business-hero p {
+        font-size: 1rem;
+    }
+}
+
 
 
 
