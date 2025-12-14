@@ -1,157 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KalOPS</title>
-    <link rel="stylesheet" href="templatemo-chain-summit.css">
-    <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KalOPS</title>
+  <link rel="stylesheet" href="templatemo-chain-summit.css">
+  <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
 </head>
 
 <body>
 
-<!-- Background Animation -->
+<!-- Background -->
 <div class="bg-animation">
-    <div class="neural-network" id="neuralNetwork"></div>
-    <div class="particles" id="particles"></div>
+  <!-- ❌ neuralNetwork removed to stop BIG LOGO -->
+  <div class="particles" id="particles"></div>
 </div>
 
-<!-- Header -->
+<!-- HEADER -->
 <header>
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
-            <span class="logo-text">KalOPS</span>
-        </a>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="images/kalops-logo.png" class="custom-logo" alt="KalOPS Logo">
+      <span class="logo-text">KalOPS</span>
+    </a>
 
-        <ul class="nav-links">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <ul class="nav-links">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
 
-        <div class="mobile-menu" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="about.html" onclick="closeMenu()">About Us</a>
-        <a href="services.html" onclick="closeMenu()">Services</a>
-        <a href="support.html" onclick="closeMenu()">Support</a>
-        <a href="clients.html" onclick="closeMenu()">Clients</a>
-        <a href="pricing.html" onclick="closeMenu()">Pricing</a>
-        <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <div class="mobile-menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About Us</a>
+    <a href="services.html" onclick="closeMenu()">Services</a>
+    <a href="support.html" onclick="closeMenu()">Support</a>
+    <a href="clients.html" onclick="closeMenu()">Clients</a>
+    <a href="pricing.html" onclick="closeMenu()">Pricing</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+  </div>
 </header>
 
-<!-- HERO SECTION -->
-<section id="hero" class="hero business-hero">
-    <div class="hero-content">
-        <h1>
-            24/7 Back-Office Support<br>
-            <span>For Retail Businesses</span>
-        </h1>
-
-        <p>
-            We manage your POS, inventory, reports & daily operations
-            so you can focus on growing your business.
-        </p>
-
-        <div class="cta-buttons">
-            <a href="#services" class="btn btn-primary">Our Services</a>
-            <a href="contact.html" class="btn btn-secondary">Free Consultation</a>
-        </div>
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1>24/7 Back-Office Support<br><span>For Retail Businesses</span></h1>
+    <p>We manage your POS, inventory, reports & daily operations so you can focus on growth.</p>
+    <div class="cta-buttons">
+      <a href="#services" class="btn btn-primary">Our Services</a>
+      <a href="contact.html" class="btn btn-secondary">Free Consultation</a>
     </div>
+  </div>
 </section>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES -->
 <section id="services" class="section">
-    <h2 class="animate-on-scroll">Our Services</h2>
-
-    <div class="speakers-grid">
-
-        <div class="speaker-card animate-on-scroll scale-up">
-            <a href="back-office.html" style="text-decoration:none;color:inherit;">
-                <div class="speaker-avatar">BO</div>
-                <h3 class="speaker-name">Back-Office Software Management</h3>
-                <div class="speaker-title">POS & ERP System Handling</div>
-                <p class="speaker-bio">
-                    POS/ERP setup, data entry, troubleshooting, sales reconciliation, and performance monitoring.
-                </p>
-            </a>
-        </div>
-
-        <div class="speaker-card animate-on-scroll scale-up" style="opacity:0.7; position:relative;">
-            <div class="speaker-avatar">CM</div>
-            <h3 class="speaker-name">24/7 Camera Monitoring</h3>
-            <div class="speaker-title">Live Security Monitoring</div>
-            <p class="speaker-bio">Real-time surveillance and daily incident reports.</p>
-            <div style="position:absolute;top:10px;right:10px;background:#ff9800;color:#fff;padding:3px 8px;font-size:12px;">
-                COMING SOON
-            </div>
-        </div>
-
-        <div class="speaker-card animate-on-scroll scale-up" style="opacity:0.7; position:relative;">
-            <div class="speaker-avatar">WD</div>
-            <h3 class="speaker-name">Website & Dashboard Development</h3>
-            <div class="speaker-title">Digital Presence Setup</div>
-            <p class="speaker-bio">Custom websites and reporting dashboards.</p>
-            <div style="position:absolute;top:10px;right:10px;background:#ff9800;color:#fff;padding:3px 8px;font-size:12px;">
-                COMING SOON
-            </div>
-        </div>
-
+  <h2>Our Services</h2>
+  <div class="speakers-grid">
+    <div class="speaker-card">
+      <h3>Back-Office Software</h3>
+      <p>POS & ERP setup, reconciliation, monitoring.</p>
     </div>
+    <div class="speaker-card coming-soon">Camera Monitoring</div>
+    <div class="speaker-card coming-soon">Website & Dashboard</div>
+  </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-    <h2 class="animate-on-scroll">About Our Services</h2>
-
-    <div class="about-content">
-        <div class="about-text animate-on-scroll slide-left">
-            <p>
-                We help convenience store and retail businesses streamline daily operations
-                with professional back-office solutions.
-            </p>
-            <p>You focus on your business — we handle the systems.</p>
-        </div>
-
-        <div class="about-visual animate-on-scroll slide-right">
-            <div class="blockchain-visual">
-                <div class="block">Daily Close</div>
-                <div class="block">Inventory</div>
-                <div class="block">Fuel Sales</div>
-                <div class="block">POS Setup</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- REGISTER -->
-<section id="register" class="section">
-    <div class="register-section animate-on-scroll">
-        <h2>Stay Updated</h2>
-        <form class="email-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-    <div class="footer-content">
-        <h2>KalOPS</h2>
-        <p>© 2026 KalOPS. All rights reserved.</p>
-    </div>
+  <p>© 2026 KalOPS. All rights reserved.</p>
 </footer>
 
 <script src="templatemo-chain-scripts.js"></script>
