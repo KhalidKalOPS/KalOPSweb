@@ -2011,6 +2011,30 @@ footer {
         font-size: 1rem;
     }
 }
+/* ===== HERO VISIBILITY FIX ===== */
+
+.hero,
+.business-hero {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* Push background layers behind everything */
+.bg-animation,
+.neural-network,
+.particles {
+    z-index: -2 !important;
+}
+
+/* Header stays on top */
+header {
+    z-index: 1000;
+}
 
 
 
