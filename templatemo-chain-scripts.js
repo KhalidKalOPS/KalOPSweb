@@ -328,3 +328,21 @@ window.addEventListener('load', () => {
    setInterval(updateCountdown, 1000);
 
 });
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hero = document.getElementById("hero");
+    if (hero) {
+        hero.style.minHeight = "80vh";
+        hero.style.height = "auto";
+        hero.style.paddingBottom = "60px";
+    }
+
+    const services = document.getElementById("services");
+    if (services) {
+        services.style.marginTop = "-120px";
+        services.style.paddingTop = "120px";
+        services.style.position = "relative";
+        services.style.zIndex = "5";
+    }
+});
+</script>
