@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KalOPS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="templatemo-chain-summit.css">
-  <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
 </head>
 
 <body>
 
 <!-- Background -->
 <div class="bg-animation">
-  <!-- ❌ neuralNetwork removed to stop BIG LOGO -->
-  <div class="particles" id="particles"></div>
+  <div id="neuralNetwork"></div>
+  <div id="particles"></div>
 </div>
 
-<!-- HEADER -->
 <header>
   <nav>
     <a href="index.html" class="logo">
-      <img src="images/kalops-logo.png" class="custom-logo" alt="KalOPS Logo">
+      <img src="images/kalops-logo.png" class="custom-logo">
       <span class="logo-text">KalOPS</span>
     </a>
 
     <ul class="nav-links">
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="clients.html">Clients</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
 
     <div class="mobile-menu" onclick="toggleMenu()">
@@ -40,45 +37,26 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="about.html" onclick="closeMenu()">About Us</a>
-    <a href="services.html" onclick="closeMenu()">Services</a>
-    <a href="support.html" onclick="closeMenu()">Support</a>
-    <a href="clients.html" onclick="closeMenu()">Clients</a>
-    <a href="pricing.html" onclick="closeMenu()">Pricing</a>
-    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="#" onclick="closeMenu()">Home</a>
+    <a href="#" onclick="closeMenu()">About</a>
+    <a href="#" onclick="closeMenu()">Services</a>
+    <a href="#" onclick="closeMenu()">Contact</a>
   </div>
 </header>
 
-<!-- HERO -->
 <section id="hero" class="hero">
   <div class="hero-content">
     <h1>24/7 Back-Office Support<br><span>For Retail Businesses</span></h1>
-    <p>We manage your POS, inventory, reports & daily operations so you can focus on growth.</p>
+    <p>We manage your POS, inventory & operations.</p>
+
     <div class="cta-buttons">
-      <a href="#services" class="btn btn-primary">Our Services</a>
-      <a href="contact.html" class="btn btn-secondary">Free Consultation</a>
+      <a href="#" class="btn btn-primary">Our Services</a>
+      <a href="#" class="btn btn-secondary">Free Consultation</a>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section">
-  <h2>Our Services</h2>
-  <div class="speakers-grid">
-    <div class="speaker-card">
-      <h3>Back-Office Software</h3>
-      <p>POS & ERP setup, reconciliation, monitoring.</p>
-    </div>
-    <div class="speaker-card coming-soon">Camera Monitoring</div>
-    <div class="speaker-card coming-soon">Website & Dashboard</div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 KalOPS. All rights reserved.</p>
-</footer>
-
+<!-- JS -->
 <script src="templatemo-chain-scripts.js"></script>
 </body>
 </html>
