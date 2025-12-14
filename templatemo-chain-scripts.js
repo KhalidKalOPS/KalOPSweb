@@ -50,3 +50,25 @@ window.addEventListener('load', () => {
   createNeuralNetwork();
   createParticles();
 });
+// ===== MOBILE MENU FIX =====
+function toggleMenu() {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileNav = document.getElementById('mobileNav');
+
+  mobileMenu.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+
+  document.body.style.overflow = mobileNav.classList.contains('active')
+    ? 'hidden'
+    : 'auto';
+}
+
+function closeMenu() {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileNav = document.getElementById('mobileNav');
+
+  mobileMenu.classList.remove('active');
+  mobileNav.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
