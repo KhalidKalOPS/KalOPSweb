@@ -2035,6 +2035,55 @@ footer {
 header {
     z-index: 1000;
 }
+/* ================= FIX EMPTY HERO SPACE + SERVICES ISSUE ================= */
+
+/* HERO HEIGHT FIX */
+.hero,
+.business-hero {
+    min-height: 85vh !important;
+    height: auto !important;
+    padding-bottom: 80px !important;
+}
+
+/* REMOVE EXTRA SPACE AFTER HERO */
+.hero::after {
+    content: none !important;
+}
+
+/* SERVICES SECTION FIX */
+#services {
+    position: relative !important;
+    z-index: 5 !important;
+    padding-top: 120px !important;
+    margin-top: -120px !important;
+}
+
+/* SERVICES GRID CENTER FIX */
+.speakers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+}
+
+/* SERVICE CARD FIX */
+.speaker-card {
+    margin: 0 auto !important;
+}
+
+/* BACKGROUND ANIMATION SOFTEN */
+.bg-animation {
+    opacity: 0.5 !important;
+}
+
+/* ENSURE CONTENT ALWAYS ABOVE BACKGROUND */
+.hero,
+.section,
+#services,
+footer {
+    position: relative;
+    z-index: 3;
+}
 
 
 
