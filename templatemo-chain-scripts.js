@@ -328,7 +328,6 @@ window.addEventListener('load', () => {
    setInterval(updateCountdown, 1000);
 
 });
-<script>
 document.addEventListener("DOMContentLoaded", function () {
     const hero = document.getElementById("hero");
     if (hero) {
@@ -345,4 +344,3 @@ document.addEventListener("DOMContentLoaded", function () {
         services.style.zIndex = "5";
     }
 });
-</script>
