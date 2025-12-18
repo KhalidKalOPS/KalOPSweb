@@ -1,7 +1,6 @@
-
 /* JavaScript Document
 
-TemplateMo 601 Chain Summit
+TemplateMo 601 Chain Summit - MODIFIED FOR KalOPS
 
 https://templatemo.com/tm-601-chain-summit
 
@@ -46,25 +45,6 @@ function animateCounters() {
    });
 }
 
-// Countdown timer
-function updateCountdown() {
-   const eventDate = new Date('2026-11-14T09:00:00');
-   const now = new Date();
-   const diff = eventDate - now;
-
-   if (diff > 0) {
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = days.toString().padStart(2, '0');
-      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-   }
-}
-
 // Create neural network animation
 function createNeuralNetwork() {
    const container = document.getElementById('neuralNetwork');
@@ -106,7 +86,7 @@ function createParticles() {
    }
 }
 
-// Schedule tab functionality
+// Schedule tab functionality - MODIFIED FOR SUPPORT PROCESS
 function showSchedule(day, event) {
    // Hide all schedule content
    document.querySelectorAll('.schedule-content').forEach(content => {
@@ -159,6 +139,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth',
             block: 'start'
          });
+         
+         // Close mobile menu if open
+         closeMenu();
       }
    });
 });
@@ -234,6 +217,12 @@ function initScrollAnimations() {
       item.classList.add('stagger-animation');
    });
 
+   // Add animations for quick access panel
+   document.querySelectorAll('.action-btn').forEach((btn, index) => {
+      btn.style.animationDelay = `${index * 0.1}s`;
+      btn.classList.add('animate-on-scroll');
+   });
+
    // Observe all animation elements
    document.querySelectorAll('.animate-on-scroll').forEach(el => {
       observer.observe(el);
@@ -268,7 +257,7 @@ function handleContactSubmit(event) {
    const subject = document.getElementById('contactSubject').value;
    const message = document.getElementById('contactMessage').value;
 
-   // Simulate form submission (in a real scenario, this would send to a server)
+   // Simulate form submission
    if (name && email && subject && message) {
       // Show success message
       alert('Thank you for your message! We\'ll get back to you soon.');
@@ -289,10 +278,10 @@ function handleEmailSubmit(event) {
    const formMessage = document.getElementById('formMessage');
    const email = emailInput.value;
 
-   // Simulate form submission (in a real scenario, this would send to a server)
+   // Simulate form submission
    if (email) {
       // Show success message
-      formMessage.textContent = 'Thank you for signing up! We\'ll keep you updated on Chain Summit.';
+      formMessage.textContent = 'Thank you for subscribing! We\'ll send you store management tips and updates.';
       formMessage.className = 'form-message success';
       formMessage.style.display = 'block';
 
@@ -316,16 +305,21 @@ function handleEmailSubmit(event) {
    }
 }
 
+// Initialize support quick access panel animations
+function initSupportPanel() {
+   const actionBtns = document.querySelectorAll('.action-btn');
+   actionBtns.forEach((btn, index) => {
+      btn.style.setProperty('--stagger', index + 1);
+      btn.classList.add('stagger-animation');
+   });
+}
+
 // Initialize everything when page loads
 window.addEventListener('load', () => {
    animateCounters();
    createNeuralNetwork();
    createParticles();
-   updateCountdown();
    initScrollAnimations();
    addHexDecorations();
-
-   // Update countdown every second
-   setInterval(updateCountdown, 1000);
-
+   initSupportPanel();
 });
