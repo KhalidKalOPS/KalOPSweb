@@ -3,16 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KalOPS</title>
+    <title>KalOPS - Customer Support</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
-<!-- 
-
-TemplateMo 601 KalOPS
-
-https://templatemo.com/tm-601-kalops
-
--->
 </head>
 <body>
     <!-- Background Animation -->
@@ -25,10 +18,10 @@ https://templatemo.com/tm-601-kalops
     <header>
         <nav>
             <a href="index.html" class="logo">
-    <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
-    <span class="logo-text">KalOPS</span>
-</a>
-             <ul class="nav-links">
+                <img src="images/kalops-logo.png" alt="KalOPS Logo" class="custom-logo">
+                <span class="logo-text">KalOPS</span>
+            </a>
+            <ul class="nav-links">
                 <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -36,7 +29,7 @@ https://templatemo.com/tm-601-kalops
                 <li><a href="clients.html">Clients</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact.html">Contact</a></li>
-           </ul>
+            </ul>
 
             <div class="mobile-menu" onclick="toggleMenu()">
                 <span></span>
@@ -44,6 +37,7 @@ https://templatemo.com/tm-601-kalops
                 <span></span>
             </div>
         </nav>
+        
         <!-- Mobile Navigation Menu -->
         <div class="mobile-nav" id="mobileNav">
             <a href="index.html" onclick="closeMenu()">Home</a>
@@ -53,8 +47,7 @@ https://templatemo.com/tm-601-kalops
             <a href="clients.html" onclick="closeMenu()">Clients</a>
             <a href="pricing.html" onclick="closeMenu()">Pricing</a>
             <a href="contact.html" onclick="closeMenu()">Contact</a>
-       </div>
-
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -63,364 +56,326 @@ https://templatemo.com/tm-601-kalops
             <h1>KalOPS</h1>
             <p>Support That Never Sleeps</p>
             
+            <!-- Business Stats -->
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number" data-target="500">0</span>
-                    <span class="stat-label">Attendees</span>
+                    <span class="stat-label">Clients Served</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number" data-target="50">0</span>
-                    <span class="stat-label">Speakers</span>
+                    <span class="stat-number" data-target="95">0</span>
+                    <span class="stat-label">Satisfaction %</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number" data-target="3">0</span>
-                    <span class="stat-label">Days</span>
+                    <span class="stat-number" data-target="24">0</span>
+                    <span class="stat-label">/7 Support</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number" data-target="25">0</span>
-                    <span class="stat-label">Sponsors</span>
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Min Response</span>
                 </div>
             </div>
 
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">00</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">00</span>
-                    <span class="countdown-label">Minutes</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">00</span>
-                    <span class="countdown-label">Seconds</span>
+            <!-- Quick Support Access Panel (Calculator Replacement) -->
+            <div class="support-quick-access animate-on-scroll">
+                <h3>Instant Support Access</h3>
+                <div class="quick-actions">
+                    <a href="tel:+1234567890" class="action-btn phone">
+                        <div class="action-icon">📞</div>
+                        <div class="action-text">
+                            <div class="action-title">Emergency Call</div>
+                            <div class="action-desc">24/7 Live Support</div>
+                        </div>
+                    </a>
+                    <a href="support.html" class="action-btn ticket">
+                        <div class="action-icon">📋</div>
+                        <div class="action-text">
+                            <div class="action-title">Open Ticket</div>
+                            <div class="action-desc">Track Your Issue</div>
+                        </div>
+                    </a>
+                    <a href="services.html" class="action-btn services">
+                        <div class="action-icon">🛠️</div>
+                        <div class="action-text">
+                            <div class="action-title">Services</div>
+                            <div class="action-desc">View All Solutions</div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
             <div class="cta-buttons">
                 <a href="#about" class="btn btn-primary">Learn More</a>
-                <a href="#schedule" class="btn btn-secondary">View Schedule</a>
+                <a href="#process" class="btn btn-secondary">Our Process</a>
             </div>
         </div>
     </section>
-        <!-- Services Section -->
-<section id="speakers" class="section">
-    <h2 class="animate-on-scroll">Our Services</h2>
 
-    <div class="speakers-grid">
+    <!-- Services Section -->
+    <section id="speakers" class="section">
+        <h2 class="animate-on-scroll">Our Services</h2>
+        <div class="speakers-grid">
+            <!-- Service 1: Back-Office -->
+            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 2;">
+                <a href="back-office.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="speaker-avatar">BO</div>
+                    <h3 class="speaker-name">Back-Office Software Management</h3>
+                    <div class="speaker-title">POS & ERP System Handling</div>
+                    <p class="speaker-bio">
+                        POS/ERP setup, data entry, troubleshooting, sales reconciliation, and performance monitoring for seamless store operations.
+                    </p>
+                    <div style="margin-top: 10px; color: var(--primary); font-weight: bold;">
+                        Click to see all 9 features →
+                    </div>
+                </a>
+            </div>
 
-        <!-- Service 1: Back-Office (EXACTLY like services.html) -->
-        <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 2; display: block; visibility: visible;">
-            <a href="back-office.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="speaker-avatar">BO</div>
-                <h3 class="speaker-name">Back-Office Software Management</h3>
-                <div class="speaker-title">POS & ERP System Handling</div>
+            <!-- Service 2: Camera Monitoring -->
+            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 3; opacity: 0.85; position: relative;">
+                <div class="speaker-avatar">CM</div>
+                <h3 class="speaker-name">24/7 Camera Monitoring</h3>
+                <div class="speaker-title">Live Security Monitoring</div>
                 <p class="speaker-bio">
-                    POS/ERP setup, data entry, troubleshooting, sales reconciliation, and performance monitoring for seamless store operations.
+                    Real-time surveillance, staff activity logs, theft alerts, and daily incident reports to keep your store secure.
                 </p>
-                <div style="margin-top: 10px; color: var(--primary); font-weight: bold;">
-                    Click to see all 9 features →
+                <div style="position: absolute; top: 10px; right: 10px; background: #ff9800; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;">
+                    COMING SOON
                 </div>
-            </a>
-        </div>
+            </div>
 
-        <!-- Service 2: Camera Monitoring (EXACTLY like services.html) -->
-        <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 3; display: block; visibility: visible; opacity: 0.7; position: relative;">
-            <div class="speaker-avatar">CM</div>
-            <h3 class="speaker-name">24/7 Camera Monitoring</h3>
-            <div class="speaker-title">Live Security Monitoring</div>
-            <p class="speaker-bio">
-                Real-time surveillance, staff activity logs, theft alerts, and daily incident reports to keep your store secure.
-            </p>
-            <div style="position: absolute; top: 10px; right: 10px; background: #ff9800; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;">
-                COMING SOON
+            <!-- Service 3: Website Development -->
+            <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 5; opacity: 0.85; position: relative;">
+                <div class="speaker-avatar">WD</div>
+                <h3 class="speaker-name">Website & Dashboard Development</h3>
+                <div class="speaker-title">Digital Presence Setup</div>
+                <p class="speaker-bio">
+                    Custom websites, reporting dashboards, POS-integrated pages, and online performance monitoring tools for store owners.
+                </p>
+                <div style="position: absolute; top: 10px; right: 10px; background: #ff9800; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;">
+                    COMING SOON
+                </div>
             </div>
         </div>
-
-        <!-- Service 3: Website Development (EXACTLY like services.html) -->
-        <div class="speaker-card animate-on-scroll scale-up stagger-animation" style="--stagger: 5; display: block; visibility: visible; opacity: 0.7; position: relative;">
-            <div class="speaker-avatar">WD</div>
-            <h3 class="speaker-name">Website & Dashboard Development</h3>
-            <div class="speaker-title">Digital Presence Setup</div>
-            <p class="speaker-bio">
-                Custom websites, reporting dashboards, POS-integrated pages, and online performance monitoring tools for store owners.
-            </p>
-            <div style="position: absolute; top: 10px; right: 10px; background: #ff9800; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;">
-                COMING SOON
-            </div>
-        </div>
-
-    </div>
-</section>
-    
-   <!-- About Section -->
-<section id="about" class="section">
-    <h2 class="animate-on-scroll">About Our Services</h2>
-    <div class="about-content">
-        <div class="about-text animate-on-scroll slide-left">
-
-            <p>We help convenience store and retail businesses streamline their daily operations with professional back-office and store management solutions. Our goal is to save your time, reduce errors, and make your business run smoother and smarter.</p>
-
-            <p>From inventory handling to fuel data entry, invoice management, and software operations, we manage the work so you don’t have to. You focus on your business, and we take care of the systems that keep it running.</p>
-
-            <p>Whether you're using any back-office software or customized management tools, our team ensures everything stays updated, accurate, and fully optimized to support your business growth.</p>
-
-            <p>Our services are built to support busy business owners who want reliable management, real-time updates, and peace of mind.</p>
-        </div>
-
-       <div class="about-visual animate-on-scroll slide-right">
-            <div class="blockchain-visual">
-                <div class="block">Daily Close</div>
-                <div class="block">Vendor Purchases</div>
-                <div class="block">Fuel Sales</div>
-                <div class="block">Lottery Sales</div>
-                <div class="block">Store OPS</div>
-                <div class="block">P&L Review</div>
-                <div class="block">Inventory Rec</div>
-                <div class="block">POS Menu Setup</div>
-                <div class="block">Cash Rec</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="about-stats animate-on-scroll scale-up">
-        <div class="about-stat">
-            <span class="about-stat-number">24/7</span>
-            <span class="about-stat-label">Monitoring Support</span>
-        </div>
-        <div class="about-stat">
-            <span class="about-stat-number">100%</span>
-            <span class="about-stat-label">Accuracy Focused</span>
-        </div>
-        <div class="about-stat">
-            <span class="about-stat-number">50+</span>
-            <span class="about-stat-label">Managed Locations</span>
-        </div>
-        <div class="about-stat">
-            <span class="about-stat-number">5+</span>
-            <span class="about-stat-label">Core Services</span>
-        </div>
-    </div>
-</section>
-
-        <!-- Hexagonal decorations -->
-        <div class="hex-decoration" style="top: 10%; left: 5%;"></div>
-        <div class="hex-decoration" style="top: 70%; right: 10%; animation-delay: 2s;"></div>
-        <div class="hex-decoration" style="top: 40%; right: 5%; animation-delay: 4s;"></div>
     </section>
     
-    <!-- Schedule Section -->
-    <section id="schedule" class="section">
-        <h2 class="animate-on-scroll">Conference Schedule</h2>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="animate-on-scroll">About Our Services</h2>
+        <div class="about-content">
+            <div class="about-text animate-on-scroll slide-left">
+                <p>We help convenience store and retail businesses streamline their daily operations with professional back-office and store management solutions. Our goal is to save your time, reduce errors, and make your business run smoother and smarter.</p>
+
+                <p>From inventory handling to fuel data entry, invoice management, and software operations, we manage the work so you don't have to. You focus on your business, and we take care of the systems that keep it running.</p>
+
+                <p>Whether you're using any back-office software or customized management tools, our team ensures everything stays updated, accurate, and fully optimized to support your business growth.</p>
+
+                <p>Our services are built to support busy business owners who want reliable management, real-time updates, and peace of mind.</p>
+            </div>
+
+            <div class="about-visual animate-on-scroll slide-right">
+                <div class="blockchain-visual">
+                    <div class="block">Daily Close</div>
+                    <div class="block">Vendor Purchases</div>
+                    <div class="block">Fuel Sales</div>
+                    <div class="block">Lottery Sales</div>
+                    <div class="block">Store OPS</div>
+                    <div class="block">P&L Review</div>
+                    <div class="block">Inventory Rec</div>
+                    <div class="block">POS Menu Setup</div>
+                    <div class="block">Cash Rec</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-stats animate-on-scroll scale-up">
+            <div class="about-stat">
+                <span class="about-stat-number">24/7</span>
+                <span class="about-stat-label">Monitoring Support</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-number">100%</span>
+                <span class="about-stat-label">Accuracy Focused</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-number">50+</span>
+                <span class="about-stat-label">Managed Locations</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-number">5+</span>
+                <span class="about-stat-label">Core Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Process Section (Changed from Conference Schedule) -->
+    <section id="process" class="section">
+        <h2 class="animate-on-scroll">Our Support Process</h2>
         
         <div class="schedule-tabs">
-            <button class="tab-btn active" onclick="showSchedule('day1', event)">Day 1</button>
-            <button class="tab-btn" onclick="showSchedule('day2', event)">Day 2</button>
-            <button class="tab-btn" onclick="showSchedule('day3', event)">Day 3</button>
+            <button class="tab-btn active" onclick="showSchedule('monitoring', event)">24/7 Monitoring</button>
+            <button class="tab-btn" onclick="showSchedule('tickets', event)">Ticket Management</button>
+            <button class="tab-btn" onclick="showSchedule('reporting', event)">Daily Reporting</button>
         </div>
 
-        <div id="day1" class="schedule-content active">
+        <div id="monitoring" class="schedule-content active">
             <div class="timeline">
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">09:00-09:30</div>
+                        <div class="timeline-time">24/7</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Registration & Welcome</div>
-                            <div class="timeline-speaker">Conference Team</div>
+                            <div class="timeline-title">Live Store Monitoring</div>
+                            <div class="timeline-speaker">Security & Operations Team</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Network with attendees and grab your conference materials.</div>
+                        <div class="timeline-desc">Real-time surveillance of POS systems, inventory tracking, and staff activity monitoring for seamless store operations.</div>
                     </div>
                 </div>
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">09:30-10:30</div>
+                        <div class="timeline-time">Real-time</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Opening Keynote: The Future of AI</div>
-                            <div class="timeline-speaker">Dr. Sarah Chen</div>
+                            <div class="timeline-title">System Alerts</div>
+                            <div class="timeline-speaker">Automated Monitoring System</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Exploring the next decade of AI and its impact on society.</div>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
-                    <div class="timeline-header">
-                        <div class="timeline-time">10:45-11:30</div>
-                        <div class="timeline-info">
-                            <div class="timeline-title">Blockchain Fundamentals</div>
-                            <div class="timeline-speaker">Marcus Johnson</div>
-                        </div>
-                        <div class="timeline-collapse-icon">▼</div>
-                    </div>
-                    <div class="timeline-details">
-                        <div class="timeline-desc">Core principles of distributed ledger technology and real-world implementations.</div>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
-                    <div class="timeline-header">
-                        <div class="timeline-time">14:00-14:45</div>
-                        <div class="timeline-info">
-                            <div class="timeline-title">Panel: AI Ethics</div>
-                            <div class="timeline-speaker">Expert Panel</div>
-                        </div>
-                        <div class="timeline-collapse-icon">▼</div>
-                    </div>
-                    <div class="timeline-details">
-                        <div class="timeline-desc">Responsible AI development and governance frameworks.</div>
+                        <div class="timeline-desc">Instant notifications for any system irregularities, security breaches, or performance issues.</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="day2" class="schedule-content">
+        <div id="tickets" class="schedule-content">
             <div class="timeline">
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">09:00-09:45</div>
+                        <div class="timeline-time">Step 1</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Deep Learning Architectures</div>
-                            <div class="timeline-speaker">Alex Rodriguez</div>
+                            <div class="timeline-title">Ticket Creation</div>
+                            <div class="timeline-speaker">Client or System Generated</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Advanced neural network designs and optimization techniques.</div>
+                        <div class="timeline-desc">Clients can open tickets via phone, email, or client portal. Automated tickets are created for system-detected issues.</div>
                     </div>
                 </div>
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">10:00-10:45</div>
+                        <div class="timeline-time">Step 2</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Smart Contracts & DeFi</div>
-                            <div class="timeline-speaker">Marcus Johnson</div>
+                            <div class="timeline-title">Ticket Assignment</div>
+                            <div class="timeline-speaker">Support Manager</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Building decentralized financial applications and automated market makers.</div>
+                        <div class="timeline-desc">Tickets are categorized and assigned to the appropriate support specialist based on expertise and workload.</div>
                     </div>
                 </div>
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">14:00-17:00</div>
+                        <div class="timeline-time">Step 3</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Hands-on Workshops</div>
-                            <div class="timeline-speaker">Various Experts</div>
+                            <div class="timeline-title">Resolution</div>
+                            <div class="timeline-speaker">Support Specialist</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Build your own AI-powered blockchain application with industry experts.</div>
+                        <div class="timeline-desc">The assigned specialist works on the issue, keeping the client updated until resolution.</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="day3" class="schedule-content">
+        <div id="reporting" class="schedule-content">
             <div class="timeline">
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">09:00-09:45</div>
+                        <div class="timeline-time">Daily</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Enterprise AI Implementation</div>
-                            <div class="timeline-speaker">Dr. Lisa Park</div>
+                            <div class="timeline-title">Performance Reports</div>
+                            <div class="timeline-speaker">Analytics Team</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Strategies for scaling AI in large organizations.</div>
+                        <div class="timeline-desc">Comprehensive daily reports on store performance, sales, inventory, and security incidents.</div>
                     </div>
                 </div>
                 <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
                     <div class="timeline-header">
-                        <div class="timeline-time">10:00-10:45</div>
+                        <div class="timeline-time">Weekly</div>
                         <div class="timeline-info">
-                            <div class="timeline-title">Startup Pitch Session</div>
-                            <div class="timeline-speaker">Selected Startups</div>
+                            <div class="timeline-title">Client Review</div>
+                            <div class="timeline-speaker">Account Manager</div>
                         </div>
                         <div class="timeline-collapse-icon">▼</div>
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-desc">Innovative AI and blockchain startups present their solutions.</div>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll" onclick="toggleTimelineItem(this)">
-                    <div class="timeline-header">
-                        <div class="timeline-time">14:00-15:00</div>
-                        <div class="timeline-info">
-                            <div class="timeline-title">Closing Ceremony</div>
-                            <div class="timeline-speaker">Conference Team</div>
-                        </div>
-                        <div class="timeline-collapse-icon">▼</div>
-                    </div>
-                    <div class="timeline-details">
-                        <div class="timeline-desc">Awards ceremony and networking finale.</div>
+                        <div class="timeline-desc">Weekly review meetings with clients to discuss performance, issues, and improvements.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sponsors Section -->
-    <section id="sponsors" class="section">
-        <h2 class="animate-on-scroll">Our Sponsors</h2>
+    <!-- Technology Partners Section (Changed from Sponsors) -->
+    <section id="partners" class="section">
+        <h2 class="animate-on-scroll">Our Technology Partners</h2>
         <div class="sponsors-section animate-on-scroll">
             <div class="sponsor-tiers">
-                <!-- Platinum Sponsors -->
+                <!-- Platinum Partners -->
                 <div class="sponsor-tier">
                     <h3 class="tier-title platinum">Platinum Partners</h3>
                     <div class="sponsors-grid platinum">
                         <div class="sponsor-card platinum animate-on-scroll scale-up stagger-animation" style="--stagger: 1;">
-                            <div class="sponsor-logo">TC</div>
-                            <h4 class="sponsor-name">TechCorp Global</h4>
-                            <p class="sponsor-description">Leading AI infrastructure and enterprise solutions</p>
+                            <div class="sponsor-logo">POS</div>
+                            <h4 class="sponsor-name">POS System Partners</h4>
+                            <p class="sponsor-description">Leading point-of-sale software providers</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Gold Sponsors -->
+                <!-- Gold Partners -->
                 <div class="sponsor-tier">
                     <h3 class="tier-title gold">Gold Partners</h3>
                     <div class="sponsors-grid gold">
                         <div class="sponsor-card gold animate-on-scroll scale-up stagger-animation" style="--stagger: 2;">
-                            <div class="sponsor-logo">CL</div>
-                            <h4 class="sponsor-name">CryptoLabs</h4>
-                            <p class="sponsor-description">Blockchain development and DeFi solutions</p>
+                            <div class="sponsor-logo">PMT</div>
+                            <h4 class="sponsor-name">Payment Processors</h4>
+                            <p class="sponsor-description">Secure transaction solutions</p>
                         </div>
                         <div class="sponsor-card gold animate-on-scroll scale-up stagger-animation" style="--stagger: 3;">
-                            <div class="sponsor-logo">DM</div>
-                            <h4 class="sponsor-name">DataMind</h4>
-                            <p class="sponsor-description">Machine learning and data analytics platform</p>
+                            <div class="sponsor-logo">INV</div>
+                            <h4 class="sponsor-name">Inventory Software</h4>
+                            <p class="sponsor-description">Advanced inventory management systems</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Silver Sponsors -->
+                <!-- Silver Partners -->
                 <div class="sponsor-tier">
                     <h3 class="tier-title silver">Silver Partners</h3>
                     <div class="sponsors-grid silver">
                         <div class="sponsor-card silver animate-on-scroll scale-up stagger-animation" style="--stagger: 4;">
-                            <div class="sponsor-logo">FC</div>
-                            <h4 class="sponsor-name">FutureCorp</h4>
-                            <p class="sponsor-description">Digital transformation services</p>
+                            <div class="sponsor-logo">SEC</div>
+                            <h4 class="sponsor-name">Security Solutions</h4>
+                            <p class="sponsor-description">Cybersecurity and surveillance</p>
                         </div>
                         <div class="sponsor-card silver animate-on-scroll scale-up stagger-animation" style="--stagger: 5;">
-                            <div class="sponsor-logo">AI</div>
-                            <h4 class="sponsor-name">AI Ventures</h4>
-                            <p class="sponsor-description">Investment and startup incubation</p>
+                            <div class="sponsor-logo">CLOUD</div>
+                            <h4 class="sponsor-name">Cloud Providers</h4>
+                            <p class="sponsor-description">Reliable cloud infrastructure</p>
                         </div>
                         <div class="sponsor-card silver animate-on-scroll scale-up stagger-animation" style="--stagger: 6;">
-                            <div class="sponsor-logo">BC</div>
-                            <h4 class="sponsor-name">BlockChain Pro</h4>
-                            <p class="sponsor-description">Blockchain consulting and development</p>
+                            <div class="sponsor-logo">NET</div>
+                            <h4 class="sponsor-name">Network Partners</h4>
+                            <p class="sponsor-description">High-speed connectivity</p>
                         </div>
                     </div>
                 </div>
@@ -428,12 +383,12 @@ https://templatemo.com/tm-601-kalops
         </div>
     </section>
 
-    <!-- Register Section -->
+    <!-- Newsletter Section -->
     <section id="register" class="section">
         <div class="register-section animate-on-scroll">
             <div class="register-content">
                 <h2 class="register-title">Stay Updated</h2>
-                <p class="register-subtitle">Be the first to know about conference updates and early bird tickets</p>
+                <p class="register-subtitle">Get the latest tips and updates for store management</p>
                 
                 <form class="email-form" onsubmit="handleEmailSubmit(event)">
                     <input 
@@ -443,7 +398,7 @@ https://templatemo.com/tm-601-kalops
                         required
                         id="emailInput"
                     >
-                    <button type="submit" class="submit-btn">Sign Up</button>
+                    <button type="submit" class="submit-btn">Subscribe</button>
                 </form>
                 
                 <div id="formMessage" class="form-message"></div>
@@ -488,8 +443,8 @@ https://templatemo.com/tm-601-kalops
                                 </svg>
                             </div>
                             <div class="contact-details">
-                                <span class="contact-label">Venue</span>
-                                <span class="contact-value">Bangkok Convention Center<br>999 Rama IV Road<br>Bangkok, Thailand</span>
+                                <span class="contact-label">Head Office</span>
+                                <span class="contact-value">KalOPS Support Center<br>Business District<br>Karachi, Pakistan</span>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -500,7 +455,7 @@ https://templatemo.com/tm-601-kalops
                             </div>
                             <div class="contact-details">
                                 <span class="contact-label">Email</span>
-                                <span class="contact-value"><a href="mailto:info@chainsummit.com">info@chainsummit.com</a></span>
+                                <span class="contact-value"><a href="mailto:support@kalops.com">support@kalops.com</a></span>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -511,7 +466,7 @@ https://templatemo.com/tm-601-kalops
                             </div>
                             <div class="contact-details">
                                 <span class="contact-label">Phone</span>
-                                <span class="contact-value">+66 2 123 4567</span>
+                                <span class="contact-value">+92 300 1234567</span>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -521,8 +476,8 @@ https://templatemo.com/tm-601-kalops
                                 </svg>
                             </div>
                             <div class="contact-details">
-                                <span class="contact-label">Event Date</span>
-                                <span class="contact-value">December 15-17, 2025<br>9:00 AM - 6:00 PM Daily</span>
+                                <span class="contact-label">Support Hours</span>
+                                <span class="contact-value">24/7 Support Available<br>Monday - Sunday</span>
                             </div>
                         </div>
                     </div>
@@ -535,24 +490,19 @@ https://templatemo.com/tm-601-kalops
     <footer>
         <div class="footer-content">
             <h2>KalOPS</h2>
-            <p>November 14-16, 2026 • Bangkok Convention Center</p>
-            <!-- set the event date in the JavaScript file / line number 32 -->
+            <p>Professional Store Management & Support Solutions</p>
             <div class="social-links">
-                <a href="https://x.com/minthu" class="social-link" rel="nofollow noopener" target="_blank">T</a>
+                <a href="#" class="social-link">T</a>
                 <a href="#" class="social-link">L</a>
                 <a href="#" class="social-link">F</a>
                 <a href="#" class="social-link">I</a>
             </div>
-
             <p>
-                © 2026 KalOPS. All rights reserved. 
-                | Designed by <a href="https://templatemo.com" rel="nofollow noopener" target="_blank">TemplateMo</a>
+                © 2024 KalOPS. All rights reserved.
             </p>
         </div>
     </footer>
 
-<script src="templatemo-chain-scripts.js"></script>
+    <script src="templatemo-chain-scripts.js"></script>
 </body>
-
 </html>
-
