@@ -2170,4 +2170,16 @@ footer {
 .quick-actions .action-btn:nth-child(3) { animation-delay: 0.3s; }
 
 
+.hero {
+    padding-top: 100px !important;
+}
 
+.hero-content {
+    transform: translateY(30px) !important;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px !important;
+    }
+}
