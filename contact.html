@@ -36,25 +36,49 @@
         }
         
         .contact-content {
-            padding: 40px 20px 80px;
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
+        .contact-content h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .contact-content p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        /* Contact container - same as index.html */
+        .contact-info-section {
+            padding: 40px 0;
+        }
+        
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
             gap: 60px;
-            margin-top: 40px;
+            padding: 0 20px;
         }
         
         @media (max-width: 768px) {
             .contact-container {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 40px;
             }
         }
         
-        .contact-form-column, .contact-info-column {
+        .contact-form-column {
+            flex: 1;
             padding: 30px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
@@ -62,12 +86,28 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .contact-form-title, .contact-info-title {
+        .contact-info-column {
+            flex: 1;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-form-title {
             color: var(--primary);
             margin-bottom: 30px;
             font-size: 1.8rem;
         }
         
+        .contact-info-title {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        /* Form styles - exactly same as index.html */
         .form-field {
             margin-bottom: 20px;
         }
@@ -99,7 +139,7 @@
         }
         
         .form-field textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
         
@@ -120,6 +160,7 @@
             transform: translateY(-2px);
         }
         
+        /* Contact info grid - exactly same as index.html */
         .contact-info-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -174,26 +215,25 @@
             text-decoration: underline;
         }
         
-        .success-message {
-            display: none;
+        /* Success/Error messages */
+        #formSuccessMessage, #formErrorMessage {
             margin-top: 20px;
             padding: 15px;
-            background: rgba(76, 175, 80, 0.1);
-            border: 1px solid #4CAF50;
             border-radius: 8px;
-            color: #4CAF50;
             text-align: center;
+            display: none;
         }
         
-        .error-message {
-            display: none;
-            margin-top: 20px;
-            padding: 15px;
+        #formSuccessMessage {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+        }
+        
+        #formErrorMessage {
             background: rgba(244, 67, 54, 0.1);
             border: 1px solid #f44336;
-            border-radius: 8px;
             color: #f44336;
-            text-align: center;
         }
         
         /* Footer styling */
@@ -254,130 +294,106 @@
 
     <!-- Contact Content Section -->
     <section class="contact-content">
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 20px;">Let's Start a Conversation</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-color); line-height: 1.6;">
+        <h2>Let's Start a Conversation</h2>
+        <p>
             Ready to streamline your business operations? Contact us today to discuss how KalOPS 
             can provide comprehensive support for your convenience store or fuel station. Our team 
             is here to answer your questions and provide tailored solutions.
         </p>
         
-        <div class="contact-container">
-            <!-- Contact Form Column -->
-            <div class="contact-form-column">
-                <h3 class="contact-form-title">Send Us a Message</h3>
-                <form name="contact" method="POST" data-netlify="true" netlify>
-                    <input type="hidden" name="form-name" value="contact">
-                    
-                    <!-- Honey pot field for spam protection (hidden) -->
-                    <p style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                    </p>
-                    
-                    <div class="form-field">
-                        <label for="contactName">Full Name</label>
-                        <input type="text" id="contactName" name="name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-field">
-                        <label for="contactEmail">Email Address</label>
-                        <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
-                    </div>
-                    <div class="form-field">
-                        <label for="contactPhone">Phone Number (Optional)</label>
-                        <input type="tel" id="contactPhone" name="phone" placeholder="+92 300 1234567">
-                    </div>
-                    <div class="form-field">
-                        <label for="contactSubject">Subject</label>
-                        <input type="text" id="contactSubject" name="subject" required placeholder="How can we help you?">
-                    </div>
-                    <div class="form-field">
-                        <label for="contactMessage">Your Message</label>
-                        <textarea id="contactMessage" name="message" required placeholder="Tell us about your business needs..."></textarea>
-                    </div>
-                    <button type="submit" class="contact-submit-btn">Send Message</button>
-                    
-                    <!-- Success Message -->
-                    <div id="successMessage" class="success-message">
-                        ✓ Message sent successfully! We'll get back to you within 24 hours.
-                    </div>
-                    
-                    <!-- Error Message -->
-                    <div id="errorMessage" class="error-message">
-                        ✗ Failed to send message. Please try again or email us directly at support@kalops.com
-                    </div>
-                </form>
-            </div>
-
-            <!-- Contact Info Column -->
-            <div class="contact-info-column">
-                <h3 class="contact-info-title">Get In Touch</h3>
-                <div class="contact-info-grid">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                            </svg>
+        <!-- Contact Information - EXACTLY SAME AS INDEX.HTML -->
+        <div class="contact-info-section">
+            <div class="contact-container">
+                <!-- Contact Form Column -->
+                <div class="contact-form-column">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <!-- Honey pot field for spam protection (hidden) -->
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        </p>
+                        
+                        <div class="form-field">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" name="name" required placeholder="Your name">
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Head Office</span>
-                            <span class="contact-value">
-                                KalOPS Support Center<br>
-                                Business District<br>
-                                Karachi, Pakistan
-                            </span>
+                        <div class="form-field">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
+                        <div class="form-field">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="subject" required placeholder="How can we help?">
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Email</span>
-                            <span class="contact-value">
-                                <a href="mailto:khalid@kalops.it.com">khalid@kalops.it.com</a><br>
-                                <a href="mailto:khalid@kalops.it.com">khalid@kalops.it.com</a>
-                            </span>
+                        <div class="form-field">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="message" required placeholder="Your message..."></textarea>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
+                        <button type="submit" class="contact-submit-btn">Send Message</button>
+                        
+                        <!-- Success Message (hidden by default) -->
+                        <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 10px; background: #4CAF50; color: white; border-radius: 5px; text-align: center;">
+                            Message sent successfully! We'll get back to you soon.
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Phone</span>
-                            <span class="contact-value">
-                                (281) 944-7614 (24/7 Support)<br>
-                                (281) 944-7614 (Business Hours)
-                            </span>
+                        
+                        <!-- Error Message (hidden by default) -->
+                        <div id="formErrorMessage" style="display: none; margin-top: 20px; padding: 10px; background: #f44336; color: white; border-radius: 5px; text-align: center;">
+                            Failed to send message. Please try again or email us directly.
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Support Hours</span>
-                            <span class="contact-value">
-                                24/7 Support Available<br>
-                                Monday - Sunday<br>
-                                Emergency Support: Always On
-                            </span>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                
-                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                    <h4 style="color: var(--primary); margin-bottom: 15px;">Response Time</h4>
-                    <p style="color: var(--text-color); line-height: 1.6; font-size: 14px;">
-                        <strong>Normal Queries:</strong> Within 24 hours<br>
-                        <strong>Urgent Support:</strong> Within 1 hour<br>
-                        <strong>Emergency Calls:</strong> Immediate response
-                    </p>
+
+                <!-- Contact Info Column -->
+                <div class="contact-info-column">
+                    <h3 class="contact-info-title">Get In Touch</h3>
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Head Office</span>
+                                <span class="contact-value">KalOPS Support Center<br>Business District<br>Karachi, Pakistan</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value"><a href="mailto:khalid@kalops.it.com">khalid@kalops.it.com</a></span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">(281) 944-7614</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Support Hours</span>
+                                <span class="contact-value">24/7 Support Available<br>Monday - Sunday</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -405,7 +421,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Check URL for success parameter
         if(window.location.search.includes('success=true')) {
-            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('formSuccessMessage').style.display = 'block';
             setTimeout(function() {
                 window.scrollTo(0, document.querySelector('.contact-form-column').offsetTop - 100);
             }, 100);
@@ -413,7 +429,7 @@
         
         // Check URL for error parameter
         if(window.location.search.includes('success=false')) {
-            document.getElementById('errorMessage').style.display = 'block';
+            document.getElementById('formErrorMessage').style.display = 'block';
             setTimeout(function() {
                 window.scrollTo(0, document.querySelector('.contact-form-column').offsetTop - 100);
             }, 100);
