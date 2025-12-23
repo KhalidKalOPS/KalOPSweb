@@ -406,101 +406,102 @@
         </div>
 
         <!-- Contact Information -->
-<div class="contact-info-section animate-on-scroll">
-    <div class="contact-container">
-        <!-- Contact Form Column -->
-        <div class="contact-form-column">
-            <h3 class="contact-form-title">Send Us a Message</h3>
-            <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
-                <input type="hidden" name="form-name" value="contact">
-                
-                <!-- Honey pot field for spam protection (hidden) -->
-                <p style="display: none;">
-                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                </p>
-                
-                <div class="form-field">
-                    <label for="contactName">Name</label>
-                    <input type="text" id="contactName" name="name" required placeholder="Your name">
+        <div class="contact-info-section animate-on-scroll">
+            <div class="contact-container">
+                <!-- Contact Form Column -->
+                <div class="contact-form-column">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <!-- Honey pot field for spam protection (hidden) -->
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        </p>
+                        
+                        <div class="form-field">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-field">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-field">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="subject" required placeholder="How can we help?">
+                        </div>
+                        <div class="form-field">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="message" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="contact-submit-btn">Send Message</button>
+                        
+                        <!-- Success Message (hidden by default) -->
+                        <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 10px; background: #4CAF50; color: white; border-radius: 5px; text-align: center;">
+                            Message sent successfully! We'll get back to you soon.
+                        </div>
+                        
+                        <!-- Error Message (hidden by default) -->
+                        <div id="formErrorMessage" style="display: none; margin-top: 20px; padding: 10px; background: #f44336; color: white; border-radius: 5px; text-align: center;">
+                            Failed to send message. Please try again or email us directly.
+                        </div>
+                    </form>
                 </div>
-                <div class="form-field">
-                    <label for="contactEmail">Email</label>
-                    <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-field">
-                    <label for="contactSubject">Subject</label>
-                    <input type="text" id="contactSubject" name="subject" required placeholder="How can we help?">
-                </div>
-                <div class="form-field">
-                    <label for="contactMessage">Message</label>
-                    <textarea id="contactMessage" name="message" required placeholder="Your message..."></textarea>
-                </div>
-                <button type="submit" class="contact-submit-btn">Send Message</button>
-                
-                <!-- Success Message (hidden by default) -->
-                <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 10px; background: #4CAF50; color: white; border-radius: 5px; text-align: center;">
-                    Message sent successfully! We'll get back to you soon.
-                </div>
-                
-                <!-- Error Message (hidden by default) -->
-                <div id="formErrorMessage" style="display: none; margin-top: 20px; padding: 10px; background: #f44336; color: white; border-radius: 5px; text-align: center;">
-                    Failed to send message. Please try again or email us directly.
-                </div>
-            </form>
-        </div>
 
-        <!-- Contact Info Column -->
-        <div class="contact-info-column">
-            <h3 class="contact-info-title">Get In Touch</h3>
-            <div class="contact-info-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Head Office</span>
-                        <span class="contact-value">KalOPS Support Center<br>Business District<br>Karachi, Pakistan</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value"><a href="mailto:khalid@kalops.it.com">khalid@kalops.it.com</a></span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">(281) 944-7614</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Support Hours</span>
-                        <span class="contact-value">24/7 Support Available<br>Monday - Sunday</span>
+                <!-- Contact Info Column -->
+                <div class="contact-info-column">
+                    <h3 class="contact-info-title">Get In Touch</h3>
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Head Office</span>
+                                <span class="contact-value">KalOPS Support Center<br>Business District<br>Karachi, Pakistan</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value"><a href="mailto:khalid@kalops.it.com">khalid@kalops.it.com</a></span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">(281) 944-7614</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Support Hours</span>
+                                <span class="contact-value">24/7 Support Available<br>Monday - Sunday</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
     
     <!-- Footer -->
     <footer>
@@ -522,7 +523,3 @@
     <script src="templatemo-chain-scripts.js"></script>
 </body>
 </html>
-
-
-
-
