@@ -415,44 +415,5 @@
     </footer> 
 
     <script src="templatemo-chain-scripts.js"></script>
-    
-    <script>
-    // Form submission handler for success/error messages
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check URL for success parameter
-        if(window.location.search.includes('success=true')) {
-            document.getElementById('formSuccessMessage').style.display = 'block';
-            setTimeout(function() {
-                window.scrollTo(0, document.querySelector('.contact-form-column').offsetTop - 100);
-            }, 100);
-        }
-        
-        // Check URL for error parameter
-        if(window.location.search.includes('success=false')) {
-            document.getElementById('formErrorMessage').style.display = 'block';
-            setTimeout(function() {
-                window.scrollTo(0, document.querySelector('.contact-form-column').offsetTop - 100);
-            }, 100);
-        }
-        
-        // Form submission enhancement
-        const form = document.querySelector('form[name="contact"]');
-        if(form) {
-            form.addEventListener('submit', function() {
-                // Show loading state
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-                
-                // Re-enable button after 5 seconds in case of error
-                setTimeout(function() {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 5000);
-            });
-        }
-    });
-    </script>
 </body>
 </html>
