@@ -6,12 +6,12 @@
     <title>KalOPS</title>
     <link rel="stylesheet" href="templatemo-chain-summit.css">
     <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "name" : "KalOPS",
       "url" : "https://kalops.it.com/"
     }
-  </script>
+    </script>
 </head>
 <body>
     <!-- Background Animation -->
@@ -396,18 +396,18 @@
                 <h2 class="register-title">Stay Updated</h2>
                 <p class="register-subtitle">Get the latest tips and updates for store management</p>
                 
-                <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                <form class="email-form" id="newsletterForm">
                     <input 
                         type="email" 
                         class="email-input" 
                         placeholder="Enter your email address" 
                         required
-                        id="emailInput"
+                        id="newsletterEmail"
                     >
                     <button type="submit" class="submit-btn">Subscribe</button>
                 </form>
                 
-                <div id="formMessage" class="form-message"></div>
+                <div id="newsletterMessage" class="form-message"></div>
             </div>
         </div>
 
@@ -417,14 +417,7 @@
                 <!-- Contact Form Column -->
                 <div class="contact-form-column">
                     <h3 class="contact-form-title">Send Us a Message</h3>
-                    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify action="/success.html">
-                        <input type="hidden" name="form-name" value="contact">
-                        
-                        <!-- Honey pot field for spam protection (hidden) -->
-                        <p style="display: none;">
-                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                        </p>
-                        
+                    <form class="contact-form" id="contactForm">
                         <div class="form-field">
                             <label for="contactName">Name</label>
                             <input type="text" id="contactName" name="name" required placeholder="Your name">
@@ -443,12 +436,12 @@
                         </div>
                         <button type="submit" class="contact-submit-btn">Send Message</button>
                         
-                        <!-- Success Message (hidden by default) -->
+                        <!-- Success Message -->
                         <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 10px; background: #4CAF50; color: white; border-radius: 5px; text-align: center;">
                             Message sent successfully! We'll get back to you soon.
                         </div>
                         
-                        <!-- Error Message (hidden by default) -->
+                        <!-- Error Message -->
                         <div id="formErrorMessage" style="display: none; margin-top: 20px; padding: 10px; background: #f44336; color: white; border-radius: 5px; text-align: center;">
                             Failed to send message. Please try again or email us directly.
                         </div>
@@ -527,9 +520,89 @@
     </footer>
 
     <script src="templatemo-chain-scripts.js"></script>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Form Handling -->
+    <script>
+        // Newsletter Form Handler
+        document.getElementById('newsletterForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            const messageDiv = document.getElementById('newsletterMessage');
+            
+            try {
+                await db.collection('newsletter_subscriptions').add({
+                    email: email,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    source: 'index.html'
+                });
+                
+                messageDiv.innerHTML = 'Thank you for subscribing!';
+                messageDiv.style.color = '#4CAF50';
+                document.getElementById('newsletterEmail').value = '';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.innerHTML = '';
+                }, 5000);
+            } catch (error) {
+                console.error('Error:', error);
+                messageDiv.innerHTML = 'Error: ' + error.message;
+                messageDiv.style.color = '#f44336';
+            }
+        });
+        
+        // Contact Form Handler
+        document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            const successMessage = document.getElementById('formSuccessMessage');
+            const errorMessage = document.getElementById('formErrorMessage');
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            try {
+                await db.collection('contact_messages').add({
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    page: 'index.html'
+                });
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                document.getElementById('contactForm').reset();
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 10000);
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.style.display = 'block';
+                errorMessage.innerHTML = 'Failed to send message: ' + error.message;
+                
+                // Hide error message after 10 seconds
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 10000);
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
