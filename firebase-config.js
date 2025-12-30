@@ -1,5 +1,5 @@
-// firebase-config.js
-// Firebase configuration for KalOPS project
+// firebase-config.js - Firebase configuration for KalOPS project
+// Make sure this file is included BEFORE any form handling scripts
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,17 +12,18 @@ const firebaseConfig = {
     measurementId: "G-H77HP6YH1S"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Initialize Firebase only if not already initialized
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 
 // Initialize Firestore database
 const db = firebase.firestore();
 
-// Optional: Enable offline persistence (for better user experience)
+// Enable offline persistence (optional)
 db.enablePersistence()
   .catch((err) => {
       console.log("Firebase persistence error: ", err.code);
   });
 
-// Console log for debugging (remove in production)
 console.log("Firebase initialized successfully!");
