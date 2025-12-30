@@ -35,48 +35,88 @@
             margin: 0 auto;
         }
         
-        .contact-content {
+        /* Main Contact Section - Two Column Layout */
+        .contact-main-section {
             padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
-        .contact-content h2 {
-            color: var(--primary);
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-            text-align: center;
-        }
-        
-        .contact-content p {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-        
-        /* Contact container - same as index.html */
-        .contact-info-section {
-            padding: 40px 0;
-        }
-        
         .contact-container {
             display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
             gap: 60px;
-            padding: 0 20px;
+            align-items: flex-start;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .contact-container {
                 flex-direction: column;
                 gap: 40px;
             }
         }
         
+        /* Left Column - Content */
+        .contact-content-column {
+            flex: 1;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-title {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .contact-description {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .contact-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+        
+        .feature-content h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .feature-content p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Right Column - Contact Form (Exactly like index.html) */
         .contact-form-column {
             flex: 1;
             padding: 30px;
@@ -86,22 +126,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .contact-info-column {
-            flex: 1;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
         .contact-form-title {
-            color: var(--primary);
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-        
-        .contact-info-title {
             color: var(--primary);
             margin-bottom: 30px;
             font-size: 1.8rem;
@@ -160,59 +185,67 @@
             transform: translateY(-2px);
         }
         
-        /* Contact info grid - exactly same as index.html */
-        .contact-info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
+        /* FAQs Section */
+        .faqs-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        
-        .contact-icon {
-            flex-shrink: 0;
-            width: 45px;
-            height: 45px;
+        .faqs-section h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 50%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .faqs-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .faqs-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .faq-question {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
         }
         
-        .contact-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
+        .faq-question span {
+            font-size: 1.2rem;
         }
         
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .contact-label {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .contact-value {
+        .faq-answer {
             color: var(--text-color);
-            line-height: 1.5;
-        }
-        
-        .contact-value a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .contact-value a:hover {
-            text-decoration: underline;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         /* Success/Error messages */
@@ -234,14 +267,6 @@
             background: rgba(244, 67, 54, 0.1);
             border: 1px solid #f44336;
             color: #f44336;
-        }
-        
-        /* Footer styling */
-        .footer-content h2 {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
     </style>
 </head>
@@ -288,106 +313,111 @@
 
     <!-- Contact Hero Section -->
     <div class="contact-hero">
-        <h1>Contact Us</h1>
-        <p>Get in touch with our team for professional business solutions</p>
+        <h1>Get in Touch with KalOPS</h1>
+        <p>We're here to help streamline your business operations. Reach out for professional support and solutions.</p>
     </div>
 
-    <!-- Contact Content Section -->
-    <section class="contact-content">
-        <h2>Let's Start a Conversation</h2>
-        <p>
-            Ready to streamline your business operations? Contact us today to discuss how KalOPS 
-            can provide comprehensive support for your convenience store or fuel station. Our team 
-            is here to answer your questions and provide tailored solutions.
-        </p>
-        
-        <!-- Contact Information -->
-        <div class="contact-info-section">
-            <div class="contact-container">
-                <!-- Contact Form Column -->
-                <div class="contact-form-column">
-                    <h3 class="contact-form-title">Send Us a Message</h3>
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-field">
-                            <label for="contactName">Name</label>
-                            <input type="text" id="contactName" name="name" required placeholder="Your name">
+    <!-- Main Contact Section -->
+    <section class="contact-main-section">
+        <div class="contact-container">
+            <!-- Left Column: Content -->
+            <div class="contact-content-column">
+                <h2 class="contact-title">Let's Transform Your Business Operations Together</h2>
+                <p class="contact-description">
+                    At KalOPS, we understand that every minute counts in business management. Our team of experts is dedicated to providing you with seamless support and innovative solutions tailored to your convenience store or retail business needs.
+                </p>
+                <p class="contact-description">
+                    Whether you need assistance with back-office management, POS systems, inventory tracking, or want to explore our 24/7 monitoring services, we're here to help you optimize operations and boost productivity.
+                </p>
+                
+                <div class="contact-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-content">
+                            <h4>Fast Response Time</h4>
+                            <p>Get assistance within 5 minutes during business hours. Our support team is always ready to help.</p>
                         </div>
-                        <div class="form-field">
-                            <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-content">
+                            <h4>Expert Solutions</h4>
+                            <p>Years of experience in retail operations management with proven strategies for success.</p>
                         </div>
-                        <div class="form-field">
-                            <label for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" name="subject" required placeholder="How can we help?">
-                        </div>
-                        <div class="form-field">
-                            <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" name="message" required placeholder="Your message..."></textarea>
-                        </div>
-                        <button type="submit" class="contact-submit-btn">Send Message</button>
-                        
-                        <!-- Success Message -->
-                        <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 10px; background: #4CAF50; color: white; border-radius: 5px; text-align: center;">
-                            Message sent successfully! We'll get back to you soon.
-                        </div>
-                        
-                        <!-- Error Message -->
-                        <div id="formErrorMessage" style="display: none; margin-top: 20px; padding: 10px; background: #f44336; color: white; border-radius: 5px; text-align: center;">
-                            Failed to send message. Please try again or email us directly.
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Contact Info Column -->
-                <div class="contact-info-column">
-                    <h3 class="contact-info-title">Get In Touch</h3>
-                    <div class="contact-info-grid">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Head Office</span>
-                                <span class="contact-value">KalOPS Support Center<br>Business District<br>Karachi, Pakistan</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value"><a href="mailto:khalid@kalops.it.com">khalid@kalops.it.com</a></span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Phone</span>
-                                <span class="contact-value">(281) 944-7614</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Support Hours</span>
-                                <span class="contact-value">24/7 Support Available<br>Monday - Sunday</span>
-                            </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <div class="feature-content">
+                            <h4>24/7 Availability</h4>
+                            <p>Round-the-clock monitoring and support to ensure your business never sleeps.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Right Column: Contact Form (Exactly like index.html) -->
+            <div class="contact-form-column">
+                <h3 class="contact-form-title">Send Us a Message</h3>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-field">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactSubject">Subject</label>
+                        <input type="text" id="contactSubject" name="subject" required placeholder="How can we help?">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" required placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit-btn">Send Message</button>
+                    
+                    <!-- Success Message -->
+                    <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 10px; background: #4CAF50; color: white; border-radius: 5px; text-align: center;">
+                        Message sent successfully! We'll get back to you soon.
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="formErrorMessage" style="display: none; margin-top: 20px; padding: 10px; background: #f44336; color: white; border-radius: 5px; text-align: center;">
+                        Failed to send message. Please try again or email us directly.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faqs-container">
+            <div class="faq-item">
+                <div class="faq-question"><span>❓</span> What services does KalOPS provide?</div>
+                <div class="faq-answer">We offer back-office software management, 24/7 camera monitoring, website development, and comprehensive business support solutions for retail and convenience stores.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>⏱️</span> What are your response times?</div>
+                <div class="faq-answer">We guarantee response within 5 minutes during business hours for critical issues. For non-urgent matters, we respond within 1-2 business hours.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>💰</span> What are your pricing plans?</div>
+                <div class="faq-answer">We offer flexible pricing plans starting from basic support packages to comprehensive management solutions. Contact us for a customized quote.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>🛠️</span> Do you support all POS systems?</div>
+                <div class="faq-answer">We support most major POS systems including NCR, Gilbarco, PDI, and custom solutions. Contact us to discuss your specific system.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>🌍</span> Do you serve international clients?</div>
+                <div class="faq-answer">Yes! We provide remote support services globally. Our team is equipped to handle different time zones and international business requirements.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>📞</span> How can I get emergency support?</div>
+                <div class="faq-answer">For emergency support, call our 24/7 helpline at (281) 944-7614 or use the emergency contact option in your client dashboard.</div>
             </div>
         </div>
     </section>
