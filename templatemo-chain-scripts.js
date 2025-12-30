@@ -248,89 +248,6 @@ function addHexDecorations() {
    });
 }
 
-// ================= NETLIFY FORM HANDLING - UPDATED =================
-
-// Handle contact form submission (Modified for Netlify)
-function handleContactSubmit(event) {
-   // Netlify will handle the actual submission
-   // We just show a loading state
-   const form = event.target;
-   const submitBtn = form.querySelector('button[type="submit"]');
-   const originalText = submitBtn.textContent;
-   
-   // Show loading state
-   submitBtn.textContent = 'Sending...';
-   submitBtn.disabled = true;
-   
-   // Re-enable button after 8 seconds in case of error
-   setTimeout(() => {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-   }, 8000);
-   
-   // DO NOT use event.preventDefault() - Let Netlify handle the submission
-}
-
-// Handle email submission (Modified for Netlify)
-function handleEmailSubmit(event) {
-   // Netlify will handle the actual submission
-   // We just show a loading state
-   const form = event.target;
-   const submitBtn = form.querySelector('button[type="submit"]');
-   const originalText = submitBtn.textContent;
-   
-   // Show loading state
-   submitBtn.textContent = 'Subscribing...';
-   submitBtn.disabled = true;
-   
-   // Re-enable button after 5 seconds in case of error
-   setTimeout(() => {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-   }, 5000);
-   
-   // DO NOT use event.preventDefault() - Let Netlify handle the submission
-}
-
-// Check for Netlify form success/error messages in URL
-function checkNetlifyFormStatus() {
-   const urlParams = new URLSearchParams(window.location.search);
-   const successParam = urlParams.get('success');
-   
-   // Find message containers on the page
-   const successMsg = document.getElementById('formSuccessMessage');
-   const errorMsg = document.getElementById('formErrorMessage');
-   const formMessage = document.getElementById('formMessage'); // For newsletter
-   
-   if (successParam === 'true' && successMsg) {
-      successMsg.style.display = 'block';
-      // Optional: Clear the form
-      const form = document.querySelector('form[name="contact"]');
-      if (form) form.reset();
-      // Scroll to show the message
-      setTimeout(() => {
-         if (successMsg.scrollIntoView) {
-            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-         }
-      }, 300);
-   } 
-   else if (successParam === 'false' && errorMsg) {
-      errorMsg.style.display = 'block';
-      setTimeout(() => {
-         if (errorMsg.scrollIntoView) {
-            errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-         }
-      }, 300);
-   }
-   
-   // Check for newsletter form success
-   if (window.location.pathname.includes('success') && formMessage) {
-      formMessage.textContent = 'Thank you for subscribing! We\'ll send you store management tips and updates.';
-      formMessage.className = 'form-message success';
-      formMessage.style.display = 'block';
-   }
-}
-
 // Initialize support quick access panel animations
 function initSupportPanel() {
    const actionBtns = document.querySelectorAll('.action-btn');
@@ -348,7 +265,5 @@ window.addEventListener('load', () => {
    initScrollAnimations();
    addHexDecorations();
    initSupportPanel();
-   
-   // Check if a Netlify form was just submitted
-   checkNetlifyFormStatus();
 });
+
