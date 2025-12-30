@@ -540,7 +540,7 @@
                 await db.collection('newsletter_subscriptions').add({
                     email: email,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    source: 'index.html'
+                    source: 'Home'
                 });
                 
                 messageDiv.innerHTML = 'Thank you for subscribing!';
@@ -606,3 +606,4 @@
     </script>
 </body>
 </html>
+
