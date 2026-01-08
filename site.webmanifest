@@ -1,0 +1,15 @@
+{
+  "name": "KalOPS",
+  "short_name": "KalOPS",
+  "description": "Professional Store Management & Support Solutions",
+  "icons": [
+    {
+      "src": "kalops-logo 1.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
