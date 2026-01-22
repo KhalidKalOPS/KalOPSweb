@@ -124,33 +124,106 @@
         </div>
     </header>
 
-    <!-- Hero Section - EXACTLY YOUR SCREENSHOT STRUCTURE -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Kalops</h1>
-            <p>Support That Never Sleeps</p>
-            
-            <!-- Business Stats -->
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-target="500">0</span>
-                    <span class="stat-label">Clients Served</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="95">0</span>
-                    <span class="stat-label">Satisfaction %</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="24">0</span>
-                    <span class="stat-label">/7 Support</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="5">0</span>
-                    <span class="stat-label">Min Response</span>
+    <!-- Hero Section - JEIMEEN STYLE -->
+    <section id="home" class="hero jeimeen-style">
+        <div class="hero-container">
+            <!-- Left Side: Photo Frame + Description (Jeimeen Style) -->
+            <div class="hero-left">
+                <div class="profile-frame">
+                    <!-- Add your photo here -->
+                    <div class="profile-photo">
+                        <img src="images/kalops-profile.jpg" alt="Kalops" id="profileImage">
+                        <div class="photo-placeholder" id="photoPlaceholder">
+                            <span>Add Your Photo</span>
+                            <small>Upload a professional photo</small>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h1>Kalops</h1>
+                        <p class="tagline">Support That Never Sleeps</p>
+                        <p class="description">
+                            We provide 24/7 back-office software management, camera monitoring, 
+                            and website development for retail businesses. Our mission is to 
+                            make your store operations seamless and efficient.
+                        </p>
+                        <div class="profile-stats">
+                            <div class="profile-stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="profile-stat">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">Satisfaction</span>
+                            </div>
+                            <div class="profile-stat">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Support</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Quick Support Access Panel -->
+            <!-- Right Side: Animated Diagram (Jeimeen Style) -->
+            <div class="hero-right">
+                <div class="tech-diagram">
+                    <h3>Our Support Ecosystem</h3>
+                    <div class="diagram-container">
+                        <!-- Animated Network Diagram -->
+                        <div class="network-diagram">
+                            <div class="diagram-node main-node">
+                                <div class="node-icon">🏪</div>
+                                <div class="node-label">Store Operations</div>
+                            </div>
+                            
+                            <div class="diagram-node node-1">
+                                <div class="node-icon">📊</div>
+                                <div class="node-label">Back-Office</div>
+                            </div>
+                            
+                            <div class="diagram-node node-2">
+                                <div class="node-icon">📹</div>
+                                <div class="node-label">Camera Monitoring</div>
+                            </div>
+                            
+                            <div class="diagram-node node-3">
+                                <div class="node-icon">🌐</div>
+                                <div class="node-label">Website Dev</div>
+                            </div>
+                            
+                            <div class="diagram-node node-4">
+                                <div class="node-icon">📞</div>
+                                <div class="node-label">24/7 Support</div>
+                            </div>
+                            
+                            <!-- Connection Lines -->
+                            <div class="connection line-1"></div>
+                            <div class="connection line-2"></div>
+                            <div class="connection line-3"></div>
+                            <div class="connection line-4"></div>
+                        </div>
+                        
+                        <div class="diagram-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: var(--primary);"></div>
+                                <span>Real-time Monitoring</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: var(--secondary);"></div>
+                                <span>Automated Support</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: var(--accent);"></div>
+                                <span>Data Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Contact Panel (Below Hero) -->
+        <div class="emergency-panel">
             <div class="support-quick-access animate-on-scroll">
                 <h3>Instant Support Access</h3>
                 <div class="quick-actions">
@@ -579,6 +652,39 @@
     
     <!-- Firebase Configuration -->
     <script src="firebase-config.js"></script>
+    
+    <!-- Photo Upload Script -->
+    <script>
+        // Photo upload functionality
+        document.getElementById('profileImage').addEventListener('error', function() {
+            // If image fails to load, show placeholder
+            this.style.display = 'none';
+            document.getElementById('photoPlaceholder').style.display = 'flex';
+        });
+
+        document.getElementById('photoPlaceholder').addEventListener('click', function() {
+            // Create file input for photo upload
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+            
+            fileInput.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const img = document.getElementById('profileImage');
+                        img.src = event.target.result;
+                        img.style.display = 'block';
+                        document.getElementById('photoPlaceholder').style.display = 'none';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            
+            fileInput.click();
+        });
+    </script>
     
     <!-- Form Handling -->
     <script>
