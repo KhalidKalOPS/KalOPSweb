@@ -126,40 +126,48 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2rem;
-	max-width: 1200px;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 
-.logo {
+/* Social Links in Navigation */
+.nav-social-links {
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
+}
+
+.nav-social-link {
+	width: 36px;
+	height: 36px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
 	display: flex;
 	align-items: center;
-	gap: 0.8rem;
+	justify-content: center;
 	text-decoration: none;
-	transition: transform 0.3s ease;
-}
-
-.logo:hover {
-	transform: translateY(-2px);
-}
-
-.logo-icon {
-	width: 40px;
-	height: 40px;
-}
-
-.logo-text {
-	font-size: 1.5rem;
+	color: var(--light);
 	font-weight: bold;
-	background: linear-gradient(45deg, var(--primary), var(--secondary));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+	font-size: 0.9rem;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.nav-social-link:hover {
+	background: var(--primary);
+	color: var(--dark);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Navigation Links Center Alignment */
 .nav-links {
 	display: flex;
 	list-style: none;
-	gap: 0.5rem;
+	gap: 1.5rem;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -167,7 +175,7 @@ nav {
 	text-decoration: none;
 	transition: all 0.3s ease;
 	position: relative;
-	padding: 0.6rem 1.2rem;
+	padding: 0.5rem 1rem;
 	border-radius: 25px;
 	font-weight: 500;
 	font-size: 0.95rem;
@@ -207,6 +215,57 @@ nav {
 	display: none;
 }
 
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	text-decoration: none;
+	transition: transform 0.3s ease;
+}
+
+.logo:hover {
+	transform: translateY(-2px);
+}
+
+.logo-text {
+	font-size: 1.5rem;
+	font-weight: bold;
+	background: linear-gradient(45deg, var(--primary), var(--secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Mobile Social Links */
+.mobile-social-links {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+	padding: 1rem;
+}
+
+.mobile-social-link {
+	width: 45px;
+	height: 45px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--light);
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.mobile-social-link:hover {
+	background: var(--primary);
+	color: var(--dark);
+	transform: scale(1.1);
+}
+
+/* Mobile Menu Button */
 .mobile-menu {
 	display: none;
 	flex-direction: column;
@@ -1425,30 +1484,9 @@ footer p a:hover {
 	margin: 0 auto;
 }
 
-.social-links {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-	margin: 2rem 0;
-}
-
-.social-link {
-	width: 50px;
-	height: 50px;
-	background: linear-gradient(45deg, var(--primary), var(--accent));
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-decoration: none;
-	color: var(--dark);
-	font-weight: bold;
-	transition: all 0.3s ease;
-}
-
-.social-link:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+/* Remove Social Links from Footer */
+.footer-content .social-links {
+	display: none;
 }
 
 /* Particles */
@@ -1535,6 +1573,10 @@ footer p a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
 	.nav-links {
+		display: none;
+	}
+	
+	.nav-social-links {
 		display: none;
 	}
 
@@ -2181,5 +2223,72 @@ footer {
 @media (max-width: 768px) {
     .hero {
         padding-top: 80px !important;
+    }
+}
+
+/* For larger screens (1100px+) */
+@media (min-width: 1100px) {
+    .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* For medium screens (768px - 1100px) */
+@media (max-width: 1100px) and (min-width: 769px) {
+    .nav-links {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .nav-social-links {
+        order: 2;
+    }
+    
+    .mobile-menu {
+        display: none;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-social-links {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: flex;
+    }
+    
+    nav {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .mobile-menu {
+        order: 2;
     }
 }
