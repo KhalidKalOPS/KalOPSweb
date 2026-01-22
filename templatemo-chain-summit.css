@@ -126,48 +126,40 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2rem;
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
-/* Social Links in Navigation */
-.nav-social-links {
+.logo {
 	display: flex;
+	align-items: center;
 	gap: 0.8rem;
-	align-items: center;
-}
-
-.nav-social-link {
-	width: 36px;
-	height: 36px;
-	background: rgba(255, 255, 255, 0.1);
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	text-decoration: none;
-	color: var(--light);
-	font-weight: bold;
-	font-size: 0.9rem;
-	transition: all 0.3s ease;
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: transform 0.3s ease;
 }
 
-.nav-social-link:hover {
-	background: var(--primary);
-	color: var(--dark);
+.logo:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
 }
 
-/* Navigation Links Center Alignment */
+.logo-icon {
+	width: 40px;
+	height: 40px;
+}
+
+.logo-text {
+	font-size: 1.5rem;
+	font-weight: bold;
+	background: linear-gradient(45deg, var(--primary), var(--secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
 .nav-links {
 	display: flex;
 	list-style: none;
-	gap: 1.5rem;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	gap: 0.5rem;
 }
 
 .nav-links a {
@@ -175,7 +167,7 @@ nav {
 	text-decoration: none;
 	transition: all 0.3s ease;
 	position: relative;
-	padding: 0.5rem 1rem;
+	padding: 0.6rem 1.2rem;
 	border-radius: 25px;
 	font-weight: 500;
 	font-size: 0.95rem;
@@ -215,57 +207,6 @@ nav {
 	display: none;
 }
 
-.logo {
-	display: flex;
-	align-items: center;
-	gap: 0.8rem;
-	text-decoration: none;
-	transition: transform 0.3s ease;
-}
-
-.logo:hover {
-	transform: translateY(-2px);
-}
-
-.logo-text {
-	font-size: 1.5rem;
-	font-weight: bold;
-	background: linear-gradient(45deg, var(--primary), var(--secondary));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-}
-
-/* Mobile Social Links */
-.mobile-social-links {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-	margin-top: 2rem;
-	padding: 1rem;
-}
-
-.mobile-social-link {
-	width: 45px;
-	height: 45px;
-	background: rgba(255, 255, 255, 0.1);
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-decoration: none;
-	color: var(--light);
-	font-weight: bold;
-	transition: all 0.3s ease;
-}
-
-.mobile-social-link:hover {
-	background: var(--primary);
-	color: var(--dark);
-	transform: scale(1.1);
-}
-
-/* Mobile Menu Button */
 .mobile-menu {
 	display: none;
 	flex-direction: column;
@@ -1484,9 +1425,30 @@ footer p a:hover {
 	margin: 0 auto;
 }
 
-/* Remove Social Links from Footer */
-.footer-content .social-links {
-	display: none;
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin: 2rem 0;
+}
+
+.social-link {
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(45deg, var(--primary), var(--accent));
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--dark);
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.social-link:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
 }
 
 /* Particles */
@@ -1573,10 +1535,6 @@ footer p a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
 	.nav-links {
-		display: none;
-	}
-	
-	.nav-social-links {
 		display: none;
 	}
 
@@ -2223,494 +2181,5 @@ footer {
 @media (max-width: 768px) {
     .hero {
         padding-top: 80px !important;
-    }
-}
-
-/* For larger screens (1100px+) */
-@media (min-width: 1100px) {
-    .nav-links {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* For medium screens (768px - 1100px) */
-@media (max-width: 1100px) and (min-width: 769px) {
-    .nav-links {
-        position: static;
-        transform: none;
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-    
-    nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-    
-    .logo {
-        order: 1;
-    }
-    
-    .nav-social-links {
-        order: 2;
-    }
-    
-    .mobile-menu {
-        display: none;
-    }
-}
-
-/* For mobile screens */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .nav-social-links {
-        display: none;
-    }
-    
-    .mobile-menu {
-        display: flex;
-    }
-    
-    nav {
-        justify-content: space-between;
-        padding: 1rem;
-    }
-    
-    .logo {
-        order: 1;
-    }
-    
-    .mobile-menu {
-        order: 2;
-    }
-}
-
-/* ========== JEIMEEN STYLE HERO SECTION ========== */
-.hero.jeimeen-style {
-    height: auto;
-    min-height: 90vh;
-    padding-top: 120px;
-}
-
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    align-items: center;
-}
-
-.hero-left {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-radius: 25px;
-    padding: 2.5rem;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.profile-frame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    border: 5px solid var(--primary);
-    position: relative;
-    background: rgba(0, 255, 255, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-    border-color: var(--secondary);
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
-}
-
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
-    color: var(--light);
-    padding: 1rem;
-    text-align: center;
-}
-
-.photo-placeholder span {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.photo-placeholder small {
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
-
-.profile-info h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.tagline {
-    color: var(--primary);
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-}
-
-.description {
-    color: var(--gray);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-}
-
-.profile-stats {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.profile-stat {
-    text-align: center;
-}
-
-.profile-stat .stat-number {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary);
-    display: block;
-}
-
-.profile-stat .stat-label {
-    color: var(--gray);
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
-}
-
-/* Right Side: Tech Diagram */
-.hero-right {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-radius: 25px;
-    padding: 2.5rem;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.tech-diagram h3 {
-    color: var(--primary);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-}
-
-.diagram-container {
-    position: relative;
-    min-height: 350px;
-}
-
-.network-diagram {
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.diagram-node {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid;
-    transition: all 0.3s ease;
-    animation: nodeFloat 6s infinite alternate;
-    z-index: 2;
-}
-
-.diagram-node:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-}
-
-.main-node {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 255, 255, 0.15);
-    border-color: var(--primary);
-    animation-delay: 0s;
-}
-
-.node-1 {
-    top: 20%;
-    left: 20%;
-    background: rgba(255, 0, 255, 0.15);
-    border-color: var(--secondary);
-    animation-delay: 1s;
-}
-
-.node-2 {
-    top: 20%;
-    right: 20%;
-    background: rgba(124, 58, 237, 0.15);
-    border-color: var(--accent);
-    animation-delay: 2s;
-}
-
-.node-3 {
-    bottom: 20%;
-    left: 20%;
-    background: rgba(0, 255, 136, 0.15);
-    border-color: var(--success);
-    animation-delay: 3s;
-}
-
-.node-4 {
-    bottom: 20%;
-    right: 20%;
-    background: rgba(255, 193, 7, 0.15);
-    border-color: #ffc107;
-    animation-delay: 4s;
-}
-
-.node-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.node-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-align: center;
-    color: var(--light);
-}
-
-@keyframes nodeFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.connection {
-    position: absolute;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary), transparent);
-    transform-origin: left center;
-    z-index: 1;
-}
-
-.line-1 {
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    transform: translate(-75px, -1px) rotate(-45deg);
-    animation: pulseLine 3s infinite;
-}
-
-.line-2 {
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    transform: translate(-75px, -1px) rotate(45deg);
-    animation: pulseLine 3s infinite 0.5s;
-}
-
-.line-3 {
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    transform: translate(-75px, -1px) rotate(-135deg);
-    animation: pulseLine 3s infinite 1s;
-}
-
-.line-4 {
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    transform: translate(-75px, -1px) rotate(135deg);
-    animation: pulseLine 3s infinite 1.5s;
-}
-
-@keyframes pulseLine {
-    0%, 100% {
-        opacity: 0.3;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-.diagram-legend {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.legend-color {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-}
-
-.legend-item span {
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
-/* Emergency Panel Below Hero */
-.emergency-panel {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 1100px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .hero-left, .hero-right {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero.jeimeen-style {
-        padding-top: 100px;
-    }
-    
-    .hero-container {
-        padding: 2rem 1rem;
-    }
-    
-    .hero-left, .hero-right {
-        padding: 1.5rem;
-    }
-    
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .profile-info h1 {
-        font-size: 2rem;
-    }
-    
-    .network-diagram {
-        height: 250px;
-    }
-    
-    .diagram-node {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .node-icon {
-        font-size: 2rem;
-    }
-    
-    .node-label {
-        font-size: 0.7rem;
-    }
-    
-    .line-1, .line-2, .line-3, .line-4 {
-        width: 120px;
-        transform: translate(-60px, -1px);
-    }
-    
-    .profile-stats {
-        gap: 1.5rem;
-    }
-    
-    .profile-stat .stat-number {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-photo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .profile-info h1 {
-        font-size: 1.8rem;
-    }
-    
-    .tagline {
-        font-size: 1rem;
-    }
-    
-    .description {
-        font-size: 0.9rem;
-    }
-    
-    .diagram-node {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .node-icon {
-        font-size: 1.5rem;
-    }
-    
-    .diagram-legend {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
     }
 }
