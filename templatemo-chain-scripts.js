@@ -266,3 +266,39 @@ window.addEventListener('load', () => {
    addHexDecorations();
    initSupportPanel();
 });
+
+// ========== MINIMAL HEADER MOBILE MENU FUNCTIONS ==========
+function toggleMinimalMenu() {
+    const mobileMenu = document.getElementById('mobileNavMenu');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    }
+}
+
+function closeMinimalMenu() {
+    const mobileMenu = document.getElementById('mobileNavMenu');
+    if (mobileMenu) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileNavMenu');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    
+    if (mobileMenu && mobileMenu.classList.contains('active') && 
+        !mobileMenu.contains(event.target) && 
+        !mobileToggle.contains(event.target)) {
+        closeMinimalMenu();
+    }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeMinimalMenu();
+    }
+});
