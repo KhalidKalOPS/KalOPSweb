@@ -266,4 +266,3 @@ window.addEventListener('load', () => {
    addHexDecorations();
    initSupportPanel();
 });
-
