@@ -73,15 +73,19 @@
         <div class="particles" id="particles"></div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="images/kalops-logo.png" alt="Kalops Logo" class="custom-logo">
-                <span class="logo-text">Kalops</span>
-            </a>
-            <ul class="nav-links">
-                <li><a class="active" href="index.html">Home</a></li>
+    <!-- ========== SCREENSHOT-STYLE HEADER ========== -->
+    <header class="minimal-header">
+        <nav class="minimal-nav">
+            <!-- Left Side: Name -->
+            <div class="header-name">
+                <a href="index.html" class="name-link">
+                    <span class="name-text">Kalops</span>
+                </a>
+            </div>
+
+            <!-- Center: Navigation Links -->
+            <ul class="center-nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="support.html">Support</a></li>
@@ -90,86 +94,73 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
-            <div class="mobile-menu" onclick="toggleMenu()">
+            <!-- Right Side: Action Buttons (Like Screenshot) -->
+            <div class="header-action-buttons">
+                <a href="#projects" class="action-btn outline">View Projects</a>
+                <a href="Kalops_Resume.pdf" download class="action-btn filled">Download Resume</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-toggle" onclick="toggleMinimalMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </nav>
-        
+
         <!-- Mobile Navigation Menu -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="index.html" onclick="closeMenu()">Home</a>
-            <a href="about.html" onclick="closeMenu()">About Us</a>
-            <a href="services.html" onclick="closeMenu()">Services</a>
-            <a href="support.html" onclick="closeMenu()">Support</a>
-            <a href="clients.html" onclick="closeMenu()">Clients</a>
-            <a href="pricing.html" onclick="closeMenu()">Pricing</a>
-            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        <div class="mobile-nav-menu" id="mobileNavMenu">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-title">Menu</span>
+                <button class="mobile-close-btn" onclick="closeMinimalMenu()">×</button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="index.html" onclick="closeMinimalMenu()">Home</a>
+                <a href="about.html" onclick="closeMinimalMenu()">About Us</a>
+                <a href="services.html" onclick="closeMinimalMenu()">Services</a>
+                <a href="support.html" onclick="closeMinimalMenu()">Support</a>
+                <a href="clients.html" onclick="closeMinimalMenu()">Clients</a>
+                <a href="pricing.html" onclick="closeMinimalMenu()">Pricing</a>
+                <a href="contact.html" onclick="closeMinimalMenu()">Contact</a>
+            </div>
+            <div class="mobile-action-buttons">
+                <a href="#projects" class="mobile-action-btn" onclick="closeMinimalMenu()">View Projects</a>
+                <a href="Kalops_Resume.pdf" download class="mobile-action-btn primary" onclick="closeMinimalMenu()">Download Resume</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Kalops</h1>
-            <p>Support That Never Sleeps</p>
-            
-            <!-- Business Stats -->
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-target="500">0</span>
-                    <span class="stat-label">Clients Served</span>
+    <!-- ========== SCREENSHOT-STYLE HERO SECTION ========== -->
+    <section class="minimal-hero">
+        <div class="minimal-hero-container">
+            <!-- Main Hero Content -->
+            <div class="minimal-hero-content">
+                <h1 class="minimal-hero-title">Kalops</h1>
+                <p class="minimal-hero-tagline">Support That Never Sleeps</p>
+                <p class="minimal-hero-description">
+                    Building production-ready AI systems, intelligent assistants, and ML-driven applications for retail businesses. 24/7 support and management solutions.
+                </p>
+                
+                <!-- CTA Buttons (Like Screenshot) -->
+                <div class="minimal-hero-actions">
+                    <a href="#projects" class="minimal-cta-btn primary">View Projects</a>
+                    <a href="Kalops_Resume.pdf" download class="minimal-cta-btn secondary">Download Resume</a>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="95">0</span>
-                    <span class="stat-label">Satisfaction %</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="24">0</span>
-                    <span class="stat-label">/7 Support</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="5">0</span>
-                    <span class="stat-label">Min Response</span>
-                </div>
-            </div>
 
-            <!-- Quick Support Access Panel (Calculator Replacement) -->
-            <div class="support-quick-access animate-on-scroll">
-                <h3>Instant Support Access</h3>
-                <div class="quick-actions">
-                    <a href="tel:+1234567890" class="action-btn phone">
-                        <div class="action-icon">📞</div>
-                        <div class="action-text">
-                            <div class="action-title">Emergency Call</div>
-                            <div class="action-desc">24/7 Live Support</div>
-                        </div>
-                    </a>
-                    <a href="support.html" class="action-btn ticket">
-                        <div class="action-icon">📋</div>
-                        <div class="action-text">
-                            <div class="action-title">Open Ticket</div>
-                            <div class="action-desc">Track Your Issue</div>
-                        </div>
-                    </a>
-                    <a href="services.html" class="action-btn services">
-                        <div class="action-icon">🛠️</div>
-                        <div class="action-text">
-                            <div class="action-title">Services</div>
-                            <div class="action-desc">View All Solutions</div>
-                        </div>
-                    </a>
+                <!-- Tech Stack (Like Screenshot) -->
+                <div class="tech-stack-section">
+                    <span class="tech-label">Tech Stack:</span>
+                    <div class="tech-badges">
+                        <span class="tech-badge">JS</span>
+                        <span class="tech-badge">TS</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="cta-buttons">
-                <a href="#about" class="btn btn-primary">Learn More</a>
-                <a href="#process" class="btn btn-secondary">Our Process</a>
             </div>
         </div>
     </section>
-
     <!-- Services Section -->
     <section id="speakers" class="section">
         <h2 class="animate-on-scroll">Our Services</h2>
@@ -649,3 +640,4 @@
     </script>
 </body>
 </html>
+
