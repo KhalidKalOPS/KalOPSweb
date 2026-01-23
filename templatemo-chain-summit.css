@@ -631,27 +631,17 @@ nav {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Floating Animation */
+/* Static Circles - No Floating */
 .tech-circle {
-    animation: float 6s ease-in-out infinite;
+    animation: none;
+    transform: translateY(0);
 }
 
-.js-circle {
-    animation-delay: 0s;
+.js-circle, .ts-circle, .aws-circle {
+    animation: none;
 }
 
-.ts-circle {
-    animation-delay: 0.5s;
-}
-
-.aws-circle {
-    animation-delay: 1s;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
+/* Remove float keyframes completely */
 
 /* Responsive Design for Tech Network */
 @media (max-width: 1024px) {
@@ -2540,3 +2530,40 @@ footer {
         padding-top: 80px !important;
     }
 }
+/* ========== NAME GLOW ANIMATION ========== */
+@keyframes nameGlow {
+    0% {
+        background-position: 0% 50%;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    50% {
+        background-position: 100% 50%;
+        text-shadow: 0 0 40px rgba(255, 0, 255, 0.5);
+    }
+    100% {
+        background-position: 0% 50%;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+}
+
+.hero-left .name {
+    background: linear-gradient(
+        45deg, 
+        var(--primary), 
+        var(--secondary), 
+        var(--accent),
+        var(--primary)
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: nameGlow 4s ease-in-out infinite;
+}
+
+.hero-left .name span {
+    -webkit-text-fill-color: initial;
+    background: none;
+    text-shadow: none;
+}
+
