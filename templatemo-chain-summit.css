@@ -2183,3 +2183,253 @@ footer {
         padding-top: 80px !important;
     }
 }
+
+/* ========== NEW HERO SECTION (Screenshot Style) ========== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-left {
+    flex: 1;
+    text-align: left;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.hero-left .name {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-left .name span {
+    color: var(--primary);
+    -webkit-text-fill-color: initial;
+    background: none;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.hero-buttons .btn-primary {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    color: var(--dark);
+}
+
+.hero-buttons .btn-primary:hover {
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+}
+
+.hero-buttons .btn-secondary {
+    background: transparent;
+    color: var(--light);
+    border: 2px solid var(--primary);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: var(--primary);
+    color: var(--dark);
+    border-color: var(--primary);
+}
+
+/* Right Side Tech Icons */
+.hero-right {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tech-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-icon:hover {
+    transform: translateY(-8px) scale(1.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+    border-color: var(--primary);
+}
+
+.icon-js {
+    background: linear-gradient(135deg, #f7df1e, #f0db4f);
+    color: #000;
+}
+
+.icon-ts {
+    background: linear-gradient(135deg, #3178c6, #4d7ebf);
+    color: #fff;
+}
+
+.icon-aws {
+    background: linear-gradient(135deg, #ff9900, #f90);
+    color: #000;
+}
+
+/* Responsive Design for New Hero */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .hero-left {
+        text-align: center;
+    }
+    
+    .tagline {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .tech-icons {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-container {
+        gap: 2rem;
+    }
+    
+    .hero-left .name {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .tech-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    
+    .tech-icons {
+        gap: 1rem;
+    }
+    
+    .tech-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* Animation for New Hero */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-left, .hero-right {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-right {
+    animation-delay: 0.2s;
+}
