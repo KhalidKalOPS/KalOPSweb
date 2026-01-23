@@ -546,7 +546,9 @@ nav {
     box-shadow: 
         0 15px 35px rgba(0, 0, 0, 0.2),
         inset 0 2px 0 rgba(255, 255, 255, 0.1);
-    border: 2px solid transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
 
 .tech-circle::before {
@@ -578,23 +580,8 @@ nav {
         0 25px 50px rgba(0, 0, 0, 0.4),
         0 0 30px rgba(0, 255, 255, 0.3),
         inset 0 2px 0 rgba(255, 255, 255, 0.2);
-}
-
-/* UPDATED: New Support Circle Colors */
-.support-circle {
-    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
-}
-
-.monitoring-circle {
-    background: linear-gradient(135deg, #6c5ce7 0%, #5b4fcf 100%);
-}
-
-.software-circle {
-    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
-}
-
-.development-circle {
-    background: linear-gradient(135deg, #fdcb6e 0%, #f9a825 100%);
+    border-color: var(--primary);
+    background: rgba(0, 255, 255, 0.05);
 }
 
 .circle-content {
@@ -605,11 +592,16 @@ nav {
 }
 
 .tech-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 400;
     display: block;
-    margin-bottom: 0.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-circle:hover .tech-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px var(--primary));
 }
 
 .tech-label {
@@ -630,6 +622,7 @@ nav {
     background: rgba(0, 0, 0, 0.5);
     transform: translateY(2px);
     border-color: rgba(255, 255, 255, 0.3);
+    color: var(--primary);
 }
 
 /* Static Circles - No Floating */
@@ -640,6 +633,27 @@ nav {
 
 .support-circle, .monitoring-circle, .software-circle, .development-circle {
     animation: none;
+}
+
+/* Glow Effect for Circles */
+.tech-circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-circle:hover::after {
+    opacity: 1;
 }
 
 /* Responsive Design for Support Network */
@@ -655,7 +669,7 @@ nav {
     }
     
     .tech-icon {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .tech-label {
@@ -689,7 +703,7 @@ nav {
     }
     
     .tech-icon {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .tech-label {
@@ -713,7 +727,7 @@ nav {
     }
     
     .tech-icon {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
     .tech-label {
@@ -724,27 +738,6 @@ nav {
     .network-lines {
         opacity: 0.3;
     }
-}
-
-/* Glow Effect for Circles */
-.tech-circle::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, 
-        rgba(255, 255, 255, 0.2) 0%, 
-        transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.tech-circle:hover::after {
-    opacity: 1;
 }
 
 /* Animation for New Hero */
@@ -2549,3 +2542,4 @@ footer {
         padding-top: 80px !important;
     }
 }
+
