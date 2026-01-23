@@ -266,3 +266,35 @@ window.addEventListener('load', () => {
    addHexDecorations();
    initSupportPanel();
 });
+
+// Function to initialize the breathing animation
+function initBreathingAnimation() {
+    const breathingCircle = document.querySelector('.breathing-circle');
+    
+    if (breathingCircle) {
+        // Create pulsing effect
+        const pulse = () => {
+            breathingCircle.style.transform = 'translateX(-50%) scale(1.1)';
+            breathingCircle.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                breathingCircle.style.transform = 'translateX(-50%) scale(0.9)';
+                breathingCircle.style.opacity = '0.4';
+            }, 2000);
+        };
+        
+        // Start the pulse animation
+        setInterval(pulse, 4000);
+        
+        // Initial pulse
+        setTimeout(pulse, 500);
+    }
+}
+
+// Add to window load event
+window.addEventListener('load', () => {
+    // ... existing code ...
+    initBreathingAnimation();
+    // ... existing code ...
+});
+
