@@ -2310,334 +2310,313 @@ footer {
 }
 
 /* ========== PURPLE BREATHING ANIMATION ========== */
-.purple-breathing-animation {
-    position: fixed;
-    top: 70px;
+.breathing-circle {
+    position: absolute;
+    top: 80px; /* Below the header */
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 100px;
     height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    z-index: 999;
-}
-
-.breathing-circle {
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, #8a2be2, #6a1fb2);
+    background: rgba(138, 43, 226, 0.2); /* Purple color with transparency */
+    border: 4px solid #8a2be2; /* Purple border */
     border-radius: 50%;
-    box-shadow: 
-        0 0 20px rgba(138, 43, 226, 0.6),
-        0 0 40px rgba(138, 43, 226, 0.4),
-        0 0 60px rgba(138, 43, 226, 0.2);
-    animation: breathe 3s ease-in-out infinite;
+    z-index: 1;
+    animation: breathing 4s ease-in-out infinite;
+    filter: blur(8px);
 }
 
-@keyframes breathe {
+@keyframes breathing {
     0%, 100% {
-        transform: scale(1);
-        opacity: 0.7;
+        transform: translateX(-50%) scale(0.8);
+        opacity: 0.5;
+        box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
     }
     50% {
-        transform: scale(1.5);
-        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+        opacity: 0.8;
+        box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
     }
 }
 
-/* ========== HERO TWO COLUMN LAYOUT ========== */
-.hero-two-columns {
+/* ========== TWO COLUMN HERO LAYOUT ========== */
+.hero-content.two-column-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin: 3rem 0;
-    max-width: 1100px;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: start;
 }
 
-.hero-left-column {
+.hero-left {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+}
+
+.hero-tagline {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
 }
 
 .hero-description {
     background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 15px;
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 }
 
 .hero-description p {
-    color: var(--gray);
-    font-size: 1rem;
+    color: var(--light);
     line-height: 1.7;
-    margin: 0;
+    margin-bottom: 1rem;
 }
 
-.hero-image {
-    border-radius: 20px;
+.hero-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Customer Support Image */
+.support-image-container {
+    position: relative;
+    border-radius: 15px;
     overflow: hidden;
-    border: 2px solid rgba(0, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.hero-image:hover {
-    border-color: var(--primary);
-    box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3);
-    transform: translateY(-5px);
-}
-
-.hero-image img {
+.support-image {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
-    display: block;
+    transition: transform 0.5s ease;
 }
 
-.hero-right-column {
+.support-image:hover {
+    transform: scale(1.03);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 1.5rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* ========== RIGHT COLUMN STYLES ========== */
+.hero-right {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.hero-right-column h3 {
-    font-size: 1.3rem;
+/* Technology Logos Grid */
+.tech-logos-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-logos-section h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
     text-align: center;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0;
+    font-size: 1.3rem;
 }
 
 .tech-logos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .tech-logo {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     padding: 1.2rem 0.8rem;
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
 }
 
 .tech-logo:hover {
-    background: rgba(0, 255, 255, 0.1);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
     border-color: var(--primary);
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.15);
 }
 
 .logo-icon {
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-radius: 12px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--dark);
-    transition: transform 0.3s ease;
+    margin-bottom: 0.8rem;
 }
 
-.tech-logo:hover .logo-icon {
-    transform: rotate(360deg) scale(1.1);
-}
-
-.tech-logo span {
-    font-size: 0.85rem;
+.logo-name {
+    font-size: 0.9rem;
     color: var(--light);
     font-weight: 500;
 }
 
 /* ========== HOW WE WORK SECTION ========== */
 .how-we-work-section {
-    margin: 3rem 0;
-    padding: 2rem 0;
-    max-width: 1100px;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.how-we-work-section h2 {
-    font-size: 2rem;
+.how-we-work-section h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 1.5rem;
 }
 
-.work-boxes {
+.how-we-work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .work-box {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    padding: 1.5rem;
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 2px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.work-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-    transition: left 0.6s ease;
-}
-
-.work-box:hover::before {
-    left: 100%;
 }
 
 .work-box:hover {
-    border-color: var(--primary);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
 }
 
-.work-box-icon {
-    font-size: 3rem;
-    text-align: center;
+.work-box h4 {
+    color: var(--light);
     margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
-}
-
-.work-box h3 {
-    font-size: 1.4rem;
-    color: var(--primary);
-    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 
-.work-steps {
+.work-box ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.work-steps li {
+.work-box li {
     color: var(--gray);
-    padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.work-steps li:last-child {
+.work-box li:last-child {
     border-bottom: none;
 }
 
-.work-steps li strong {
+.work-box.process li span {
     color: var(--primary);
-    font-weight: 600;
+    font-weight: bold;
+    min-width: 20px;
 }
 
-/* ========== RESPONSIVE DESIGN FOR NEW SECTIONS ========== */
-@media (max-width: 768px) {
-    .purple-breathing-animation {
-        top: 60px;
-        height: 80px;
-    }
-    
-    .breathing-circle {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .hero-two-columns {
+.work-box.technology li {
+    color: var(--light);
+}
+
+.work-box.technology li::before {
+    content: "✓";
+    color: var(--success);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+    .hero-content.two-column-layout {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        margin: 2rem 0;
-    }
-    
-    .hero-description {
-        padding: 1.2rem;
-    }
-    
-    .hero-description p {
-        font-size: 0.95rem;
-    }
-    
-    .hero-right-column h3 {
-        font-size: 1.1rem;
+        gap: 3rem;
     }
     
     .tech-logos-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content.two-column-layout {
+        padding: 0 1rem;
+    }
+    
+    .tech-logos-grid {
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
     
-    .tech-logo {
-        padding: 1rem 0.6rem;
-    }
-    
-    .logo-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .tech-logo span {
-        font-size: 0.75rem;
-    }
-    
-    .how-we-work-section h2 {
-        font-size: 1.6rem;
-    }
-    
-    .work-boxes {
+    .how-we-work-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
     
-    .work-box {
-        padding: 1.5rem;
+    .support-image {
+        height: 250px;
     }
     
-    .work-box-icon {
-        font-size: 2.5rem;
-    }
-    
-    .work-box h3 {
-        font-size: 1.2rem;
-    }
-    
-    .work-steps li {
-        font-size: 0.9rem;
-        padding: 0.6rem 0;
+    .breathing-circle {
+        width: 80px;
+        height: 80px;
+        top: 70px;
     }
 }
 
 @media (max-width: 480px) {
     .tech-logos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
+    .hero-description,
+    .tech-logos-section,
     .how-we-work-section {
-        padding: 1rem 0;
+        padding: 1.2rem;
+    }
+    
+    .support-image {
+        height: 200px;
+    }
+    
+    .breathing-circle {
+        width: 60px;
+        height: 60px;
+        top: 65px;
     }
 }
