@@ -1,36 +1,33 @@
 /* JavaScript Document
 
-TemplateMo 601 Chain Summit - MODIFIED FOR KalOPS & NETLIFY FORMS
-OPTIMIZED FOR MOBILE PERFORMANCE
+TemplateMo 601 Chain Summit - MODIFIED FOR KalOPS
+FIXED FOR MOBILE PERFORMANCE AND ANIMATIONS
 
 https://templatemo.com/tm-601-chain-summit
 
 */
 
-// ================= URL FIX CODE - START =================
+// ================= URL FIX CODE =================
 (function() {
-    // Remove .html from all URLs
     var currentPath = window.location.pathname;
     
     if (currentPath.endsWith('.html')) {
         var newPath = currentPath.replace('.html', '');
         
-        // Special case for home page
         if (newPath === '/index') {
             newPath = '/';
         }
         
-        // Update URL without refreshing page
         window.history.replaceState({}, document.title, newPath);
     }
 })();
-// ================= URL FIX CODE - END =================
 
-// Performance optimizations for mobile
+// ================= MOBILE DETECTION =================
 let isMobile = window.innerWidth <= 768;
-let animationFrameId = null;
+let lastScrollTop = 0;
+let scrollTimeout;
 
-// Debounce function for scroll events
+// ================= DEBOUNCE FUNCTION =================
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -43,7 +40,7 @@ function debounce(func, wait) {
     };
 }
 
-// Throttle function for resize events
+// ================= THROTTLE FUNCTION =================
 function throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -57,52 +54,40 @@ function throttle(func, limit) {
     };
 }
 
-// Optimized counter animation
+// ================= PERFORMANCE OPTIMIZED COUNTERS =================
 function animateCounters() {
-    if (isMobile) return; // Skip on mobile for performance
-    
     const counters = document.querySelectorAll('.stat-number');
     if (!counters.length) return;
     
     counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target')) || 100;
-        const duration = 1500; // Reduced duration
-        const step = target / (duration / 16); // 60fps
-        
-        let current = 0;
-        const updateCounter = () => {
-            current += step;
-            if (current < target) {
-                counter.textContent = Math.floor(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
-            }
-        };
-        
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateCounter();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-            
-            observer.observe(counter);
-        } else {
-            updateCounter();
+        if (isMobile) {
+            counter.textContent = counter.getAttribute('data-target') || '100';
+            return;
         }
+        
+        const target = parseInt(counter.getAttribute('data-target')) || 100;
+        let current = 0;
+        const increment = target / 50;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 30);
     });
 }
 
-// Optimized neural network animation - reduced for mobile
+// ================= FIXED BACKGROUND ANIMATIONS FOR MOBILE =================
 function createNeuralNetwork() {
     const container = document.getElementById('neuralNetwork');
     if (!container) return;
     
-    const nodes = isMobile ? 8 : 15; // Reduced nodes on mobile
+    const nodes = isMobile ? 10 : 20;
+    container.innerHTML = '';
     
     for (let i = 0; i < nodes; i++) {
         const node = document.createElement('div');
@@ -111,54 +96,48 @@ function createNeuralNetwork() {
         node.style.top = Math.random() * 100 + '%';
         node.style.animationDelay = Math.random() * 2 + 's';
         container.appendChild(node);
+        
+        if (i > 0 && Math.random() > 0.6 && !isMobile) {
+            const connection = document.createElement('div');
+            connection.className = 'connection';
+            connection.style.left = Math.random() * 100 + '%';
+            connection.style.top = Math.random() * 100 + '%';
+            connection.style.width = Math.random() * 150 + 30 + 'px';
+            connection.style.animationDelay = Math.random() * 3 + 's';
+            container.appendChild(connection);
+        }
     }
 }
 
-// Optimized particles - reduced for mobile
+// ================= FIXED PARTICLES FOR MOBILE (BUBBLES) =================
 function createParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
     
-    const particleCount = isMobile ? 15 : 30; // Reduced particles on mobile
+    const particleCount = isMobile ? 20 : 50;
+    container.innerHTML = '';
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+        particle.style.setProperty('--random-x', Math.random());
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        
+        if (i % 3 === 0) {
+            particle.style.width = '3px';
+            particle.style.height = '3px';
+        } else if (i % 5 === 0) {
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+        }
+        
         container.appendChild(particle);
     }
 }
 
-// Schedule tab functionality - OPTIMIZED
-function showSchedule(day, event) {
-    if (event) event.preventDefault();
-    
-    // Hide all schedule content
-    const scheduleContents = document.querySelectorAll('.schedule-content');
-    scheduleContents.forEach(content => {
-        content.classList.remove('active');
-    });
-
-    // Remove active class from all tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    // Show selected day and activate tab
-    const selectedDay = document.getElementById(day);
-    if (selectedDay) {
-        selectedDay.classList.add('active');
-    }
-    
-    if (event && event.target) {
-        event.target.classList.add('active');
-    }
-}
-
-// Mobile menu toggle - OPTIMIZED
+// ================= MOBILE MENU FIXES =================
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileNav = document.getElementById('mobileNav');
@@ -168,16 +147,16 @@ function toggleMenu() {
     mobileMenu.classList.toggle('active');
     mobileNav.classList.toggle('active');
     
-    // Prevent body scroll when menu is open
     document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     
-    // Close menu when clicking outside on mobile
     if (mobileNav.classList.contains('active') && isMobile) {
         setTimeout(() => {
             document.addEventListener('click', closeMenuOnClickOutside);
+            document.addEventListener('touchstart', closeMenuOnClickOutside);
         }, 10);
     } else {
         document.removeEventListener('click', closeMenuOnClickOutside);
+        document.removeEventListener('touchstart', closeMenuOnClickOutside);
     }
 }
 
@@ -201,15 +180,43 @@ function closeMenu() {
     
     document.body.style.overflow = '';
     document.removeEventListener('click', closeMenuOnClickOutside);
+    document.removeEventListener('touchstart', closeMenuOnClickOutside);
 }
 
-// Timeline item toggle
+// ================= SCHEDULE TAB FUNCTIONALITY =================
+function showSchedule(day, event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    const scheduleContents = document.querySelectorAll('.schedule-content');
+    scheduleContents.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    const selectedDay = document.getElementById(day);
+    if (selectedDay) {
+        selectedDay.classList.add('active');
+    }
+    
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
+}
+
+// ================= TIMELINE ITEM TOGGLE =================
 function toggleTimelineItem(item) {
     if (!item) return;
     item.classList.toggle('expanded');
 }
 
-// Optimized smooth scrolling
+// ================= OPTIMIZED SMOOTH SCROLLING =================
 function smoothScroll(targetId) {
     const target = document.querySelector(targetId);
     if (!target) return;
@@ -217,30 +224,34 @@ function smoothScroll(targetId) {
     const targetPosition = target.offsetTop - 80;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 500;
+    
+    if (Math.abs(distance) < 100) return;
+    
     let start = null;
+    const duration = 500;
     
     function animation(currentTime) {
         if (start === null) start = currentTime;
         const timeElapsed = currentTime - start;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easeProgress = easeInOutCubic(progress);
+        
+        window.scrollTo(0, startPosition + distance * easeProgress);
+        
         if (timeElapsed < duration) {
             requestAnimationFrame(animation);
         }
     }
     
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
+    function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
     
     requestAnimationFrame(animation);
+    closeMenu();
 }
 
-// Setup smooth scrolling for navigation links
+// ================= SETUP SMOOTH SCROLLING =================
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -249,61 +260,58 @@ function setupSmoothScrolling() {
             
             e.preventDefault();
             smoothScroll(href);
-            closeMenu();
         });
     });
 }
 
-// Optimized active menu items on scroll
+// ================= ACTIVE MENU ITEMS ON SCROLL =================
 function updateActiveMenuItem() {
-    if (isMobile) return; // Less frequent updates on mobile
+    if (scrollTimeout) clearTimeout(scrollTimeout);
     
-    const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 100;
-    let currentSection = '';
+    scrollTimeout = setTimeout(() => {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+        let currentSection = '';
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentSection = sectionId;
-        }
-    });
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = sectionId;
+            }
+        });
 
-    // Update desktop menu
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-
-    // Update mobile menu
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
+        document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === `#${currentSection}` || (currentSection === 'home' && href === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }, 100);
 }
 
-// Optimized header scroll effect
+// ================= HEADER SCROLL EFFECT =================
 function updateHeaderOnScroll() {
     const header = document.querySelector('header');
     if (!header) return;
     
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(10, 10, 15, 0.95)';
-        header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 50) {
+        header.style.background = 'rgba(10, 10, 15, 0.97)';
+        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
     } else {
-        header.style.background = 'rgba(10, 10, 15, 0.9)';
-        header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
+        header.style.background = 'rgba(10, 10, 15, 0.95)';
+        header.style.boxShadow = 'none';
     }
+    
+    lastScrollTop = scrollTop;
 }
 
-// Intersection Observer for scroll animations - OPTIMIZED
+// ================= INTERSECTION OBSERVER FOR ANIMATIONS =================
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -313,44 +321,47 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animated');
-            observer.unobserve(entry.target); // Stop observing once animated
+            if (isMobile) {
+                observer.unobserve(entry.target);
+            }
         }
     });
 }, observerOptions);
 
-// Initialize scroll animations - OPTIMIZED
+// ================= INITIALIZE SCROLL ANIMATIONS =================
 function initScrollAnimations() {
-    // Add animation classes to elements
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     
     elementsToAnimate.forEach(el => {
-        observer.observe(el);
+        if (!isMobile || Math.random() > 0.3) {
+            observer.observe(el);
+        } else {
+            el.classList.add('animated');
+        }
     });
 }
 
-// Performance optimization: Remove heavy animations on mobile
+// ================= PERFORMANCE OPTIMIZATIONS =================
 function optimizeForMobile() {
     if (!isMobile) return;
     
     // Reduce animation complexity
-    const animatedElements = document.querySelectorAll('*[style*="animation"], *[class*="animate"]');
+    const animatedElements = document.querySelectorAll('*[style*="animation"]');
     animatedElements.forEach(el => {
         const style = window.getComputedStyle(el);
         if (style.animationName && style.animationName !== 'none') {
-            el.style.animationDuration = '0.5s';
+            el.style.animationDuration = '0.8s';
         }
     });
     
-    // Disable parallax or heavy effects
-    const bgAnimation = document.querySelector('.bg-animation');
-    if (bgAnimation) {
-        bgAnimation.style.display = 'none';
-    }
+    // Force GPU acceleration for smooth scrolling
+    document.querySelectorAll('.tech-circle, .speaker-card, .sponsor-card').forEach(el => {
+        el.style.transform = 'translateZ(0)';
+    });
 }
 
-// Initialize everything when page loads - OPTIMIZED
+// ================= INITIALIZE PAGE =================
 function initPage() {
-    // Check if mobile
     isMobile = window.innerWidth <= 768;
     
     // Initialize components
@@ -358,11 +369,9 @@ function initPage() {
     initScrollAnimations();
     optimizeForMobile();
     
-    // Initialize animations (reduced on mobile)
-    if (!isMobile) {
-        createNeuralNetwork();
-        createParticles();
-    }
+    // Initialize background animations (ALWAYS for both desktop and mobile)
+    createNeuralNetwork();
+    createParticles();
     
     // Setup event listeners
     setupEventListeners();
@@ -372,32 +381,27 @@ function initPage() {
     updateActiveMenuItem();
 }
 
-// Setup event listeners with debouncing/throttling
+// ================= SETUP EVENT LISTENERS =================
 function setupEventListeners() {
-    // Debounced scroll events
-    window.addEventListener('scroll', debounce(() => {
+    // Optimized scroll events
+    window.addEventListener('scroll', throttle(() => {
         updateHeaderOnScroll();
         updateActiveMenuItem();
-        
-        // Cancel any pending animation frame
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-        }
-        
-        animationFrameId = requestAnimationFrame(() => {
-            // Any frame-based updates
-        });
     }, 100));
     
-    // Throttled resize events
-    window.addEventListener('resize', throttle(() => {
+    // Optimized resize events
+    window.addEventListener('resize', debounce(() => {
         isMobile = window.innerWidth <= 768;
-        optimizeForMobile();
+        if (isMobile) {
+            optimizeForMobile();
+        }
+        createNeuralNetwork();
+        createParticles();
     }, 250));
     
     // Click events
     document.addEventListener('click', (e) => {
-        // Handle timeline item clicks
+        // Timeline item clicks
         if (e.target.closest('.timeline-header')) {
             const timelineItem = e.target.closest('.timeline-item');
             if (timelineItem) {
@@ -405,7 +409,7 @@ function setupEventListeners() {
             }
         }
         
-        // Handle tab button clicks
+        // Tab button clicks
         if (e.target.closest('.tab-btn')) {
             const tabBtn = e.target.closest('.tab-btn');
             const tabId = tabBtn.getAttribute('onclick')?.match(/showSchedule\('([^']+)'/)?.[1];
@@ -413,40 +417,63 @@ function setupEventListeners() {
                 showSchedule(tabId, e);
             }
         }
+        
+        // Mobile nav links
+        if (e.target.closest('.mobile-nav a')) {
+            closeMenu();
+        }
     });
     
     // Touch events for mobile
-    if (isMobile) {
+    if ('ontouchstart' in window) {
         document.addEventListener('touchstart', function() {}, {passive: true});
         document.addEventListener('touchmove', function() {}, {passive: true});
+        
+        // Prevent zoom on double tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     }
+    
+    // Prevent context menu on mobile
+    document.addEventListener('contextmenu', function(e) {
+        if (isMobile) {
+            e.preventDefault();
+        }
+    });
 }
 
-// Cleanup function
+// ================= CLEANUP FUNCTION =================
 function cleanup() {
     if (observer) {
         observer.disconnect();
     }
     
-    if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
     }
     
     document.removeEventListener('click', closeMenuOnClickOutside);
+    document.removeEventListener('touchstart', closeMenuOnClickOutside);
 }
 
-// Initialize when DOM is ready
+// ================= INITIALIZE WHEN READY =================
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPage);
 } else {
     initPage();
 }
 
-// Cleanup on page unload
+// ================= CLEANUP ON UNLOAD =================
 window.addEventListener('beforeunload', cleanup);
 window.addEventListener('unload', cleanup);
 
-// Export functions for global access (if needed)
+// ================= EXPORT FUNCTIONS =================
 window.toggleMenu = toggleMenu;
 window.closeMenu = closeMenu;
 window.showSchedule = showSchedule;
