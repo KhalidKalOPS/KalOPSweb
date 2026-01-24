@@ -2543,4 +2543,142 @@ footer {
     .hero {
         padding-top: 80px !important;
     }
+/* Add this at the end of your existing CSS file, before the last } */
+
+/* ========== FIX: MOBILE HERO SECTION VISIBILITY ========== */
+@media (max-width: 768px) {
+    .hero-left {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        text-align: center;
+    }
+    
+    .hero-left .greeting {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+        display: block !important;
+    }
+    
+    .hero-left .name {
+        font-size: 2.2rem !important;
+        display: block !important;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent)) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        background-size: 300% 300% !important;
+        animation: nameGlow 4s ease-in-out infinite !important;
+    }
+    
+    .hero-left .tagline {
+        font-size: 1rem;
+        display: block !important;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 100% !important;
+    }
+    
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    /* Fix for KalOPS glow on mobile */
+    .hero-left .name span {
+        display: inline !important;
+    }
+    
+    /* Fix neural network visibility */
+    .neural-network {
+        opacity: 0.08 !important;
+    }
+    
+    /* Fix particles visibility */
+    .particle {
+        opacity: 0.6 !important;
+        animation: float 8s infinite !important;
+    }
 }
+
+/* ========== FIX: SCROLL PERFORMANCE ========== */
+.bg-animation, 
+.neural-network, 
+.particles {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+.node, 
+.connection, 
+.particle,
+.hex-decoration {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+/* ========== FIX: ANIMATION OPTIMIZATION ========== */
+@media (prefers-reduced-motion: no-preference) {
+    .node, 
+    .connection, 
+    .particle,
+    .hex-decoration,
+    .tech-circle,
+    .speaker-card,
+    .sponsor-card {
+        animation-play-state: running !important;
+    }
+}
+
+/* Ensure all animations work on mobile */
+@media (max-width: 768px) {
+    .tech-circle:hover {
+        transform: translateY(-5px) scale(1.03) !important;
+    }
+    
+    .speaker-card:hover,
+    .sponsor-card:hover {
+        transform: translateY(-5px) !important;
+    }
+    
+    /* Make sure all hover effects work on touch devices */
+    .tech-circle:active,
+    .speaker-card:active,
+    .sponsor-card:active {
+        transform: translateY(-2px) !important;
+    }
+}
+
+/* Fix for the specific issue - hero section on mobile */
+.hero-container {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .hero-left {
+        order: 1;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .hero-right {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        height: 350px;
+    }
+}
+}
+
