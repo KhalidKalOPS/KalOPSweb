@@ -25,6 +25,58 @@ https://templatemo.com/tm-601-chain-summit
 })();
 // ================= URL FIX CODE - END =================
 
+// FIX 3: MOBILE PERFORMANCE OPTIMIZATION
+let isMobile = window.innerWidth <= 768;
+
+// Optimize animations for mobile
+function createNeuralNetwork() {
+   const container = document.getElementById('neuralNetwork');
+   const nodes = isMobile ? 10 : 20; // Fewer nodes on mobile
+
+   for (let i = 0; i < nodes; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      node.style.left = Math.random() * 100 + '%';
+      node.style.top = Math.random() * 100 + '%';
+      node.style.animationDelay = Math.random() * 2 + 's';
+      container.appendChild(node);
+
+      // Create connections
+      if (i > 0 && Math.random() > 0.5 && !isMobile) { // Fewer connections on mobile
+         const connection = document.createElement('div');
+         connection.className = 'connection';
+         connection.style.left = Math.random() * 100 + '%';
+         connection.style.top = Math.random() * 100 + '%';
+         connection.style.width = Math.random() * 200 + 50 + 'px';
+         connection.style.animationDelay = Math.random() * 3 + 's';
+         container.appendChild(connection);
+      }
+   }
+}
+
+// FIX 3: CREATE PARTICLES FOR MOBILE TOO
+function createParticles() {
+   const container = document.getElementById('particles');
+   const particleCount = isMobile ? 20 : 50; // Fewer particles on mobile
+
+   for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 6 + 's';
+      particle.style.animationDuration = (10 + Math.random() * 4) + 's';
+      
+      // Make particles more visible on mobile
+      if (isMobile) {
+         particle.style.width = '3px';
+         particle.style.height = '3px';
+         particle.style.opacity = '0.8';
+      }
+      
+      container.appendChild(particle);
+   }
+}
+
 // Animate counter numbers
 function animateCounters() {
    const counters = document.querySelectorAll('.stat-number');
@@ -45,47 +97,6 @@ function animateCounters() {
    });
 }
 
-// Create neural network animation
-function createNeuralNetwork() {
-   const container = document.getElementById('neuralNetwork');
-   const nodes = 20;
-
-   for (let i = 0; i < nodes; i++) {
-      const node = document.createElement('div');
-      node.className = 'node';
-      node.style.left = Math.random() * 100 + '%';
-      node.style.top = Math.random() * 100 + '%';
-      node.style.animationDelay = Math.random() * 2 + 's';
-      container.appendChild(node);
-
-      // Create connections
-      if (i > 0 && Math.random() > 0.5) {
-         const connection = document.createElement('div');
-         connection.className = 'connection';
-         connection.style.left = Math.random() * 100 + '%';
-         connection.style.top = Math.random() * 100 + '%';
-         connection.style.width = Math.random() * 200 + 50 + 'px';
-         connection.style.animationDelay = Math.random() * 3 + 's';
-         container.appendChild(connection);
-      }
-   }
-}
-
-// Create floating particles
-function createParticles() {
-   const container = document.getElementById('particles');
-   const particleCount = 50;
-
-   for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 6 + 's';
-      particle.style.animationDuration = (10 + Math.random() * 4) + 's';
-      container.appendChild(particle);
-   }
-}
-
 // Schedule tab functionality - MODIFIED FOR SUPPORT PROCESS
 function showSchedule(day, event) {
    // Hide all schedule content
@@ -103,7 +114,7 @@ function showSchedule(day, event) {
    event.target.classList.add('active');
 }
 
-// Mobile menu toggle
+// FIX 1: MOBILE MENU TOGGLE
 function toggleMenu() {
    const mobileMenu = document.querySelector('.mobile-menu');
    const mobileNav = document.getElementById('mobileNav');
@@ -257,12 +268,39 @@ function initSupportPanel() {
    });
 }
 
+// FIX 3: OPTIMIZE FOR MOBILE
+function optimizeForMobile() {
+   if (!isMobile) return;
+   
+   // Reduce animation complexity on mobile
+   document.querySelectorAll('.node, .connection, .particle').forEach(el => {
+      el.style.animationDuration = '8s';
+   });
+   
+   // Disable heavy hover effects on mobile
+   if ('ontouchstart' in window) {
+      document.querySelectorAll('.tech-circle, .speaker-card, .sponsor-card').forEach(el => {
+         el.style.transition = 'none';
+      });
+   }
+}
+
 // Initialize everything when page loads
 window.addEventListener('load', () => {
+   // Check if mobile
+   isMobile = window.innerWidth <= 768;
+   
    animateCounters();
    createNeuralNetwork();
    createParticles();
    initScrollAnimations();
    addHexDecorations();
    initSupportPanel();
+   optimizeForMobile();
+});
+
+// Reinitialize on resize
+window.addEventListener('resize', function() {
+   isMobile = window.innerWidth <= 768;
+   optimizeForMobile();
 });
