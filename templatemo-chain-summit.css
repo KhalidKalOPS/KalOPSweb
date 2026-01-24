@@ -207,6 +207,7 @@ nav {
 	display: none;
 }
 
+/* FIX 1: MOBILE MENU - SIRF MOBILE PE SHOW HO */
 .mobile-menu {
 	display: none;
 	flex-direction: column;
@@ -242,6 +243,7 @@ nav {
 	transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* FIX 1: MOBILE NAVIGATION */
 .mobile-nav {
 	display: none;
 	position: fixed;
@@ -1891,14 +1893,14 @@ footer p a:hover {
 	animation-delay: calc(var(--stagger) * 0.1s);
 }
 
-/* Responsive Design */
+/* FIX 2: MOBILE RESPONSIVE DESIGN */
 @media (max-width: 768px) {
 	.nav-links {
-		display: none;
+		display: none; /* SIRF MOBILE PE HIDE */
 	}
 
 	.mobile-menu {
-		display: flex;
+		display: flex; /* SIRF MOBILE PE SHOW */
 	}
 
 	.hero-stats {
