@@ -1,31 +1,83 @@
 /* JavaScript Document
 
-TemplateMo 601 Chain Summit - MODIFIED FOR KalOPS
-FIXED FOR MOBILE WITH BUBBLES ANIMATION
+TemplateMo 601 Chain Summit - MODIFIED FOR KalOPS & NETLIFY FORMS
 
 https://templatemo.com/tm-601-chain-summit
 
 */
 
-// ================= URL FIX CODE =================
+// ================= URL FIX CODE - START =================
 (function() {
+    // Remove .html from all URLs
     var currentPath = window.location.pathname;
     
     if (currentPath.endsWith('.html')) {
         var newPath = currentPath.replace('.html', '');
         
+        // Special case for home page
         if (newPath === '/index') {
             newPath = '/';
         }
         
+        // Update URL without refreshing page
         window.history.replaceState({}, document.title, newPath);
     }
 })();
+// ================= URL FIX CODE - END =================
 
-// ================= MOBILE DETECTION =================
+// FIX 3: MOBILE PERFORMANCE OPTIMIZATION
 let isMobile = window.innerWidth <= 768;
 
-// ================= ANIMATE COUNTERS =================
+// Optimize animations for mobile
+function createNeuralNetwork() {
+   const container = document.getElementById('neuralNetwork');
+   const nodes = isMobile ? 10 : 20; // Fewer nodes on mobile
+
+   for (let i = 0; i < nodes; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      node.style.left = Math.random() * 100 + '%';
+      node.style.top = Math.random() * 100 + '%';
+      node.style.animationDelay = Math.random() * 2 + 's';
+      container.appendChild(node);
+
+      // Create connections
+      if (i > 0 && Math.random() > 0.5 && !isMobile) { // Fewer connections on mobile
+         const connection = document.createElement('div');
+         connection.className = 'connection';
+         connection.style.left = Math.random() * 100 + '%';
+         connection.style.top = Math.random() * 100 + '%';
+         connection.style.width = Math.random() * 200 + 50 + 'px';
+         connection.style.animationDelay = Math.random() * 3 + 's';
+         container.appendChild(connection);
+      }
+   }
+}
+
+// FIX 3: CREATE PARTICLES FOR MOBILE TOO
+function createParticles() {
+   const container = document.getElementById('particles');
+   const particleCount = isMobile ? 20 : 50; // Fewer particles on mobile
+
+   for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 6 + 's';
+      particle.style.animationDuration = (10 + Math.random() * 4) + 's';
+      
+      // Make particles more visible on mobile
+      if (isMobile) {
+         particle.style.width = '3px';
+         particle.style.height = '3px';
+         particle.style.opacity = '0.8';
+      }
+      
+      container.appendChild(particle);
+   }
+}
+
+// Animate counter numbers
 function animateCounters() {
    const counters = document.querySelectorAll('.stat-number');
    counters.forEach(counter => {
@@ -45,62 +97,7 @@ function animateCounters() {
    });
 }
 
-// ================= CREATE NEURAL NETWORK (FOR BOTH DESKTOP & MOBILE) =================
-function createNeuralNetwork() {
-   const container = document.getElementById('neuralNetwork');
-   if (!container) return;
-   
-   const nodes = isMobile ? 15 : 20;
-
-   for (let i = 0; i < nodes; i++) {
-      const node = document.createElement('div');
-      node.className = 'node';
-      node.style.left = Math.random() * 100 + '%';
-      node.style.top = Math.random() * 100 + '%';
-      node.style.animationDelay = Math.random() * 2 + 's';
-      container.appendChild(node);
-
-      // Create connections (fewer on mobile)
-      if (i > 0 && Math.random() > 0.5 && !isMobile) {
-         const connection = document.createElement('div');
-         connection.className = 'connection';
-         connection.style.left = Math.random() * 100 + '%';
-         connection.style.top = Math.random() * 100 + '%';
-         connection.style.width = Math.random() * 200 + 50 + 'px';
-         connection.style.animationDelay = Math.random() * 3 + 's';
-         container.appendChild(connection);
-      }
-   }
-}
-
-// ================= CREATE PARTICLES (BUBBLES) - FIXED FOR MOBILE =================
-function createParticles() {
-   const container = document.getElementById('particles');
-   if (!container) return;
-   
-   // Create MORE particles for mobile to ensure visibility
-   const particleCount = isMobile ? 40 : 50;
-
-   for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 6 + 's';
-      particle.style.animationDuration = (10 + Math.random() * 4) + 's';
-      
-      // Make particles more visible on mobile
-      if (isMobile) {
-         particle.style.width = '3px';
-         particle.style.height = '3px';
-         particle.style.opacity = '0.6';
-         particle.style.animationDuration = (12 + Math.random() * 6) + 's';
-      }
-      
-      container.appendChild(particle);
-   }
-}
-
-// ================= SCHEDULE TAB FUNCTIONALITY =================
+// Schedule tab functionality - MODIFIED FOR SUPPORT PROCESS
 function showSchedule(day, event) {
    // Hide all schedule content
    document.querySelectorAll('.schedule-content').forEach(content => {
@@ -117,7 +114,7 @@ function showSchedule(day, event) {
    event.target.classList.add('active');
 }
 
-// ================= MOBILE MENU TOGGLE =================
+// FIX 1: MOBILE MENU TOGGLE
 function toggleMenu() {
    const mobileMenu = document.querySelector('.mobile-menu');
    const mobileNav = document.getElementById('mobileNav');
@@ -138,12 +135,12 @@ function closeMenu() {
    document.body.style.overflow = 'auto';
 }
 
-// ================= TIMELINE ITEM TOGGLE =================
+// Timeline item toggle
 function toggleTimelineItem(item) {
    item.classList.toggle('expanded');
 }
 
-// ================= SMOOTH SCROLLING =================
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -160,7 +157,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    });
 });
 
-// ================= UPDATE ACTIVE MENU ITEMS ON SCROLL =================
+// Update active menu items on scroll
 function updateActiveMenuItem() {
    const sections = document.querySelectorAll('section[id]');
    const scrollPosition = window.scrollY + 100;
@@ -190,7 +187,7 @@ function updateActiveMenuItem() {
    });
 }
 
-// ================= HEADER SCROLL EFFECT =================
+// Header scroll effect
 window.addEventListener('scroll', () => {
    const header = document.querySelector('header');
    if (window.scrollY > 100) {
@@ -205,7 +202,7 @@ window.addEventListener('scroll', () => {
    updateActiveMenuItem();
 });
 
-// ================= INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =================
+// Intersection Observer for scroll animations
 const observerOptions = {
    threshold: 0.1,
    rootMargin: '0px 0px -100px 0px'
@@ -219,7 +216,7 @@ const observer = new IntersectionObserver((entries) => {
    });
 }, observerOptions);
 
-// ================= INITIALIZE SCROLL ANIMATIONS =================
+// Initialize scroll animations
 function initScrollAnimations() {
    // Add animation classes to elements
    document.querySelectorAll('.section h2').forEach(heading => {
@@ -231,13 +228,19 @@ function initScrollAnimations() {
       item.classList.add('stagger-animation');
    });
 
+   // Add animations for quick access panel
+   document.querySelectorAll('.action-btn').forEach((btn, index) => {
+      btn.style.animationDelay = `${index * 0.1}s`;
+      btn.classList.add('animate-on-scroll');
+   });
+
    // Observe all animation elements
    document.querySelectorAll('.animate-on-scroll').forEach(el => {
       observer.observe(el);
    });
 }
 
-// ================= ADD HEXAGONAL DECORATIONS =================
+// Add hexagonal decorations dynamically
 function addHexDecorations() {
    const sections = document.querySelectorAll('.section');
    sections.forEach((section, index) => {
@@ -256,35 +259,48 @@ function addHexDecorations() {
    });
 }
 
-// ================= CHECK AND UPDATE MOBILE STATUS =================
-function checkMobileStatus() {
-   isMobile = window.innerWidth <= 768;
+// Initialize support quick access panel animations
+function initSupportPanel() {
+   const actionBtns = document.querySelectorAll('.action-btn');
+   actionBtns.forEach((btn, index) => {
+      btn.style.setProperty('--stagger', index + 1);
+      btn.classList.add('stagger-animation');
+   });
+}
+
+// FIX 3: OPTIMIZE FOR MOBILE
+function optimizeForMobile() {
+   if (!isMobile) return;
    
-   // Recreate particles on resize for better mobile experience
-   const particlesContainer = document.getElementById('particles');
-   if (particlesContainer && particlesContainer.children.length === 0) {
-      createParticles();
+   // Reduce animation complexity on mobile
+   document.querySelectorAll('.node, .connection, .particle').forEach(el => {
+      el.style.animationDuration = '8s';
+   });
+   
+   // Disable heavy hover effects on mobile
+   if ('ontouchstart' in window) {
+      document.querySelectorAll('.tech-circle, .speaker-card, .sponsor-card').forEach(el => {
+         el.style.transition = 'none';
+      });
    }
 }
 
-// ================= INITIALIZE EVERYTHING =================
+// Initialize everything when page loads
 window.addEventListener('load', () => {
    // Check if mobile
-   checkMobileStatus();
+   isMobile = window.innerWidth <= 768;
    
-   // Initialize animations
    animateCounters();
    createNeuralNetwork();
-   createParticles(); // ALWAYS create particles for mobile too
+   createParticles();
    initScrollAnimations();
    addHexDecorations();
-   
-   // Setup resize listener
-   window.addEventListener('resize', checkMobileStatus);
+   initSupportPanel();
+   optimizeForMobile();
 });
 
-// ================= EXPORT FUNCTIONS =================
-window.toggleMenu = toggleMenu;
-window.closeMenu = closeMenu;
-window.showSchedule = showSchedule;
-window.toggleTimelineItem = toggleTimelineItem;
+// Reinitialize on resize
+window.addEventListener('resize', function() {
+   isMobile = window.innerWidth <= 768;
+   optimizeForMobile();
+});
