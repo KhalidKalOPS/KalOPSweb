@@ -4,12 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KalOPS - Pricing</title>
-
 <link rel="stylesheet" href="templatemo-chain-summit.css">
 <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
-
 <style>
-/* ================= HERO ================= */
+/* Your existing CSS remains exactly the same */
 .pricing-hero {
     padding-top: 120px;
     text-align: center;
@@ -26,8 +24,6 @@
     color: var(--primary);
     font-size: 1.2rem;
 }
-
-/* ================= GRID ================= */
 .pricing-grid {
     display: flex;
     flex-wrap: wrap;
@@ -35,8 +31,6 @@
     gap: 35px;
     padding: 60px 20px;
 }
-
-/* ================= CARD ================= */
 .pricing-card {
     position: relative;
     flex: 1 1 320px;
@@ -52,8 +46,6 @@
     transform: translateY(-10px);
     box-shadow: 0 18px 40px rgba(0,0,0,0.4);
 }
-
-/* ================= RIBBON ================= */
 .ribbon {
     position: absolute;
     top: -12px;
@@ -66,8 +58,6 @@
     border-radius: 20px;
     box-shadow: 0 6px 18px rgba(255,0,0,0.45);
 }
-
-/* ================= TEXT ================= */
 .pricing-card h3 {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
@@ -75,20 +65,17 @@
     font-size: 1.9rem;
     margin-bottom: 18px;
 }
-
 .old-price {
     font-size: 1.2rem;
     text-decoration: line-through;
     opacity: 0.6;
 }
-
 .new-price {
     font-size: 2.6rem;
     font-weight: bold;
     color: #00ff99;
     margin: 6px 0;
 }
-
 .save-badge {
     display: inline-block;
     margin-bottom: 18px;
@@ -98,8 +85,6 @@
     background: rgba(0,255,153,0.18);
     color: #00ff99;
 }
-
-/* ================= LIST ================= */
 .pricing-card ul {
     list-style: none;
     padding: 0;
@@ -109,8 +94,6 @@
     padding: 9px 0;
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
-
-/* ================= BUTTON ================= */
 .pricing-card button {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     color: white;
@@ -123,8 +106,6 @@
 .pricing-card button:hover {
     opacity: 0.9;
 }
-
-/* ================= RESPONSIVE ================= */
 @media (max-width: 850px) {
     .pricing-grid {
         flex-direction: column;
@@ -133,7 +114,6 @@
 }
 </style>
 </head>
-
 <body>
 
 <!-- BACKGROUND -->
@@ -173,29 +153,24 @@
 <!-- BASIC -->
 <div class="pricing-card">
     <div class="ribbon">13% OFF</div>
-
     <h3>Basic</h3>
     <div class="old-price">$149</div>
     <div class="new-price">$129</div>
     <div class="save-badge">Save 13%</div>
-
     <ul>
         <li>Vendor Purchases</li>
         <li>Fuel Purchases</li>
     </ul>
-
     <button onclick="redirectToContact('Basic')">Get Started</button>
 </div>
 
 <!-- PREMIUM -->
 <div class="pricing-card">
     <div class="ribbon">25% OFF</div>
-
     <h3>Premium</h3>
     <div class="old-price">$199</div>
     <div class="new-price">$149</div>
     <div class="save-badge">Best Value</div>
-
     <ul>
         <li>Daily Close</li>
         <li>Vendor Purchases</li>
@@ -205,7 +180,6 @@
         <li>Inventory Reconciliation</li>
         <li>Cash Reconciliation</li>
     </ul>
-
     <button onclick="redirectToContact('Premium')">Get Started</button>
 </div>
 
@@ -222,15 +196,12 @@
 
 <script src="templatemo-chain-scripts.js"></script>
 
-<!-- REDIRECT FUNCTION -->
 <script>
-    function redirectToContact(planName) {
-        // Encode plan name for URL
-        const plan = encodeURIComponent(planName);
-        
-        // Redirect to contact page with plan parameter
-        window.location.href = `contact.html?plan=${plan}`;
-    }
+// Simple redirect function
+function redirectToContact(planName) {
+    // Redirect to contact page with plan parameter
+    window.location.href = 'contact.html?plan=' + planName;
+}
 </script>
 </body>
 </html>
