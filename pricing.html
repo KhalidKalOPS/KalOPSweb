@@ -186,7 +186,7 @@
         <li>Fuel Purchases</li>
     </ul>
 
-    <button>Get Started</button>
+    <button onclick="redirectToContact('Basic')">Get Started</button>
 </div>
 
 <!-- PREMIUM -->
@@ -208,7 +208,7 @@
         <li>Cash Reconciliation</li>
     </ul>
 
-    <button>Get Started</button>
+    <button onclick="redirectToContact('Premium')">Get Started</button>
 </div>
 
 </section>
@@ -223,5 +223,17 @@
 </footer>
 
 <script src="templatemo-chain-scripts.js"></script>
+
+<!-- REDIRECT FUNCTION -->
+<script>
+    function redirectToContact(planName) {
+        // Plan name ko URL friendly bana rahe hain
+        const plan = encodeURIComponent(planName);
+        
+        // Contact page par redirect karein with plan info
+        window.location.href = `contact.html?plan=${plan}`;
+    }
+</script>
+
 </body>
 </html>
