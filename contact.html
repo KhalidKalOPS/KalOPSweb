@@ -359,6 +359,9 @@
             <div class="contact-form-column">
                 <h3 class="contact-form-title">Send Us a Message</h3>
                 <form class="contact-form" id="contactForm">
+                    <!-- Hidden field for plan -->
+                    <input type="hidden" id="selectedPlan" name="plan">
+                    
                     <div class="form-field">
                         <label for="contactName">Name</label>
                         <input type="text" id="contactName" name="name" required placeholder="Your name">
@@ -448,7 +451,27 @@
     
     <!-- Form Handling -->
     <script>
-        // Contact Form Handler for contact.html
+        // ============ Plan Auto-Fill Code ============
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const plan = urlParams.get('plan');
+            
+            if (plan) {
+                // Hidden field mein plan store karna
+                const planField = document.getElementById('selectedPlan');
+                if (planField) {
+                    planField.value = plan;
+                }
+                
+                // Subject field update karna
+                const subjectField = document.getElementById('contactSubject');
+                if (subjectField) {
+                    subjectField.value = `${plan} Plan Inquiry`;
+                }
+            }
+        });
+
+        // ============ Form Submission ============
         document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -456,6 +479,7 @@
             const email = document.getElementById('contactEmail').value;
             const subject = document.getElementById('contactSubject').value;
             const message = document.getElementById('contactMessage').value;
+            const plan = document.getElementById('selectedPlan')?.value || 'Not specified';
             
             const successMessage = document.getElementById('formSuccessMessage');
             const errorMessage = document.getElementById('formErrorMessage');
@@ -470,6 +494,7 @@
                     email: email,
                     subject: subject,
                     message: message,
+                    plan: plan, // YEH NAYA FIELD ADD KIYA HAI
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     page: 'Contact'
                 });
