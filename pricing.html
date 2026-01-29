@@ -9,7 +9,6 @@
 <link rel="icon" type="image/x-icon" href="kalops-logo 1.ico">
 
 <style>
-
 /* ================= HERO ================= */
 .pricing-hero {
     padding-top: 120px;
@@ -132,7 +131,6 @@
         align-items: center;
     }
 }
-
 </style>
 </head>
 
@@ -227,10 +225,10 @@
 <!-- REDIRECT FUNCTION -->
 <script>
     function redirectToContact(planName) {
-        // Plan name ko URL friendly bana rahe hain
+        // Encode plan name for URL
         const plan = encodeURIComponent(planName);
         
-        // Contact page par redirect karein with plan info
+        // Redirect to contact page with plan parameter
         window.location.href = `contact.html?plan=${plan}`;
     }
 </script>
